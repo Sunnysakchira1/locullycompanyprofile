@@ -503,21 +503,117 @@
   .d3 { transition-delay: 0.3s; }
 
   /* ── RESPONSIVE ── */
+  /* ── TABLET ── */
   @media (max-width: 1024px) {
     nav { padding: 0 28px; }
     .nav-services { display: none; }
-    .cover-inner, .about-grid, .svc-header, .case-header, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .container { padding: 0 28px; }
+    #cover { padding: 80px 28px 60px; }
+    .cover-inner { grid-template-columns: 1fr; gap: 48px; padding: 0; }
+    .cover-meta { gap: 20px; }
+    .about-grid, .svc-header, .case-header, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     .svc-nav-grid { grid-template-columns: 1fr; }
     .svc-nav-card { border-right: none; border-bottom: 1px solid var(--border); }
-    .svc-detail-grid { grid-template-columns: 1fr; }
-    .metrics-row, .case-stats { grid-template-columns: 1fr 1fr; }
+    .svc-nav-card:last-child { border-bottom: none; }
+    .svc-detail-grid { grid-template-columns: 1fr 1fr; }
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .metrics-row .metric:nth-child(3) { border-left: none; padding-left: 0; grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--border); }
+    .case-stats { grid-template-columns: repeat(3, 1fr); }
     .case-timeline { grid-template-columns: 1fr 1fr; }
     .proof-grid { grid-template-columns: 1fr 1fr; }
-    .container { padding: 0 28px; }
-    .cover-inner { padding: 0 0; }
+    .quick-results-grid { grid-template-columns: 1fr 1fr; }
+    .quick-results-grid .qr:nth-child(3) { border-right: none; grid-column: 1 / -1; border-top: 1px solid var(--border); }
+    .svc-section-alt .quick-results-grid .qr:nth-child(3) { border-top-color: rgba(247,245,241,0.08); }
+    .founder-row { grid-template-columns: 160px 1fr; }
+    .founder-photo { width: 160px; height: 180px; }
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 36px 28px; }
     .footer-right { text-align: center; }
-    #cover { padding: 80px 28px 60px; }
+    .svc-section { padding: 80px 0; }
+    #about, #services-nav, #case, #contact { padding: 80px 0; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    html { overflow-x: hidden; }
+    body { font-size: 15px; }
+    .container { padding: 0 20px; }
+    nav { padding: 0 20px; height: 56px; }
+    .nav-contact { font-size: 11px; }
+
+    /* Cover */
+    #cover { padding: 72px 20px 52px; min-height: 100svh; }
+    .cover-eyebrow { font-size: 10px; margin-bottom: 20px; }
+    .cover-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 32px; }
+    .cover-meta-row { padding-top: 16px; }
+    .cover-meta-value { font-size: 15px; }
+
+    /* About */
+    #about, #services-nav, #case, #contact { padding: 60px 0; }
+    .svc-section { padding: 60px 0; }
+    .about-grid { gap: 36px; }
+    .founder-row { grid-template-columns: 1fr; gap: 20px; padding: 24px 20px; }
+    .founder-photo { width: 100%; height: 240px; }
+    .founder-photo img { object-position: center 20%; }
+    .team-item { padding: 20px 20px; }
+    .mission-pull { margin-top: 24px; }
+    .mission-pull p { font-size: 19px; }
+
+    /* Services nav */
+    .services-nav-hd { margin-bottom: 36px; }
+    .svc-nav-card { padding: 28px 24px; }
+    .svc-nav-card::after { display: none; }
+    .svc-nav-title { font-size: 24px; }
+
+    /* Service sections */
+    .svc-detail-grid { grid-template-columns: 1fr; }
+    .svc-detail { padding: 24px 20px; }
+    .svc-header { gap: 36px; }
+    .metrics-row { grid-template-columns: 1fr; padding-top: 32px; }
+    .metric { padding: 0 0 20px !important; border-left: none !important; border-bottom: 1px solid var(--border); }
+    .metric:last-child { border-bottom: none; padding-bottom: 0 !important; }
+    .svc-section-alt .metric { border-bottom-color: rgba(247,245,241,0.08); }
+    .metric-n { font-size: 40px; }
+
+    /* Quick results */
+    .quick-results { margin-top: 36px; }
+    .quick-results-grid { grid-template-columns: 1fr; }
+    .qr { border-right: none !important; border-bottom: 1px solid var(--border); }
+    .qr:last-child { border-bottom: none; }
+    .svc-section-alt .qr { border-bottom-color: rgba(247,245,241,0.08); }
+    .qr-n { font-size: 30px; }
+
+    /* Proof grid */
+    .proof-grid { grid-template-columns: 1fr; margin-top: 36px; gap: 12px; }
+    .proof-item img { height: 180px; }
+
+    /* Case study */
+    .case-stats { grid-template-columns: 1fr; border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden; }
+    .case-stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .case-stat:last-child { border-bottom: none; }
+    .case-timeline { grid-template-columns: 1fr; border-top: 1px solid var(--border); }
+    .ct-step { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+    .ct-step:last-child { border-bottom: none; }
+
+    /* Contact */
+    .contact-details { margin-top: 24px; gap: 20px; }
+    .cp { padding: 18px 20px; }
+
+    /* Footer */
+    footer { padding: 28px 20px; }
+
+    /* Typography */
+    h2 { font-size: clamp(32px, 7vw, 48px); }
+    h3 { font-size: 24px; }
+    .intro { font-size: 15px; }
+    .t-name { font-size: 20px; }
+  }
+
+  /* ── SMALL MOBILE ── */
+  @media (max-width: 480px) {
+    .cover-meta { grid-template-columns: 1fr; }
+    .case-stats { grid-template-columns: 1fr 1fr; }
+    .case-stat:nth-child(1) { border-right: 1px solid var(--border); }
+    .case-stat:nth-child(3) { grid-column: 1 / -1; border-top: 1px solid var(--border); border-bottom: none; }
   }
 </style>
 </head>
@@ -739,29 +835,36 @@
 
     <!-- Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
-      <div class="label" style="margin-bottom: 8px;">Evidence — Live AI Platform Screenshots</div>
+      <div class="label" style="margin-bottom: 8px;">Results — Live AI Platform Screenshots</div>
       <p style="font-size:13px; color: var(--ink-light);">Client: Form Recovery & Wellness, Bangkok. Click to enlarge.</p>
     </div>
-    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(3,1fr);">
+    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(2,1fr);">
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/Form/chatgptbestphysiojan.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/form/chatgptbestphysiojan.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">ChatGPT</span>
           <div class="proof-desc">"Best physiotherapy clinic Bangkok" — Client ranked #1</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/physiothgemini.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/form/physiothgemini.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Google Gemini</span>
           <div class="proof-desc">"Best physio clinic Thailand" — listed first with full detail</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/Form/AIVisibilityGrowth.jpg" alt="AI visibility dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/form/AIVisibilityGrowth.jpg" alt="AI visibility dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">AI Visibility Dashboard</span>
           <div class="proof-desc">26.3% AI mention rate — outperforming Bangkok Hospital</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/cosmo/bestfillersjan.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google AI Overview</span>
+          <div class="proof-desc">"Best fillers Bangkok" — Client listed in top AI recommendations</div>
         </div>
       </div>
     </div>
@@ -865,29 +968,15 @@
 
     <!-- Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
-      <div class="label" style="margin-bottom: 8px; color: var(--terra);">Campaign Evidence</div>
+      <div class="label" style="margin-bottom: 8px; color: var(--terra);">Campaign Results</div>
       <p style="font-size:13px; color: rgba(247,245,241,0.35);">Lead generation campaigns — education expo and event activations.</p>
     </div>
-    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(3,1fr);">
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/StudyInIndia/sii1.jpg" alt="Study in India campaign" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+    <div class="proof-grid reveal d3" style="grid-template-columns: 1fr;">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)" style="max-width: 520px; margin: 0 auto;">
+        <img src="images/investorsclinic/invadds.jpg" alt="Investors clinic lead gen ads" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
-          <span class="proof-platform">Education Expo — Study in India</span>
-          <div class="proof-desc">Lead generation campaign for international education event in Bangkok</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/StudyInIndia/sii2.jpg" alt="Study in India results" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Campaign Results</span>
-          <div class="proof-desc">Registered leads and attendance metrics from expo pipeline</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/StudyInIndia/siiretagrtingaudience26.jpg" alt="Retargeting audience" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Audience Retargeting — 2026</span>
-          <div class="proof-desc">Warm audience retargeting for repeat event attendance pipeline</div>
+          <span class="proof-platform">Meta Ads — Indian Property Fair Bangkok</span>
+          <div class="proof-desc">Sponsored campaign for Investors Clinic expo — driving qualified registrations to Hilton Grande Asoke event</div>
         </div>
       </div>
     </div>
@@ -973,29 +1062,29 @@
 
     <!-- Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
-      <div class="label" style="margin-bottom: 8px;">Campaign Evidence</div>
+      <div class="label" style="margin-bottom: 8px;">Campaign Results</div>
       <p style="font-size:13px; color: var(--ink-light);">Google Ads and Meta performance data — active client campaigns.</p>
     </div>
     <div class="proof-grid reveal d3" style="grid-template-columns: repeat(3,1fr);">
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/Investorsclinic/Invclinicadresults.jpg" alt="Investors clinic ad results" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/iron/conviron.jpg" alt="Iron Fairies conversions" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Financial Services</span>
-          <div class="proof-desc">Investors clinic campaign — cost per lead and conversion tracking</div>
+          <span class="proof-platform">Google Ads — Hospitality Client</span>
+          <div class="proof-desc">Iron Fairies Bangkok — conversion attribution across channels: Maps, Search, YouTube</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/Iron/ifperformanceapr.jpg" alt="Iron Fairies performance April" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/iron/ironjanads.jpg" alt="Iron Fairies search categories conversions" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
-          <span class="proof-platform">Meta Ads — Hospitality Client</span>
-          <div class="proof-desc">Iron Fairies Bangkok — April performance overview, ROAS tracking</div>
+          <span class="proof-platform">Google Ads — Search Categories</span>
+          <div class="proof-desc">"bars near me", "live music bangkok", "jazz bar bangkok" — 34+ conversions from high-intent searches</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="Locully-25/irongadsjan.jpg" alt="Iron Google Ads January" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <img src="images/akira/akira-ad-results.jpg" alt="Akira ad results" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
-          <span class="proof-platform">Google Ads — January</span>
-          <div class="proof-desc">Search campaign performance — impressions, clicks and conversion rate</div>
+          <span class="proof-platform">Meta Ads — Akira</span>
+          <div class="proof-desc">Akira campaign performance — reach, engagement, and conversion metrics</div>
         </div>
       </div>
     </div>
