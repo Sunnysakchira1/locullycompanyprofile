@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locully — Company Profile 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:      #EDEAE3;
+    --cream-dark: #E3DFD7;
+    --ink:        #1A1918;
+    --ink-mid:    #4A4744;
+    --ink-light:  #8B867F;
+    --terra:      #C05023;
+    --terra-dark: #963D1A;
+    --white:      #F7F5F1;
+    --border:     rgba(26,25,24,0.10);
+    --border-mid: rgba(26,25,24,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; padding: 0 52px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+  }
+  nav::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--terra);
+  }
+  .nav-logo img { height: 26px; width: auto; display: block; }
+  .nav-right {
+    display: flex; align-items: center; gap: 36px;
+  }
+  .nav-services {
+    display: flex; gap: 28px; list-style: none;
+  }
+  .nav-services a {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink-light); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-services a:hover { color: var(--terra); }
+  .nav-contact {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink); text-decoration: none;
+    border-bottom: 1px solid var(--border-mid);
+    padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-contact:hover { color: var(--terra); border-color: var(--terra); }
+
+  /* ── COVER ── */
+  #cover {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 52px 80px;
+    position: relative; overflow: hidden;
+  }
+  #cover::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(192,80,35,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  #cover::after {
+    content: ''; position: absolute;
+    left: 52px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(192,80,35,0.35) 30%, rgba(192,80,35,0.35) 70%, transparent);
+  }
+  .cover-inner {
+    max-width: 1160px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: end;
+    position: relative; z-index: 1;
+  }
+  .cover-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .cover-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--terra);
+  }
+  .cover-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 600; line-height: 0.95;
+    letter-spacing: -1px; color: var(--white);
+    margin-bottom: 36px;
+  }
+  .cover-h1 em { font-style: italic; color: var(--terra); }
+  .cover-desc {
+    font-size: 17px; color: rgba(247,245,241,0.5);
+    line-height: 1.8; font-weight: 300; max-width: 440px;
+  }
+  .cover-meta {
+    align-self: flex-end;
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .cover-meta-row {
+    border-top: 1px solid rgba(247,245,241,0.08);
+    padding-top: 24px;
+  }
+  .cover-meta-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(247,245,241,0.28); margin-bottom: 8px;
+  }
+  .cover-meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: rgba(247,245,241,0.75);
+    font-weight: 400;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 52px; }
+
+  /* ── SECTION LABELS ── */
+  .label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--terra); display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .label::before {
+    content: ''; display: block; width: 24px; height: 1px; background: var(--terra);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 4vw, 60px); font-weight: 600;
+    line-height: 1.0; letter-spacing: -0.5px; margin-bottom: 20px;
+  }
+  h2 em { font-style: italic; color: var(--terra); }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 600; line-height: 1.15; margin-bottom: 14px;
+  }
+
+  .intro {
+    font-size: 17px; color: var(--ink-mid);
+    max-width: 600px; line-height: 1.8; font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  #about { padding: 120px 0; background: var(--white); border-top: none; }
+  .about-grid {
+    display: grid; grid-template-columns: 5fr 6fr;
+    gap: 96px; align-items: start;
+  }
+  .mission-pull {
+    border-left: 2px solid var(--terra);
+    padding-left: 24px; margin-top: 36px;
+  }
+  .mission-pull p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic;
+    line-height: 1.55; color: var(--ink-mid); font-weight: 400;
+  }
+  .team-stack {
+    border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden;
+  }
+  .team-item {
+    background: var(--white); padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .team-item:last-child { border-bottom: none; background: var(--cream); }
+  .t-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 600; margin-bottom: 2px;
+  }
+  .t-role {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500; margin-bottom: 12px;
+  }
+  .t-bio { font-size: 14px; color: var(--ink-mid); line-height: 1.75; font-weight: 300; }
+
+  /* ── SERVICE NAVIGATION ── */
+  #services-nav { padding: 80px 0; background: var(--cream); border-top: 1px solid var(--border); }
+  .services-nav-hd { text-align: center; margin-bottom: 60px; }
+  .services-nav-hd h2 { margin-bottom: 12px; }
+  .services-nav-hd .intro { margin: 0 auto; text-align: center; }
+
+  .svc-nav-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    border: 1px solid var(--border-mid); border-radius: 6px; overflow: hidden;
+  }
+  .svc-nav-card {
+    background: var(--white); padding: 44px 40px;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+    position: relative;
+  }
+  .svc-nav-card:last-child { border-right: none; }
+  .svc-nav-card:hover { background: var(--cream); }
+  .svc-nav-card::after {
+    content: '↓'; position: absolute; bottom: 36px; right: 36px;
+    font-size: 18px; color: var(--terra); opacity: 0;
+    transition: opacity 0.2s, transform 0.2s; transform: translateY(-4px);
+  }
+  .svc-nav-card:hover::after { opacity: 1; transform: translateY(0); }
+  .svc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px; font-weight: 600; color: var(--terra);
+    letter-spacing: 0.1em; margin-bottom: 20px;
+  }
+  .svc-nav-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 600; line-height: 1.1; margin-bottom: 16px;
+  }
+  .svc-nav-desc {
+    font-size: 14px; color: var(--ink-mid); line-height: 1.75; font-weight: 300; flex: 1;
+  }
+  .svc-nav-anchor {
+    margin-top: 28px;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500;
+  }
+
+  /* ── SERVICE SECTION SHARED ── */
+  .svc-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 60px;
+  }
+  .svc-section-alt { background: var(--ink); }
+  .svc-section-alt .label { color: var(--terra); }
+  .svc-section-alt h2 { color: var(--white); }
+  .svc-section-alt h2 em { color: var(--terra); }
+  .svc-section-alt .intro { color: rgba(247,245,241,0.45); }
+
+  .svc-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start; margin-bottom: 80px;
+  }
+  .svc-detail-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; border: 1px solid var(--border-mid);
+    border-radius: 4px; overflow: hidden;
+  }
+  .svc-detail {
+    background: var(--white); padding: 32px 32px 28px;
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .svc-detail:hover { background: var(--cream); }
+  .svc-detail-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px; font-weight: 600; color: var(--terra);
+    letter-spacing: 0.12em; margin-bottom: 14px;
+  }
+  .svc-detail h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600; margin-bottom: 10px; line-height: 1.15;
+  }
+  .svc-detail p {
+    font-size: 14px; color: var(--ink-mid); line-height: 1.75; font-weight: 300;
+  }
+
+  /* Dark variant detail grid */
+  .svc-section-alt .svc-detail {
+    background: rgba(247,245,241,0.03);
+    border-color: rgba(247,245,241,0.07);
+  }
+  .svc-section-alt .svc-detail:hover { background: rgba(247,245,241,0.06); }
+  .svc-section-alt .svc-detail h4 { color: var(--white); }
+  .svc-section-alt .svc-detail p { color: rgba(247,245,241,0.4); }
+  .svc-section-alt .svc-detail-num { color: var(--terra); }
+
+  /* Metrics row */
+  .metrics-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 64px; border-top: 1px solid var(--border);
+    padding-top: 48px;
+  }
+  .metric {
+    padding-right: 40px;
+  }
+  .metric + .metric { padding-left: 40px; border-left: 1px solid var(--border); }
+  .metric-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 600; color: var(--terra);
+    line-height: 1; letter-spacing: -1px; margin-bottom: 8px;
+  }
+  .metric-l { font-size: 13px; color: var(--ink-light); line-height: 1.45; font-weight: 300; }
+
+  .svc-section-alt .metrics-row { border-top-color: rgba(247,245,241,0.08); }
+  .svc-section-alt .metric { border-left-color: rgba(247,245,241,0.08); }
+  .svc-section-alt .metric-l { color: rgba(247,245,241,0.35); }
+
+  /* ── PROOF IMAGES ── */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 64px;
+  }
+  .proof-item {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+    cursor: pointer; transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .proof-item:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(26,25,24,0.1); }
+  .proof-item img {
+    width: 100%; display: block;
+    height: 200px; object-fit: cover; object-position: top;
+    transition: transform 0.35s;
+    background: var(--cream-dark);
+  }
+  .proof-item img.broken { height: 0; }
+  .proof-item:hover img { transform: scale(1.03); }
+  .proof-cap { padding: 14px 18px; border-top: 1px solid var(--border); }
+  .proof-platform {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500; margin-bottom: 4px; display: block;
+  }
+  .proof-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.45; font-weight: 300; }
+
+  /* Dark proof grid */
+  .svc-section-alt .proof-item {
+    background: rgba(247,245,241,0.04);
+    border-color: rgba(247,245,241,0.08);
+  }
+  .svc-section-alt .proof-item img { background: #1E1D1C; }
+  .svc-section-alt .proof-cap { border-top-color: rgba(247,245,241,0.06); }
+  .svc-section-alt .proof-desc { color: rgba(247,245,241,0.4); }
+
+  /* ── CASE STUDY ── */
+  #case { padding: 120px 0; background: var(--white); border-top: 1px solid var(--border); }
+  .case-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: end; margin-bottom: 72px;
+  }
+  .case-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden;
+  }
+  .case-stat {
+    text-align: center; padding: 32px 20px;
+    border-right: 1px solid var(--border);
+  }
+  .case-stat:last-child { border-right: none; }
+  .cs-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 600; color: var(--terra);
+    line-height: 1; margin-bottom: 8px; letter-spacing: -0.5px;
+  }
+  .cs-l { font-size: 12px; color: var(--ink-light); line-height: 1.4; }
+
+  .case-timeline {
+    margin-top: 60px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+  }
+  .ct-step { padding: 40px 32px 32px; border-right: 1px solid var(--border); }
+  .ct-step:last-child { border-right: none; }
+  .ct-when {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500; margin-bottom: 10px;
+  }
+  .ct-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; margin-bottom: 10px; line-height: 1.2;
+  }
+  .ct-body { font-size: 13px; color: var(--ink-mid); line-height: 1.7; font-weight: 300; }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 130px 0;
+    background: var(--cream-dark);
+    border-top: 1px solid var(--border);
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 96px; align-items: start;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 32px; margin-top: 40px; }
+  .contact-row {
+    border-top: 1px solid var(--border); padding-top: 20px;
+  }
+  .contact-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-light); margin-bottom: 6px;
+  }
+  .contact-value { font-size: 16px; font-weight: 400; color: var(--ink); }
+  .contact-value a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+  .contact-value a:hover { color: var(--terra); }
+  .contact-people { display: flex; flex-direction: column; gap: 1px; margin-top: 40px; }
+  .cp { background: var(--white); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .cp:first-child { border-radius: 4px 4px 0 0; }
+  .cp:last-child { border-bottom: none; border-radius: 0 0 4px 4px; }
+  .cp-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 2px; }
+  .cp-role { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); font-weight: 500; margin-bottom: 8px; }
+  .cp-contact { font-size: 13px; color: var(--ink-mid); }
+  .cp-contact a { color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
+  .cp-contact a:hover { color: var(--terra); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); padding: 44px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(247,245,241,0.07);
+  }
+  footer img { height: 24px; width: auto; }
+  .footer-right { text-align: right; }
+  .footer-copy { font-size: 12px; color: rgba(247,245,241,0.25); letter-spacing: 0.04em; }
+
+  /* ── LIGHTBOX ── */
+  #lb {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.94); z-index: 1000;
+    align-items: center; justify-content: center; cursor: pointer;
+  }
+  #lb.on { display: flex; }
+  #lb img { max-width: 88vw; max-height: 88vh; border-radius: 4px; cursor: default; }
+  #lb-x {
+    position: absolute; top: 28px; right: 36px;
+    font-size: 28px; color: rgba(255,255,255,0.35); cursor: pointer; transition: color 0.2s;
+  }
+  #lb-x:hover { color: #fff; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .d1 { transition-delay: 0.1s; }
+  .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 28px; }
+    .nav-services { display: none; }
+    .cover-inner, .about-grid, .svc-header, .case-header, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .svc-nav-grid { grid-template-columns: 1fr; }
+    .svc-nav-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .svc-detail-grid { grid-template-columns: 1fr; }
+    .metrics-row, .case-stats { grid-template-columns: 1fr 1fr; }
+    .case-timeline { grid-template-columns: 1fr 1fr; }
+    .proof-grid { grid-template-columns: 1fr 1fr; }
+    .container { padding: 0 28px; }
+    .cover-inner { padding: 0 0; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 36px 28px; }
+    .footer-right { text-align: center; }
+    #cover { padding: 80px 28px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover" class="nav-logo">
+    <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Cormorant Garamond,serif;font-size:22px;font-weight:600;color:#1A1918\'>Locully</span>'">
+  </a>
+  <div class="nav-right">
+    <ul class="nav-services">
+      <li><a href="#seo-aio">SEO & AI Visibility</a></li>
+      <li><a href="#lead-gen">Lead Gen Partner</a></li>
+      <li><a href="#performance">Performance Marketing</a></li>
+    </ul>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-inner">
+    <div>
+      <div class="cover-eyebrow">Bangkok · Advertising & Marketing · Est. 2024</div>
+      <h1 class="cover-h1">
+        Locully<br>
+        <em>Company</em><br>
+        Profile
+      </h1>
+      <p class="cover-desc">
+        A growth marketing agency specialising in AI search visibility, local lead generation, and performance advertising for businesses operating in Thailand.
+      </p>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Headquarters</div>
+        <div class="cover-meta-value">Bangkok, Thailand</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Primary Services</div>
+        <div class="cover-meta-value">SEO & AI Visibility · Lead Generation · Performance Marketing</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Clients Served</div>
+        <div class="cover-meta-value">20+ Thai businesses — Clinics, Hospitality, Finance, Education</div>
+      </div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-label">Document</div>
+        <div class="cover-meta-value">Capability Overview · 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="label">About Locully</div>
+        <h2>Bangkok's <em>Growth Partner</em></h2>
+        <p class="intro">
+          Locully is a B2B marketing agency founded in Bangkok to address a straightforward problem: most businesses invest in marketing without knowing whether it is working. We change that.
+        </p>
+        <p class="intro" style="margin-top: 16px;">
+          We operate as a dedicated growth partner — not a vendor. Our work spans AI search optimisation, local lead generation, and performance advertising, executed by a locally based team that understands the Thai market.
+        </p>
+        <div class="mission-pull">
+          <p>"When customers ask AI where to go, your business should be the answer. That is what we build — every day, for every client."</p>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="team-stack">
+          <div class="team-item">
+            <div class="t-name">Sunny Sakchiraphong</div>
+            <div class="t-role">Founder & CEO</div>
+            <p class="t-bio">Marketing specialist with expertise in SEO, AI search optimisation, and performance marketing. Sunny has worked with 20+ Thai businesses across healthcare, hospitality, finance, and education — and personally leads strategy for every client engagement.</p>
+          </div>
+          <div class="team-item">
+            <div class="t-name">Boni</div>
+            <div class="t-role">SEO & Content Lead</div>
+            <p class="t-bio">Technical SEO specialist with 7+ years in organic growth, content architecture, and digital PR. Leads execution across keyword strategy, AI-optimised content, and authority-building campaigns that earn citations from AI platforms.</p>
+          </div>
+          <div class="team-item">
+            <div class="t-name">Bangkok Operations Team</div>
+            <div class="t-role">Local Execution</div>
+            <p class="t-bio">In-market team managing paid advertising, content production, reporting, and event marketing. Locally based for faster turnaround and real-time responsiveness to Thailand's market conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE NAVIGATION -->
+<section id="services-nav">
+  <div class="container">
+    <div class="services-nav-hd reveal">
+      <div class="label" style="justify-content:center">Our Services</div>
+      <h2>Three Areas of <em>Expertise</em></h2>
+      <p class="intro">Select a service below to navigate directly to that section.</p>
+    </div>
+    <div class="svc-nav-grid reveal d1">
+
+      <a href="#seo-aio" class="svc-nav-card">
+        <div class="svc-num">01</div>
+        <div class="svc-nav-title">SEO & AI Visibility</div>
+        <p class="svc-nav-desc">
+          Structured programmes to increase organic search rankings and ensure your brand is cited by AI platforms — ChatGPT, Gemini, Google AI Overviews, and Perplexity.
+        </p>
+        <div class="svc-nav-anchor">View service details</div>
+      </a>
+
+      <a href="#lead-gen" class="svc-nav-card">
+        <div class="svc-num">02</div>
+        <div class="svc-nav-title">Local Lead Generation Partner</div>
+        <p class="svc-nav-desc">
+          End-to-end lead generation for events, expos, and launches in Thailand. We manage the full pipeline — from campaign setup to registration to qualified attendance.
+        </p>
+        <div class="svc-nav-anchor">View service details</div>
+      </a>
+
+      <a href="#performance" class="svc-nav-card">
+        <div class="svc-num">03</div>
+        <div class="svc-nav-title">Performance Marketing</div>
+        <p class="svc-nav-desc">
+          Google Search, Meta, and programmatic advertising managed for measurable ROI. Every campaign is structured around cost-per-lead and revenue targets, not impressions.
+        </p>
+        <div class="svc-nav-anchor">View service details</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SERVICE 01: SEO & AI VISIBILITY
+     ════════════════════════════════ -->
+<section id="seo-aio" class="svc-section" style="background: var(--white);">
+  <div class="container">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="label">Service 01</div>
+        <h2>SEO & <em>AI Visibility</em></h2>
+        <p class="intro">
+          Search is no longer just Google. An increasing share of product and service discovery now happens through AI platforms — ChatGPT, Gemini, Perplexity, and Google AI Overviews. Locully optimises for both.
+        </p>
+        <p class="intro" style="margin-top: 16px;">
+          We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation — and cause Google to rank you on page one.
+        </p>
+      </div>
+
+      <div class="reveal d1">
+        <div class="svc-detail-grid">
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 01</div>
+            <h4>AI Visibility Audit</h4>
+            <p>We analyse your brand across all major AI platforms and benchmark it against competitors. This establishes a clear baseline and identifies the specific gaps driving missed recommendations.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 02</div>
+            <h4>Technical & Content Foundation</h4>
+            <p>On-page SEO, schema markup, and structured content specifically formatted to be cited by AI models. We build the pages that AI engines pull from when answering user queries.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 03</div>
+            <h4>Authority & Backlink Building</h4>
+            <p>Editorial placements on DR50+ publications, digital PR, and citation building across authoritative directories. The trust signals that AI and Google both require to recommend a source.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 04</div>
+            <h4>Monitoring & Compounding</h4>
+            <p>Monthly tracking of AI citations, keyword positions, and organic traffic. Visibility compounds over time — each asset built continues to earn citations and rankings beyond the campaign period.</p>
+          </div>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-n">10×</div>
+            <div class="metric-l">Average AI mention growth within 90 days</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">33%</div>
+            <div class="metric-l">Conversion rate from AI-referred traffic</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">90%</div>
+            <div class="metric-l">Of target keywords reaching top 3 positions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected proof images -->
+    <div class="reveal d2">
+      <div class="label" style="margin-bottom: 12px;">Selected Evidence — Wellness Clinic Client</div>
+      <p style="font-size:14px; color: var(--ink-light); margin-bottom: 0;">Live screenshots from AI platforms. Client: Form Recovery & Wellness, Bangkok.</p>
+    </div>
+    <div class="proof-grid reveal d2">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/Form/chatgptbestphysiojan.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">ChatGPT</span>
+          <div class="proof-desc">"Best physiotherapy clinic Bangkok" — Client ranked #1</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/Form/bestphysio.jpg" alt="Google AI Overview physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google AI Overview</span>
+          <div class="proof-desc">"Best physio clinics Bangkok" — cited as #1 recommendation</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/bestphysio2026.jpg" alt="Google AI 2026" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google AI Overview — 2026</span>
+          <div class="proof-desc">Sustained #1 AI recommendation into 2026</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/physiothgemini.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Gemini</span>
+          <div class="proof-desc">"Best physio clinic Thailand" — listed first with full detail</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/Form/chatgptreferralsdec.jpg" alt="ChatGPT referrals analytics" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Analytics — AI Traffic</span>
+          <div class="proof-desc">ChatGPT referral sessions growing month-on-month</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="Locully-25/Form/AIVisibilityGrowth.jpg" alt="AI visibility dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">AI Visibility Dashboard</span>
+          <div class="proof-desc">26.3% AI mention rate — outperforming Bangkok Hospital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     SERVICE 02: LOCAL LEAD GEN PARTNER
+     ════════════════════════════════════ -->
+<section id="lead-gen" class="svc-section svc-section-alt">
+  <div class="container">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="label">Service 02</div>
+        <h2>Local Lead <em>Generation Partner</em></h2>
+        <p class="intro">
+          Locully operates as a dedicated local marketing partner for companies running events, expos, roadshows, and launches in Thailand. We build and manage the full lead generation pipeline — from campaign launch to confirmed attendance.
+        </p>
+        <p class="intro" style="margin-top: 16px; color: rgba(247,245,241,0.45);">
+          This is not event promotion. It is structured lead acquisition — qualified registrations from a defined audience, managed end-to-end by a locally based team who understands the Thai market.
+        </p>
+      </div>
+
+      <div class="reveal d1">
+        <div class="svc-detail-grid">
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 01</div>
+            <h4>Audience & Market Brief</h4>
+            <p>We define the exact target profile — demographics, geography, intent signals — and map the most efficient channels to reach them in the Thai market.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 02</div>
+            <h4>Campaign Build & Launch</h4>
+            <p>Paid social, Google, Line OA, and local media placements. All creative, copy, and targeting configured and managed by our local team — no briefing delays.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 03</div>
+            <h4>Registration Pipeline</h4>
+            <p>Landing pages, forms, and confirmation flows designed to minimise drop-off. Leads are qualified at point of registration, not after the event.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 04</div>
+            <h4>Attendance Management</h4>
+            <p>Reminder sequences, confirmation communications, and day-of logistics support. We manage attendance rate — not just registrations — as a primary KPI.</p>
+          </div>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-n">103</div>
+            <div class="metric-l">Qualified leads generated in 3 weeks for a single expo</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">40%</div>
+            <div class="metric-l">Attendance rate achieved (industry average: 15%)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">&lt;$20</div>
+            <div class="metric-l">Cost per qualified, attended lead</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d2">
+      <div class="label" style="margin-bottom: 12px;">Scope of Partnership</div>
+    </div>
+    <div class="svc-detail-grid reveal d2" style="grid-template-columns: repeat(3, 1fr); margin-top: 0;">
+      <div class="svc-detail">
+        <h4>Education & University Expos</h4>
+        <p>End-to-end lead generation for international education events — student acquisition, parent outreach, and partner institution representation in the Thai market.</p>
+      </div>
+      <div class="svc-detail">
+        <h4>Property & Investment Fairs</h4>
+        <p>Targeted prospecting and registration campaigns for property launches, investment seminars, and buyer expos. Qualified leads delivered against a defined buyer profile.</p>
+      </div>
+      <div class="svc-detail">
+        <h4>Product Launches & Trade Events</h4>
+        <p>Market-entry campaigns and trade event activation for brands entering Thailand. Local media, influencer, and paid channel management from a single partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SERVICE 03: PERFORMANCE MARKETING
+     ════════════════════════════════ -->
+<section id="performance" class="svc-section" style="background: var(--cream);">
+  <div class="container">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="label">Service 03</div>
+        <h2>Performance <em>Marketing</em></h2>
+        <p class="intro">
+          Paid advertising managed with one objective: measurable return on investment. We manage Google Search, Google Display, Meta (Facebook & Instagram), and programmatic campaigns for businesses in Thailand.
+        </p>
+        <p class="intro" style="margin-top: 16px;">
+          Every campaign is structured around a cost-per-lead or cost-per-acquisition target established at briefing. Spend, conversions, and pipeline value are tracked and reported monthly.
+        </p>
+      </div>
+
+      <div class="reveal d1">
+        <div class="svc-detail-grid">
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 01</div>
+            <h4>Google Search & Display</h4>
+            <p>Search campaign architecture, keyword strategy, Quality Score optimisation, and bid management. Display and remarketing for brand reinforcement across the consideration phase.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 02</div>
+            <h4>Meta — Facebook & Instagram</h4>
+            <p>Audience targeting, creative strategy, and campaign management across Meta platforms. Local Thai audience profiling using behavioural and demographic signals.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 03</div>
+            <h4>Landing Page & Conversion</h4>
+            <p>Campaign performance is only as strong as the destination. We design and optimise landing pages to convert paid traffic — reducing cost-per-lead at the conversion layer.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 04</div>
+            <h4>Reporting & Attribution</h4>
+            <p>GA4, Google Ads, and Meta Business Suite consolidated into monthly reporting. Full attribution from ad click to booked appointment or completed purchase.</p>
+          </div>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-n">฿66</div>
+            <div class="metric-l">Cost per lead — hotel direct booking campaign</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">5×</div>
+            <div class="metric-l">Organic traffic growth alongside paid campaigns (12 months)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-n">18+</div>
+            <div class="metric-l">Months of continuous profitable campaign operation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case">
+  <div class="container">
+    <div class="case-header reveal">
+      <div>
+        <div class="label">Case Study</div>
+        <h2>Form Recovery <em>& Wellness</em></h2>
+        <p class="intro">
+          A Bangkok-based physiotherapy and wellness clinic. Locully has managed SEO, AI visibility, and local search for this client since mid-2024.
+        </p>
+      </div>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="cs-n">10×</div>
+          <div class="cs-l">AI mentions in 90 days</div>
+        </div>
+        <div class="case-stat">
+          <div class="cs-n">4.9★</div>
+          <div class="cs-l">Google rating — 670+ reviews</div>
+        </div>
+        <div class="case-stat">
+          <div class="cs-n">#1</div>
+          <div class="cs-l">AI-recommended physio clinic, Bangkok</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-timeline reveal d1">
+      <div class="ct-step">
+        <div class="ct-when">Month 1</div>
+        <div class="ct-title">Audit & Foundation</div>
+        <p class="ct-body">Full AI visibility audit across ChatGPT, Gemini, and Google AI. Technical SEO fixes, schema markup, and Google Business Profile optimisation across three clinic locations.</p>
+      </div>
+      <div class="ct-step">
+        <div class="ct-when">Months 2–3</div>
+        <div class="ct-title">Content & Authority</div>
+        <p class="ct-body">30+ AI-optimised service pages covering physiotherapy, acupuncture, TCM, and lymphatic drainage. Editorial backlinks secured on DR50+ health publications.</p>
+      </div>
+      <div class="ct-step">
+        <div class="ct-when">Months 3–6</div>
+        <div class="ct-title">AI Citation Growth</div>
+        <p class="ct-body">Client began appearing in ChatGPT, Gemini, and Google AI Overviews for 15+ target queries. AI-referred sessions tracked in GA4 with a 5.13% conversion rate.</p>
+      </div>
+      <div class="ct-step">
+        <div class="ct-when">Ongoing — 2026</div>
+        <div class="ct-title">Compounding Results</div>
+        <p class="ct-body">Sustained #1 AI and organic rankings. New clinic location (Thonglor) onboarded and reaching local pack within 60 days. Expansion to Phrom Phong underway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="label">Get in Touch</div>
+        <h2>Start a <em>Conversation</em></h2>
+        <p class="intro">
+          We work with a small number of clients at any time to ensure quality of execution. If you are evaluating Locully as a growth partner, the best next step is a 30-minute briefing call.
+        </p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:sunny@locully.org">sunny@locully.org</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Phone / Line</div>
+            <div class="contact-value">+66 62 695 9444</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Website</div>
+            <div class="contact-value"><a href="https://locully.org" target="_blank">locully.org</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Schedule a Call</div>
+            <div class="contact-value"><a href="https://calendly.com/locully/30min" target="_blank">calendly.com/locully/30min</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="label">Points of Contact</div>
+        <div class="contact-people" style="margin-top: 20px;">
+          <div class="cp">
+            <div class="cp-name">Sunny Sakchiraphong</div>
+            <div class="cp-role">Founder & CEO — Strategy, Partnerships</div>
+            <div class="cp-contact">
+              <a href="mailto:sunny@locully.org">sunny@locully.org</a> &nbsp;·&nbsp;
+              <a href="https://www.linkedin.com/in/sunnysak/" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+          <div class="cp">
+            <div class="cp-name">Boni</div>
+            <div class="cp-role">SEO & Content Lead — Technical Enquiries</div>
+            <div class="cp-contact"><a href="mailto:sunny@locully.org">Via Sunny</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" style="filter: invert(1) brightness(0.55);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('afterbegin','<span style=\'font-family:Cormorant Garamond,serif;font-size:18px;font-weight:600;color:rgba(247,245,241,0.4)\'>Locully</span>')">
+  <div class="footer-right">
+    <div class="footer-copy">Locully · Bangkok, Thailand · locully.org · +66 62 695 9444</div>
+    <div class="footer-copy" style="margin-top: 6px;">Company Profile · 2025 · Confidential</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLb()">
+  <div id="lb-x" onclick="closeLb()">×</div>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '-40px' });
+  reveals.forEach(el => io.observe(el));
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Lightbox
+  function lb(src) { document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('on'); }
+  function closeLb() { document.getElementById('lb').classList.remove('on'); document.getElementById('lb-img').src = ''; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+</script>
+
+</body>
+</html>
