@@ -513,31 +513,6 @@
     text-decoration-thickness: 1.5px;
   }
 
-  /* ── STAT ROW (inline callout) ── */
-  .stat-callout {
-    margin-top: 40px;
-    padding: 28px 32px;
-    background: var(--cream); border: 1px solid var(--border-mid); border-radius: 4px;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-  }
-  .stat-callout-item {
-    padding-right: 28px;
-    border-right: 1px solid var(--border);
-  }
-  .stat-callout-item:last-child { border-right: none; padding-right: 0; }
-  .stat-callout-item + .stat-callout-item { padding-left: 28px; }
-  .sci-n {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px; font-weight: 600; color: var(--terra);
-    line-height: 1; letter-spacing: -0.5px; margin-bottom: 6px;
-  }
-  .sci-l { font-size: 13px; color: var(--ink-mid); line-height: 1.5; font-weight: 300; }
-  @media (max-width: 768px) {
-    .stat-callout { grid-template-columns: 1fr; }
-    .stat-callout-item { border-right: none; padding-right: 0; padding-left: 0 !important; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
-    .stat-callout-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-  }
-
   /* ── SCROLL REVEAL ── */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -759,6 +734,19 @@
   </div>
 </section>
 
+<!-- CLIENTS -->
+<section id="clients" style="padding: 80px 0; background: var(--cream); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 40px;">
+      <div class="label" style="margin-bottom: 12px; justify-content: center;">Clients</div>
+      <h2 style="font-size: clamp(28px, 4vw, 42px);">Brands We've <em>Worked With</em></h2>
+    </div>
+    <div class="reveal d1">
+      <img src="images/clientlogos.jpg" alt="Locully clients — Form, Eatali, i-Brokers, Investors Clinic, Akira, Tony's, BigBoss, Amorretto, Jaidee Clear, The Iron Fairies, Study in India Expo, Cosmo Clinic" style="width: 100%; border-radius: 6px; display: block;">
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE NAVIGATION -->
 <section id="services-nav">
   <div class="container">
@@ -894,20 +882,6 @@
       </div>
     </div>
 
-    <div class="stat-callout reveal" style="margin-top: 32px;">
-      <div class="stat-callout-item">
-        <div class="sci-n">221</div>
-        <div class="sci-l">ChatGPT crawl events in a single month — highest ever recorded for a client</div>
-      </div>
-      <div class="stat-callout-item">
-        <div class="sci-n">#1</div>
-        <div class="sci-l">Rankings for lymphatic drainage Bangkok (590/mo), cupping, red light & acupuncture therapy</div>
-      </div>
-      <div class="stat-callout-item">
-        <div class="sci-n">+42%</div>
-        <div class="sci-l">ChatGPT organic traffic month-on-month — paid bookings up 129% in the same period</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1069,25 +1043,6 @@
       </div>
     </div>
 
-    <!-- Quick Results -->
-    <div class="quick-results reveal">
-      <div class="quick-results-label">Client Results at a Glance</div>
-      <div class="quick-results-grid" style="grid-template-columns: repeat(3,1fr);">
-        <div class="qr">
-          <div class="qr-n">1,497%</div>
-          <div class="qr-l">ROAS — Amorretto Café, Google Ads. Revenue generated against ad spend.</div>
-        </div>
-        <div class="qr">
-          <div class="qr-n">5:1</div>
-          <div class="qr-l">ROAS — Hotel Pattaya, Meta Ads. Every ฿1 spent returned ฿5 in direct bookings. Sustained over a 2+ year engagement with ฿66 cost-per-lead.</div>
-        </div>
-        <div class="qr">
-          <div class="qr-n">฿3.28</div>
-          <div class="qr-l">Cost per conversion — Achyut Bhavan Pattaya, Google Ads. 3,350 conversions (directions + calls) in a single month.</div>
-        </div>
-      </div>
-    </div>
-
     <!-- Google Ads Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
       <div class="label" style="margin-bottom: 8px;">Google Ads — Campaign Results</div>
@@ -1124,23 +1079,39 @@
       </div>
     </div>
 
-    <!-- Achyut Bhavan Google Ads Stats -->
+    <!-- Achyut Bhavan Google Ads Screenshots -->
     <div class="reveal" style="margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border);">
       <div class="label" style="margin-bottom: 8px;">Google Ads — Achyut Bhavan (Indian Restaurant, Pattaya & Bangkok)</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Performance Max campaigns driving foot traffic, directions, and calls. January 2026.</p>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Performance Max — live campaign dashboards. December 2025.</p>
     </div>
-    <div class="stat-callout reveal" style="margin-top: 0; background: var(--white);">
-      <div class="stat-callout-item">
-        <div class="sci-n">3,350</div>
-        <div class="sci-l">Conversions (directions + calls) in a single month — Pattaya location. ฿11K spend.</div>
+    <div class="proof-grid reveal" style="grid-template-columns: repeat(2,1fr); margin-top: 0;">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/achyut/pmaxptydec.jpg" alt="Achyut Bhavan Pattaya PMax ROAS" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Pattaya, Performance Max</span>
+          <div class="proof-desc">2,608% actual ROAS · 3.4K conversions · ฿9.15K spend — directions, store visits, contacts</div>
+        </div>
       </div>
-      <div class="stat-callout-item">
-        <div class="sci-n">฿3.28</div>
-        <div class="sci-l">Cost per conversion. "Dosa near me" converted at ฿1.72/conv with a 100% conversion rate.</div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/achyut/pmaxbkkdec.jpg" alt="Achyut Bhavan Bangkok PMax" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Bangkok, Performance Max</span>
+          <div class="proof-desc">525% ROAS · 495 conversions · ฿4K spend — Maps driving 91% of results</div>
+        </div>
       </div>
-      <div class="stat-callout-item">
-        <div class="sci-n">952</div>
-        <div class="sci-l">Conversions in Bangkok on ฿4.1K spend — "south indian food near me" at 200% conversion rate.</div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/achyut/gadsdec.jpg" alt="Achyut Bhavan search categories" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Search Categories</span>
+          <div class="proof-desc">"indian restaurant near me" +204% · "dosa near me" +550% · "south indian food near me" +1,000%</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/achyut/gadsperformancedec.jpg" alt="Achyut Bhavan campaign dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Campaign Dashboard</span>
+          <div class="proof-desc">Both locations: 6,544 clicks · 443K impressions · 3,583 directions generated</div>
+        </div>
       </div>
     </div>
 
@@ -1149,19 +1120,6 @@
       <div class="label" style="margin-bottom: 8px;">Content & Creative</div>
       <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Social media content produced across client campaigns — restaurants, retail, events, and F&B.</p>
       <img src="images/social-content-grid.png" alt="Social media content grid — Achyut Bhavan, Eatali, JaiDeeClear, Study in India Expo" style="width: 100%; border-radius: 6px; display: block; border: 1px solid var(--border); cursor: pointer;" onclick="lb(this.src)">
-    </div>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section id="clients" style="padding: 80px 0; background: var(--white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="reveal" style="text-align: center; margin-bottom: 40px;">
-      <div class="label" style="margin-bottom: 12px;">Clients</div>
-      <h2 style="font-size: clamp(28px, 4vw, 42px);">Brands We've <em>Worked With</em></h2>
-    </div>
-    <div class="reveal d1">
-      <img src="images/clientlogos.jpg" alt="Locully clients — Form, Eatali, i-Brokers, Investors Clinic, Akira, Tony's, BigBoss, Amorretto, Jaidee Clear, The Iron Fairies, Study in India Expo, Cosmo Clinic" style="width: 100%; border-radius: 6px; display: block;">
     </div>
   </div>
 </section>
