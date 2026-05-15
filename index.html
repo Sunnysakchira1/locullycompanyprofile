@@ -646,6 +646,7 @@
     .nav-services { display: none; }
     .container { padding: 0 28px; }
     #cover { padding: 80px 28px 60px; }
+    #cover::after { left: 28px; } /* align accent line with tablet padding */
     .cover-inner { grid-template-columns: 1fr; gap: 48px; padding: 0; }
     .cover-meta { gap: 20px; }
     .about-grid, .svc-header, .case-header, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -768,14 +769,19 @@
 
     /* Cover */
     #cover { padding: 72px 20px 52px; min-height: 100svh; }
+    #cover::after { display: none; } /* vertical accent line breaks on mobile */
     .cover-eyebrow { font-size: 10px; margin-bottom: 20px; }
     .cover-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 32px; }
     .cover-meta-row { padding-top: 16px; }
-    .cover-meta-value { font-size: 15px; }
+    .cover-meta-value { font-size: 14px; }
+    .cover-meta-label { font-size: 9px; }
+
+    /* Sections — inline padding overrides need !important */
+    #about, #services-nav, #case, #contact { padding: 60px 0; }
+    #clients, #discovery, #testimonials { padding: 56px 0 !important; }
+    .svc-section { padding: 60px 0; }
 
     /* About */
-    #about, #services-nav, #case, #contact { padding: 60px 0; }
-    .svc-section { padding: 60px 0; }
     .about-grid { gap: 36px; }
     .founder-row { grid-template-columns: 1fr; gap: 20px; padding: 24px 20px; }
     .founder-photo { width: 100%; height: 240px; }
@@ -811,16 +817,23 @@
     /* Dashboard walkthrough */
     .db-2col { grid-template-columns: 1fr; gap: 24px; }
 
-    /* New sections */
-    #discovery .container > div { grid-template-columns: 1fr; gap: 40px; }
-    .pathway-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .combine-cols { grid-template-columns: 1fr; gap: 16px; }
-    #fit .reveal.d1 { grid-template-columns: 1fr; }
+    /* Discovery section — inline grid-template-columns needs !important */
+    #discovery .container > div { grid-template-columns: 1fr !important; gap: 36px !important; }
 
-    /* Proof grid */
-    .proof-grid { grid-template-columns: 1fr; margin-top: 36px; gap: 12px; }
+    /* Pathway, combine */
+    .pathway-grid { grid-template-columns: 1fr; }
+    .combine-cols { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Fit section — inline style needs !important to override */
+    #fit .reveal.d1 { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+    /* Proof grid — inline grid-template-columns needs !important */
+    .proof-grid { grid-template-columns: 1fr !important; margin-top: 36px; gap: 12px; }
     .proof-item img { height: 180px; }
+
+    /* Testimonials — review image grid needs separate override */
+    #testimonials .reveal.d1 { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .senja-embed { height: 380px !important; }
 
     /* Case study */
     .case-stats { grid-template-columns: 1fr; border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden; }
@@ -838,10 +851,12 @@
     footer { padding: 28px 20px; }
 
     /* Typography */
-    h2 { font-size: clamp(32px, 7vw, 48px); }
-    h3 { font-size: 24px; }
+    h2 { font-size: clamp(30px, 8vw, 46px); }
+    h3 { font-size: 22px; }
     .intro { font-size: 15px; }
     .t-name { font-size: 20px; }
+    .combine-block { padding: 28px 20px; }
+    .combine-block h3 { font-size: 22px; }
   }
 
   /* ── SMALL MOBILE ── */
