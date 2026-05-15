@@ -704,6 +704,20 @@
     line-height: 1.5; font-weight: 300;
   }
 
+  /* Bullet lists inside capability / step cards */
+  .svc-detail ul {
+    list-style: none; margin-top: 10px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .svc-detail ul li {
+    font-size: 13px; color: var(--ink-mid);
+    line-height: 1.5; font-weight: 300;
+    padding-left: 14px; position: relative;
+  }
+  .svc-detail ul li::before {
+    content: '·'; position: absolute; left: 0; color: var(--terra);
+  }
+
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     html { overflow-x: hidden; }
@@ -803,6 +817,7 @@
     <ul class="nav-services">
       <li><a href="#performance">Performance Marketing</a></li>
       <li><a href="#seo-aio">SEO & AI Visibility</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
     </ul>
     <a href="#contact" class="nav-contact">Contact</a>
   </div>
@@ -953,51 +968,39 @@
         <div class="client-cards reveal">
           <div class="client-card" onclick="openCase('hotel-pattaya')">
             <div class="cc-service">Meta Ads · 18+ Months</div>
-            <div class="cc-name">Hotel Pattaya</div>
+            <div class="cc-name">Hotel, Pattaya</div>
             <div class="cc-metric">5:1</div>
             <div class="cc-label">ROAS · ฿351K managed spend</div>
           </div>
           <div class="client-card" onclick="openCase('achyut-pattaya')">
-            <div class="cc-service">Google Ads</div>
-            <div class="cc-name">Achyut Bhavan Pattaya</div>
+            <div class="cc-service">Google Ads · Maps</div>
+            <div class="cc-name">Indian Restaurant, Pattaya</div>
             <div class="cc-metric">2,608%</div>
             <div class="cc-label">Actual ROAS · 3,350 conversions/mo</div>
           </div>
           <div class="client-card" onclick="openCase('achyut-bangkok')">
-            <div class="cc-service">Google Ads</div>
-            <div class="cc-name">Achyut Bhavan Bangkok</div>
+            <div class="cc-service">Google Ads · Maps</div>
+            <div class="cc-name">Indian Restaurant, Bangkok</div>
             <div class="cc-metric">฿4.34</div>
             <div class="cc-label">Cost per conversion · 952/month</div>
           </div>
           <div class="client-card" onclick="openCase('amorretto')">
             <div class="cc-service">Google Ads · Local SEO</div>
-            <div class="cc-name">Amorretto Café & Bar</div>
+            <div class="cc-name">Café & Bar, Bangkok</div>
             <div class="cc-metric">1,497%</div>
             <div class="cc-label">ROAS · +80% Maps visibility</div>
           </div>
           <div class="client-card" onclick="openCase('eatali')">
             <div class="cc-service">SEO · Google Ads · Meta</div>
-            <div class="cc-name">Eatali Soi 5, Pattaya</div>
+            <div class="cc-name">Italian Restaurant, Pattaya</div>
             <div class="cc-metric">Top 3</div>
             <div class="cc-label">"Italian restaurant pattaya"</div>
           </div>
           <div class="client-card" onclick="openCase('iron-fairies')">
             <div class="cc-service">Google Ads</div>
-            <div class="cc-name">The Iron Fairies</div>
+            <div class="cc-name">Bar & Venue, Bangkok</div>
             <div class="cc-metric">34+</div>
             <div class="cc-label">Conversions from "near me" searches</div>
-          </div>
-          <div class="client-card" onclick="openCase('akira')">
-            <div class="cc-service">Meta Ads</div>
-            <div class="cc-name">AKiRA Pattaya</div>
-            <div class="cc-metric">↑</div>
-            <div class="cc-label">Reach · Engagement · Conversions</div>
-          </div>
-          <div class="client-card" onclick="openCase('jaideeclear')">
-            <div class="cc-service">Meta Ads</div>
-            <div class="cc-name">JaiDeeClear</div>
-            <div class="cc-metric">Meta</div>
-            <div class="cc-label">Active lead gen campaign, Bangkok</div>
           </div>
         </div>
       </div>
@@ -1006,23 +1009,43 @@
         <div class="svc-detail-grid">
           <div class="svc-detail">
             <div class="svc-detail-num">Capability 01</div>
-            <h4>Google Search & Display</h4>
-            <p>Search campaign architecture, keyword strategy, Quality Score optimisation, and bid management. Display and remarketing for brand reinforcement across the consideration phase.</p>
+            <h4>Google Maps & Search Ads</h4>
+            <ul>
+              <li>Appear at the top of Google Maps when customers search "near me"</li>
+              <li>Capture location-based intent at the exact moment someone decides where to go</li>
+              <li>Keyword strategy, Quality Score optimisation, and bid management</li>
+              <li>Conversion tracking: directions, calls, and store visit confirmations</li>
+            </ul>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Capability 02</div>
             <h4>Meta — Facebook & Instagram</h4>
-            <p>Audience targeting, creative strategy, and campaign management across Meta platforms. Local Thai audience profiling using behavioural and demographic signals.</p>
+            <ul>
+              <li>Audience targeting using behavioural and demographic signals for the Thai market</li>
+              <li>Creative strategy and ad copy managed locally — no briefing delays</li>
+              <li>Retargeting for people who visited your website or engaged with your profile</li>
+              <li>Campaign management across Facebook, Instagram, and Messenger placements</li>
+            </ul>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Capability 03</div>
             <h4>Landing Page & Conversion</h4>
-            <p>Campaign performance is only as strong as the destination. We design and optimise landing pages to convert paid traffic — reducing cost-per-lead at the conversion layer.</p>
+            <ul>
+              <li>Landing pages designed for paid traffic — not generic website pages</li>
+              <li>Mobile-first build for Thailand's mobile-dominant audience</li>
+              <li>A/B testing of headlines, offers, and CTA copy</li>
+              <li>Reduce cost-per-lead at the conversion layer, not just the ad layer</li>
+            </ul>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Capability 04</div>
             <h4>Reporting & Attribution</h4>
-            <p>GA4, Google Ads, and Meta Business Suite consolidated into monthly reporting. Full attribution from ad click to booked appointment or completed purchase.</p>
+            <ul>
+              <li>GA4, Google Ads, and Meta consolidated into one monthly report</li>
+              <li>Full attribution from ad click to booked appointment or completed purchase</li>
+              <li>Cost-per-lead and ROAS tracked against benchmarks set at briefing</li>
+              <li>Clear next-month recommendations based on what the data shows</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1030,7 +1053,7 @@
 
     <!-- Achyut Bhavan — Enlarged Google Ads Dashboards -->
     <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 4px;">Google Ads — Achyut Bhavan, Pattaya & Bangkok</div>
+      <div class="label" style="margin-bottom: 4px;">Google Ads — Indian Restaurant, Pattaya & Bangkok</div>
       <p style="font-size:13px; color: var(--ink-light); margin-bottom: 32px;">Performance Max campaigns. December 2025. Click any image to zoom.</p>
     </div>
 
@@ -1286,37 +1309,64 @@
       </div>
     </div>
 
-    <!-- Local SEO Results -->
+    <!-- Local SEO Results — client cards -->
     <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Local SEO — Organic Growth</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">Google Search Console data — organic clicks and impressions growth across F&B and healthcare clients.</p>
+      <div class="label" style="margin-bottom: 8px;">Local SEO — Organic Ranking Results</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">F&B and healthcare clients in Bangkok and Pattaya. Click a card to see full results.</p>
     </div>
-    <div class="proof-grid reveal" style="grid-template-columns: repeat(3,1fr); margin-top: 24px;">
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/eatali-local-seo.avif" alt="Eatali local SEO growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">GSC — Eatali Soi 5, Pattaya</span>
-          <div class="proof-desc">Top 3 "italian restaurant pattaya" · organic click growth</div>
-        </div>
+    <div class="client-cards reveal" style="margin-top: 24px; border-top: none; padding-top: 0;">
+      <div class="client-card" onclick="openCase('eatali')">
+        <div class="cc-service">Local SEO · Pattaya</div>
+        <div class="cc-name">Italian Restaurant, Pattaya</div>
+        <div class="cc-metric">Top 3</div>
+        <div class="cc-label">"Italian restaurant pattaya"</div>
       </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/amorretto-local-seo.avif" alt="Amorretto local SEO growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">GSC — Amorretto Café & Bar</span>
-          <div class="proof-desc">+80% Google Maps visibility · Top 3 "Italian bistro Bangkok"</div>
-        </div>
+      <div class="client-card" onclick="openCase('amorretto')">
+        <div class="cc-service">Local SEO · Google Maps</div>
+        <div class="cc-name">Café & Bar, Bangkok</div>
+        <div class="cc-metric">+80%</div>
+        <div class="cc-label">Google Maps visibility growth</div>
       </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/FormLocalgrowth.avif" alt="Form Recovery organic growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">GSC — Form Recovery & Wellness</span>
-          <div class="proof-desc">19% of target keywords Top 5 · compounding organic growth</div>
-        </div>
+      <div class="client-card" onclick="openCase('form-recovery')">
+        <div class="cc-service">SEO · Healthcare · Bangkok</div>
+        <div class="cc-name">Physiotherapy Clinic</div>
+        <div class="cc-metric">19%</div>
+        <div class="cc-label">Keywords in Top 5 within 3 weeks</div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background: var(--ink); padding: 96px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+      <div class="label" style="justify-content: center; color: rgba(192,80,35,0.9); margin-bottom: 14px;">Client Reviews</div>
+      <h2 style="color: var(--white); font-size: clamp(30px,4vw,48px);">What Clients <em>Say</em></h2>
+      <p style="font-size: 14px; color: rgba(247,245,241,0.45); margin-top: 10px; font-weight: 300;">Verified · Senja</p>
+    </div>
+
+    <!-- Senja video testimonial -->
+    <div class="reveal" style="max-width: 680px; margin: 0 auto 64px; background: rgba(247,245,241,0.04); border: 1px solid rgba(247,245,241,0.1); border-radius: 6px; overflow: hidden;">
+      <div class="senja-embed" data-id="e78045b1-0c17-4032-ae66-d945b9ace7b2" data-mode="shadow" data-lazyload="false" style="display: block; width: 100%; height: 480px;"></div>
+    </div>
+
+    <!-- Written reviews — 2 images side by side -->
+    <div class="reveal d1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; margin: 0 auto;">
+      <img src="images/review-by-vincent-d.png"
+           alt="5-star review by Vincent D, Managing Director — excellent job getting us on ChatGPT"
+           style="width: 100%; height: auto; border-radius: 6px; display: block; cursor: zoom-in;"
+           onclick="lb(this.src)"
+           onerror="this.style.display='none'">
+      <img src="images/review-by-phakjira.png"
+           alt="5-star review by Phakjira, Owner Indian Restaurant — game changer for visibility and growth"
+           style="width: 100%; height: auto; border-radius: 6px; display: block; cursor: zoom-in;"
+           onclick="lb(this.src)"
+           onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1440,7 +1490,7 @@
     },
     'achyut-pattaya': {
       svc: 'Google Ads · Performance Max · F&B',
-      name: 'Achyut Bhavan Pattaya',
+      name: 'Indian Restaurant, Pattaya',
       sub: 'Pattaya, Thailand · South Indian Restaurant',
       before: ['Not appearing for "indian restaurant near me" in Pattaya tourist searches','Competitor brands (Dosa King, Shree Bhavan) dominating local search','Walk-in traffic from tourist searches not being captured'],
       after: ['3,350 conversions (directions, calls, store visits) in a single month','2,608% actual ROAS — Google Ads dashboard confirmed figure','401 clicks → 315 conversions for "indian restaurant near me"','"Dosa near me" converting at 100% conversion rate','Google Maps driving 60% of all campaign results'],
@@ -1448,7 +1498,7 @@
     },
     'achyut-bangkok': {
       svc: 'Google Ads · Performance Max · F&B',
-      name: 'Achyut Bhavan Bangkok',
+      name: 'Indian Restaurant, Bangkok',
       sub: 'Sukhumvit, Bangkok · South Indian Restaurant',
       before: ['Low brand awareness in Bangkok vs. established Pattaya location','Missing "near me" searches: dosa, south Indian food, pure veg queries','High competition from Indian restaurant cluster in Sukhumvit'],
       after: ['952 conversions (directions + calls) in a single month on ฿4K spend','"Dosa in Bangkok" converted at ฿0.29 per conversion','"South Indian food near me" — 200% conversion rate','"Pure veg restaurants near me" — 255% conversion rate','65% overall campaign conversion rate'],
@@ -1464,7 +1514,7 @@
     },
     'eatali': {
       svc: 'Local SEO · Google Ads · Meta Ads · F&B',
-      name: 'Eatali Soi 5',
+      name: 'Italian Restaurant, Pattaya',
       sub: 'Pattaya, Thailand · Italian Restaurant',
       before: ['Invisible online despite strong local reputation in Pattaya','Not ranking for any Italian food searches in the city','Missing walk-in traffic from tourist "near me" queries'],
       after: ['Top 3 ranking for "italian restaurant pattaya"','Top 3 ranking for "italian food pattaya"','Top 5 ranking for "best pizza pattaya"','Fully integrated Google Ads + Meta Ads + Local SEO running together'],
@@ -1472,7 +1522,7 @@
     },
     'iron-fairies': {
       svc: 'Google Ads · Hospitality · Live Music Venue',
-      name: 'The Iron Fairies',
+      name: 'Bar & Venue, Bangkok',
       sub: 'Bangkok, Thailand · Bar & Live Music Venue',
       before: ['Missing high-intent "near me" searches for bars and live music in Bangkok','Low conversion from Google Maps ad placements','No structured attribution across Search, Maps, and YouTube'],
       after: ['34+ conversions from "bars near me," "live music bangkok," "jazz bar bangkok"','Attribution tracked across Google Maps, Search, and YouTube channels','April 2026 performance outperforming January 2026 — compounding results'],
@@ -1538,5 +1588,6 @@
   document.getElementById('cs-modal').addEventListener('click', e => { if (e.target === document.getElementById('cs-modal')) closeCase(); });
 </script>
 
+<script src="https://widget.senja.io/widget/e78045b1-0c17-4032-ae66-d945b9ace7b2/platform.js" type="text/javascript" async></script>
 </body>
 </html>
