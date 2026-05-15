@@ -535,19 +535,102 @@
     .dashboard-2col { grid-template-columns: 1fr; }
   }
 
-  /* ── CLIENT TAGS ── */
-  .client-tags {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border);
+  /* ── CLIENT CARDS ── */
+  .client-cards {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border);
   }
-  .client-tag {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
-    padding: 5px 12px; border-radius: 2px;
-    background: var(--cream); border: 1px solid var(--border-mid);
-    color: var(--ink-mid);
+  .client-card {
+    background: var(--cream); border: 1px solid var(--border-mid); border-radius: 4px;
+    padding: 20px 20px 28px; cursor: pointer; position: relative;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   }
-  .svc-section-alt .client-tags { border-top-color: rgba(247,245,241,0.08); }
-  .svc-section-alt .client-tag { background: rgba(247,245,241,0.05); border-color: rgba(247,245,241,0.12); color: rgba(247,245,241,0.55); }
+  .client-card:hover { background: var(--white); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(26,25,24,0.09); }
+  .client-card::after {
+    content: 'View case study →';
+    position: absolute; bottom: 14px; left: 20px;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--terra); font-weight: 500;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .client-card:hover::after { opacity: 1; }
+  .cc-service {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 8px;
+  }
+  .cc-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 600; line-height: 1.2; margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .cc-metric { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--terra); line-height: 1; letter-spacing: -0.5px; margin-bottom: 3px; }
+  .cc-label { font-size: 11px; color: var(--ink-light); line-height: 1.4; }
+
+  /* ── CASE STUDY MODAL ── */
+  #cs-modal {
+    display: none; position: fixed; inset: 0;
+    background: rgba(26,25,24,0.9); z-index: 1001;
+    align-items: flex-start; justify-content: center;
+    padding: 60px 20px 40px; overflow-y: auto;
+  }
+  #cs-modal.on { display: flex; }
+  .cs-inner {
+    background: var(--white); border-radius: 6px;
+    max-width: 660px; width: 100%; position: relative; overflow: hidden;
+    margin: auto;
+  }
+  .cs-head {
+    background: var(--ink); padding: 32px 36px 28px;
+  }
+  .cs-svc-tag {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 10px;
+  }
+  .cs-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 600; color: var(--white); line-height: 1.05; margin-bottom: 6px;
+  }
+  .cs-subtitle { font-size: 13px; color: rgba(247,245,241,0.38); font-weight: 300; }
+  #cs-close {
+    position: absolute; top: 18px; right: 22px;
+    font-size: 26px; color: rgba(247,245,241,0.35); cursor: pointer; transition: color 0.2s; z-index: 2;
+  }
+  #cs-close:hover { color: var(--white); }
+  .cs-body { padding: 32px 36px 36px; }
+  .cs-ba {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--border); border: 1px solid var(--border-mid); border-radius: 4px;
+    overflow: hidden; margin-bottom: 24px;
+  }
+  .cs-before, .cs-after { padding: 22px 22px 18px; }
+  .cs-before { background: var(--white); }
+  .cs-after { background: var(--cream); }
+  .cs-ba-lbl {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cs-before .cs-ba-lbl { color: var(--ink-light); }
+  .cs-after .cs-ba-lbl { color: var(--terra); }
+  .cs-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .cs-list li { font-size: 13px; color: var(--ink-mid); line-height: 1.5; font-weight: 300; padding-left: 14px; position: relative; }
+  .cs-list li::before { content: '·'; position: absolute; left: 0; color: var(--ink-light); }
+  .cs-after .cs-list li::before { color: var(--terra); }
+  .cs-metrics-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden;
+  }
+  .cs-m { padding: 18px 12px; text-align: center; border-right: 1px solid var(--border); }
+  .cs-m:last-child { border-right: none; }
+  .cs-mn { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--terra); line-height: 1; letter-spacing: -0.5px; margin-bottom: 5px; }
+  .cs-ml { font-size: 11px; color: var(--ink-light); line-height: 1.4; }
+  @media (max-width: 600px) {
+    .cs-ba { grid-template-columns: 1fr; }
+    .cs-metrics-row { grid-template-columns: 1fr 1fr; }
+    .cs-m:nth-child(3) { grid-column: 1/-1; border-right: none; border-top: 1px solid var(--border); }
+    .cs-body { padding: 24px 20px; }
+    .cs-head { padding: 24px 20px; }
+    .client-cards { grid-template-columns: repeat(2, 1fr); }
+  }
 
   /* ── SCROLL REVEAL ── */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -584,6 +667,41 @@
     .footer-right { text-align: center; }
     .svc-section { padding: 80px 0; }
     #about, #services-nav, #case, #contact { padding: 80px 0; }
+  }
+
+  /* ── DASHBOARD WALKTHROUGH 2-COL ── */
+  .db-2col {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 24px;
+  }
+  .db-2col + .db-2col { margin-top: 40px; }
+  .db-2col-img img {
+    width: 100%; height: auto; display: block;
+    border-radius: 4px; border: 1px solid var(--border);
+    cursor: zoom-in;
+  }
+  .db-walk-head {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 16px;
+  }
+  .db-walk-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .db-walk-item:last-child { border-bottom: none; }
+  .db-walk-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 600;
+    color: var(--terra); line-height: 1;
+    letter-spacing: -0.3px; margin-bottom: 5px;
+  }
+  .db-walk-l {
+    font-size: 13px; color: var(--ink-mid);
+    line-height: 1.5; font-weight: 300;
   }
 
   /* ── MOBILE ── */
@@ -635,6 +753,9 @@
     .qr:last-child { border-bottom: none; }
     .svc-section-alt .qr { border-bottom-color: rgba(247,245,241,0.08); }
     .qr-n { font-size: 30px; }
+
+    /* Dashboard walkthrough */
+    .db-2col { grid-template-columns: 1fr; gap: 24px; }
 
     /* Proof grid */
     .proof-grid { grid-template-columns: 1fr; margin-top: 36px; gap: 12px; }
@@ -829,17 +950,55 @@
         <p class="intro" style="margin-top: 16px;">
           Every campaign is structured around a cost-per-lead or cost-per-acquisition target established at briefing. Spend, conversions, and pipeline value are tracked and reported monthly.
         </p>
-        <div class="client-tags reveal">
-          <span class="client-tag">AKiRA Pattaya</span>
-          <span class="client-tag">Hotel Pattaya</span>
-          <span class="client-tag">Eatali Soi 5</span>
-          <span class="client-tag">Amorretto Café & Bar</span>
-          <span class="client-tag">Opera Italian Restaurant</span>
-          <span class="client-tag">Achyut Bhavan Bangkok</span>
-          <span class="client-tag">Achyut Bhavan Pattaya</span>
-          <span class="client-tag">Tony's Italian Bangkok</span>
-          <span class="client-tag">The Iron Fairies</span>
-          <span class="client-tag">JaiDeeClear</span>
+        <div class="client-cards reveal">
+          <div class="client-card" onclick="openCase('hotel-pattaya')">
+            <div class="cc-service">Meta Ads · 18+ Months</div>
+            <div class="cc-name">Hotel Pattaya</div>
+            <div class="cc-metric">5:1</div>
+            <div class="cc-label">ROAS · ฿351K managed spend</div>
+          </div>
+          <div class="client-card" onclick="openCase('achyut-pattaya')">
+            <div class="cc-service">Google Ads</div>
+            <div class="cc-name">Achyut Bhavan Pattaya</div>
+            <div class="cc-metric">2,608%</div>
+            <div class="cc-label">Actual ROAS · 3,350 conversions/mo</div>
+          </div>
+          <div class="client-card" onclick="openCase('achyut-bangkok')">
+            <div class="cc-service">Google Ads</div>
+            <div class="cc-name">Achyut Bhavan Bangkok</div>
+            <div class="cc-metric">฿4.34</div>
+            <div class="cc-label">Cost per conversion · 952/month</div>
+          </div>
+          <div class="client-card" onclick="openCase('amorretto')">
+            <div class="cc-service">Google Ads · Local SEO</div>
+            <div class="cc-name">Amorretto Café & Bar</div>
+            <div class="cc-metric">1,497%</div>
+            <div class="cc-label">ROAS · +80% Maps visibility</div>
+          </div>
+          <div class="client-card" onclick="openCase('eatali')">
+            <div class="cc-service">SEO · Google Ads · Meta</div>
+            <div class="cc-name">Eatali Soi 5, Pattaya</div>
+            <div class="cc-metric">Top 3</div>
+            <div class="cc-label">"Italian restaurant pattaya"</div>
+          </div>
+          <div class="client-card" onclick="openCase('iron-fairies')">
+            <div class="cc-service">Google Ads</div>
+            <div class="cc-name">The Iron Fairies</div>
+            <div class="cc-metric">34+</div>
+            <div class="cc-label">Conversions from "near me" searches</div>
+          </div>
+          <div class="client-card" onclick="openCase('akira')">
+            <div class="cc-service">Meta Ads</div>
+            <div class="cc-name">AKiRA Pattaya</div>
+            <div class="cc-metric">↑</div>
+            <div class="cc-label">Reach · Engagement · Conversions</div>
+          </div>
+          <div class="client-card" onclick="openCase('jaideeclear')">
+            <div class="cc-service">Meta Ads</div>
+            <div class="cc-name">JaiDeeClear</div>
+            <div class="cc-metric">Meta</div>
+            <div class="cc-label">Active lead gen campaign, Bangkok</div>
+          </div>
         </div>
       </div>
 
@@ -875,16 +1034,62 @@
       <p style="font-size:13px; color: var(--ink-light); margin-bottom: 32px;">Performance Max campaigns. December 2025. Click any image to zoom.</p>
     </div>
 
-    <!-- Full-width ROAS dashboard — the headline number -->
-    <div class="dashboard-block reveal">
+    <!-- Pattaya ROAS — 2-col with walkthrough -->
+    <div class="reveal" style="margin-bottom: 16px;">
       <div class="dashboard-label">Pattaya — Performance Max ROAS <span>December 2025</span></div>
-      <img src="images/achyut/pmaxptydec.jpg" alt="Achyut Bhavan Pattaya 2,608% ROAS dashboard" onclick="lb(this.src)">
+    </div>
+    <div class="db-2col reveal">
+      <div class="db-2col-img">
+        <img src="images/achyut/pmaxptydec.jpg" alt="Achyut Bhavan Pattaya 2,608% ROAS dashboard" onclick="lb(this.src)">
+      </div>
+      <div class="db-2col-text">
+        <div class="db-walk-head">What this shows</div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">2,608%</div>
+          <div class="db-walk-l">ROAS — every ฿1 in ad spend returned ฿26 in measurable customer actions, confirmed directly in the Google Ads dashboard</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">60% Maps</div>
+          <div class="db-walk-l">Over half the budget ran through Google Maps placements — where "Indian restaurant near me" searches convert fastest into foot traffic</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">3,350</div>
+          <div class="db-walk-l">Conversions in a single month — directions, phone calls, and store visit confirmations all attributed back to the campaign</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">฿3.28</div>
+          <div class="db-walk-l">Cost per conversion — less than the price of one menu item to bring each new customer through the door</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Full-width search categories — the growth percentages read clearly at this size -->
-    <div class="dashboard-block reveal">
-      <div class="dashboard-label">Search Category Performance <span>Clicks & growth vs. prior period</span></div>
-      <img src="images/achyut/gadsdec.jpg" alt="Achyut Bhavan search category growth" onclick="lb(this.src)">
+    <!-- Search category growth — 2-col with walkthrough -->
+    <div class="reveal" style="margin-top: 48px; margin-bottom: 16px;">
+      <div class="dashboard-label">Search Category Growth <span>Clicks vs. prior period · December 2025</span></div>
+    </div>
+    <div class="db-2col reveal">
+      <div class="db-2col-img">
+        <img src="images/achyut/gadsdec.jpg" alt="Achyut Bhavan search category growth" onclick="lb(this.src)">
+      </div>
+      <div class="db-2col-text">
+        <div class="db-walk-head">Reading the numbers</div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">+204%</div>
+          <div class="db-walk-l">"Indian restaurant near me" — Bangkok's most searched Indian food term, now fully captured</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">+550%</div>
+          <div class="db-walk-l">"Dosa near me" — specific buyers, not browsers. Converting at ฿0.29 each because intent matches exactly</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">&gt;+1,000%</div>
+          <div class="db-walk-l">"South Indian food near me" — niche queries convert at 80–100% because only one type of restaurant satisfies that search</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">78–100%</div>
+          <div class="db-walk-l">Conversion rate on food-specific terms — people searching "dosa" are deciding where to eat right now, not browsing</div>
+        </div>
+      </div>
     </div>
 
     <!-- Two dashboards side-by-side: campaign overview + Bangkok -->
@@ -959,12 +1164,25 @@
         <p class="intro" style="margin-top: 16px;">
           We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation — and cause Google to rank you on page one.
         </p>
-        <div class="client-tags reveal">
-          <span class="client-tag">Form Recovery & Wellness</span>
-          <span class="client-tag">Cosmo Clinic</span>
-          <span class="client-tag">Valuation Masterclass</span>
-          <span class="client-tag">Eatali Soi 5</span>
-          <span class="client-tag">Tony's Italian Bangkok</span>
+        <div class="client-cards reveal">
+          <div class="client-card" onclick="openCase('form-recovery')">
+            <div class="cc-service">SEO · AI Visibility</div>
+            <div class="cc-name">Form Recovery & Wellness</div>
+            <div class="cc-metric">9×</div>
+            <div class="cc-label">AI consultation growth in 6 months</div>
+          </div>
+          <div class="client-card" onclick="openCase('cosmo')">
+            <div class="cc-service">SEO · AI Visibility</div>
+            <div class="cc-name">Cosmo Clinic</div>
+            <div class="cc-metric">#1</div>
+            <div class="cc-label">"Best Botox Bangkok" on Gemini AI</div>
+          </div>
+          <div class="client-card" onclick="openCase('ibrokers')">
+            <div class="cc-service">SEO · 12 Months</div>
+            <div class="cc-name">i-Brokers Insurance</div>
+            <div class="cc-metric">5×</div>
+            <div class="cc-label">Click growth · 1,030 → 5,180/month</div>
+          </div>
         </div>
       </div>
 
@@ -1009,12 +1227,42 @@
       </div>
     </div>
 
-    <!-- AI Platform Screenshots -->
+    <!-- AI Visibility Dashboard — enlarged with walkthrough -->
+    <div class="reveal d3" style="margin-top: 48px; margin-bottom: 16px;">
+      <div class="label" style="margin-bottom: 4px;">AI Visibility — Tracking Dashboard</div>
+      <p style="font-size:13px; color: var(--ink-light);">AI mention rate tracked across ChatGPT, Gemini, Perplexity, and Google AIO. Form Recovery & Wellness, Bangkok.</p>
+    </div>
+    <div class="db-2col reveal d3">
+      <div class="db-2col-img">
+        <img src="images/form/AIVisibilityGrowth.jpg" alt="AI visibility growth dashboard — 26.3% mention rate" onclick="lb(this.src)" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="db-2col-text">
+        <div class="db-walk-head">What this tracks</div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">26.3%</div>
+          <div class="db-walk-l">AI mention rate for "physiotherapy Bangkok" queries — cited in more than 1 in 4 AI responses, ahead of Bangkok Hospital</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">0 → 26%</div>
+          <div class="db-walk-l">Starting from zero AI presence. Within 6 months, the clinic became the category leader in AI recommendations across Bangkok</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">5 platforms</div>
+          <div class="db-walk-l">Tracked across ChatGPT, Google Gemini, Perplexity, Google AI Overviews, and Claude — not just one channel</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">27/month</div>
+          <div class="db-walk-l">Paid consultations per month traced directly to AI referrals. Real bookings — not traffic estimates</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live AI Platform Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
-      <div class="label" style="margin-bottom: 8px;">Results — Live AI Platform Screenshots</div>
+      <div class="label" style="margin-bottom: 8px;">Live AI Platform Screenshots</div>
       <p style="font-size:13px; color: var(--ink-light);">Form Recovery & Wellness and Cosmo Clinic, Bangkok. Click to enlarge.</p>
     </div>
-    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(2,1fr);">
+    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(3,1fr);">
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
         <img src="images/form/chatgptbestphysiojan.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
@@ -1030,17 +1278,39 @@
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/form/AIVisibilityGrowth.jpg" alt="AI visibility dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">AI Visibility Dashboard</span>
-          <div class="proof-desc">26.3% AI mention rate — outperforming Bangkok Hospital</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
         <img src="images/cosmo/bestfillersjan.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Google AI Overview</span>
-          <div class="proof-desc">"Best fillers Bangkok" — Cosmo Clinic in top AI recommendations</div>
+          <div class="proof-desc">"Best fillers Bangkok" — Cosmo Clinic recommended</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Local SEO Results -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Local SEO — Organic Growth</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">Google Search Console data — organic clicks and impressions growth across F&B and healthcare clients.</p>
+    </div>
+    <div class="proof-grid reveal" style="grid-template-columns: repeat(3,1fr); margin-top: 24px;">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/eatali-local-seo.avif" alt="Eatali local SEO growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">GSC — Eatali Soi 5, Pattaya</span>
+          <div class="proof-desc">Top 3 "italian restaurant pattaya" · organic click growth</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/amorretto-local-seo.avif" alt="Amorretto local SEO growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">GSC — Amorretto Café & Bar</span>
+          <div class="proof-desc">+80% Google Maps visibility · Top 3 "Italian bistro Bangkok"</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/FormLocalgrowth.avif" alt="Form Recovery organic growth" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">GSC — Form Recovery & Wellness</span>
+          <div class="proof-desc">19% of target keywords Top 5 · compounding organic growth</div>
         </div>
       </div>
     </div>
@@ -1109,6 +1379,31 @@
   </div>
 </footer>
 
+<!-- CASE STUDY MODAL -->
+<div id="cs-modal">
+  <div class="cs-inner">
+    <span id="cs-close" onclick="closeCase()">×</span>
+    <div class="cs-head">
+      <div class="cs-svc-tag" id="cs-svc"></div>
+      <div class="cs-title" id="cs-name"></div>
+      <div class="cs-subtitle" id="cs-sub"></div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-ba">
+        <div class="cs-before">
+          <div class="cs-ba-lbl">Before</div>
+          <ul class="cs-list" id="cs-before"></ul>
+        </div>
+        <div class="cs-after">
+          <div class="cs-ba-lbl">After</div>
+          <ul class="cs-list" id="cs-after"></ul>
+        </div>
+      </div>
+      <div class="cs-metrics-row" id="cs-metrics"></div>
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div id="lb" onclick="closeLb()">
   <div id="lb-x" onclick="closeLb()">×</div>
@@ -1131,7 +1426,116 @@
   // Lightbox
   function lb(src) { document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('on'); }
   function closeLb() { document.getElementById('lb').classList.remove('on'); document.getElementById('lb-img').src = ''; }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLb(); closeCase(); } });
+
+  // Case study data
+  const CASES = {
+    'hotel-pattaya': {
+      svc: 'Meta Ads · Hospitality · 18+ Month Campaign',
+      name: 'Hotel Pattaya',
+      sub: 'Pattaya, Thailand · Hotel & Direct Bookings',
+      before: ['Heavy OTA dependence — losing 15–20% revenue per booking in commissions','No structured Meta Ads presence to capture direct booking intent','Seasonal demand spikes not being captured through owned channels'],
+      after: ['5,291 direct guest conversations generated over the campaign','20% increase in direct bookings, bypassing OTA commissions','฿66.40 average cost per lead — below Thai hospitality industry average','Campaign sustained consistently for 18+ months with seasonal peaks captured','Total ad spend managed: ฿351,305'],
+      metrics: [['5,291','Direct guest\nconversations'],['฿66','Average cost\nper lead'],['20%','Increase in\ndirect bookings']]
+    },
+    'achyut-pattaya': {
+      svc: 'Google Ads · Performance Max · F&B',
+      name: 'Achyut Bhavan Pattaya',
+      sub: 'Pattaya, Thailand · South Indian Restaurant',
+      before: ['Not appearing for "indian restaurant near me" in Pattaya tourist searches','Competitor brands (Dosa King, Shree Bhavan) dominating local search','Walk-in traffic from tourist searches not being captured'],
+      after: ['3,350 conversions (directions, calls, store visits) in a single month','2,608% actual ROAS — Google Ads dashboard confirmed figure','401 clicks → 315 conversions for "indian restaurant near me"','"Dosa near me" converting at 100% conversion rate','Google Maps driving 60% of all campaign results'],
+      metrics: [['2,608%','Actual ROAS\n(Google Ads)'],['3,350','Conversions\nper month'],['฿3.28','Cost per\nconversion']]
+    },
+    'achyut-bangkok': {
+      svc: 'Google Ads · Performance Max · F&B',
+      name: 'Achyut Bhavan Bangkok',
+      sub: 'Sukhumvit, Bangkok · South Indian Restaurant',
+      before: ['Low brand awareness in Bangkok vs. established Pattaya location','Missing "near me" searches: dosa, south Indian food, pure veg queries','High competition from Indian restaurant cluster in Sukhumvit'],
+      after: ['952 conversions (directions + calls) in a single month on ฿4K spend','"Dosa in Bangkok" converted at ฿0.29 per conversion','"South Indian food near me" — 200% conversion rate','"Pure veg restaurants near me" — 255% conversion rate','65% overall campaign conversion rate'],
+      metrics: [['952','Conversions\nper month'],['฿4.34','Cost per\nconversion'],['65%','Campaign\nconversion rate']]
+    },
+    'amorretto': {
+      svc: 'Google Ads · Local SEO · F&B',
+      name: 'Amorretto Café & Bar',
+      sub: 'Phattanakarn, Bangkok · Italian Bistro',
+      before: ['Low Google Maps visibility in Bangkok Italian food searches','Few calls and walk-ins generated from online discovery','Not ranking in top 3 local search results for Italian food'],
+      after: ['+80% increase in Google Maps visibility','50% increase in calls to the business','Top 3 rankings: "Italian food," "Italian Bistro," "Italian restaurant near me"','1,497% ROAS on Google Ads spend'],
+      metrics: [['1,497%','ROAS\n(Google Ads)'],['+80%','Google Maps\nvisibility'],['+50%','Increase in\nbusiness calls']]
+    },
+    'eatali': {
+      svc: 'Local SEO · Google Ads · Meta Ads · F&B',
+      name: 'Eatali Soi 5',
+      sub: 'Pattaya, Thailand · Italian Restaurant',
+      before: ['Invisible online despite strong local reputation in Pattaya','Not ranking for any Italian food searches in the city','Missing walk-in traffic from tourist "near me" queries'],
+      after: ['Top 3 ranking for "italian restaurant pattaya"','Top 3 ranking for "italian food pattaya"','Top 5 ranking for "best pizza pattaya"','Fully integrated Google Ads + Meta Ads + Local SEO running together'],
+      metrics: [['Top 3','"Italian restaurant\npattaya"'],['Top 3','"Italian food\npattaya"'],['Top 5','"Best pizza\npattaya"']]
+    },
+    'iron-fairies': {
+      svc: 'Google Ads · Hospitality · Live Music Venue',
+      name: 'The Iron Fairies',
+      sub: 'Bangkok, Thailand · Bar & Live Music Venue',
+      before: ['Missing high-intent "near me" searches for bars and live music in Bangkok','Low conversion from Google Maps ad placements','No structured attribution across Search, Maps, and YouTube'],
+      after: ['34+ conversions from "bars near me," "live music bangkok," "jazz bar bangkok"','Attribution tracked across Google Maps, Search, and YouTube channels','April 2026 performance outperforming January 2026 — compounding results'],
+      metrics: [['34+','Conversions from\nnear me searches'],['3','Channels:\nSearch·Maps·YouTube'],['↑','Month-on-month\nimprovement']]
+    },
+    'akira': {
+      svc: 'Meta Ads · F&B · Hospitality',
+      name: 'AKiRA Pattaya',
+      sub: 'Pattaya, Thailand · Restaurant & Bar',
+      before: ['Limited Meta Ads presence','Reach and engagement not structured for conversion'],
+      after: ['Active Meta campaign driving reach, engagement, and direct conversions','Ongoing campaign — performance data in campaign screenshots above'],
+      metrics: [['Meta','Active\nplatform'],['↑','Reach &\nengagement'],['↑','Conversion\ntracking']]
+    },
+    'jaideeclear': {
+      svc: 'Meta Ads · Home Services',
+      name: 'JaiDeeClear',
+      sub: 'Bangkok, Thailand · Window Film & Tinting',
+      before: ['Low brand awareness in competitive window tinting market in Bangkok','No structured paid social presence for lead generation'],
+      after: ['Active Meta Ads campaigns targeting residential and commercial clients in Bangkok','Consistent lead flow — residential property, condos, offices'],
+      metrics: [['Meta','Active\nplatform'],['BKK','Primary\nmarket'],['↑','Consistent\nlead flow']]
+    },
+    'form-recovery': {
+      svc: 'SEO · AI Search Optimisation · Healthcare',
+      name: 'Form Recovery & Wellness',
+      sub: 'Bangkok, Thailand · Physiotherapy & Wellness Clinic',
+      before: ['Only 2% of target keywords in Top 5 positions','Not appearing in ChatGPT, Gemini, or Google AI Overview recommendations','3 AI-referred paid consultations per month'],
+      after: ['19% of target keywords in Top 5 within 3 weeks','#1 "Book physio session" · #2 "Physio Asoke" · #5 "Physiotherapy Bangkok"','Listed in Google AI Overviews for multiple high-intent queries','27 AI-referred paid consultations per month — 9× growth in 6 months'],
+      metrics: [['9×','AI consultation\ngrowth, 6 months'],['#1','"Book physio\nsession" (Google)'],['19%','Keywords\nin Top 5']]
+    },
+    'cosmo': {
+      svc: 'SEO · AI Search Optimisation · Aesthetics',
+      name: 'Cosmo Clinic',
+      sub: 'Bangkok, Thailand · Aesthetic Medicine Clinic',
+      before: ['Low visibility in highly competitive Bangkok aesthetics market','Not appearing in AI recommendations for Botox, fillers, skin treatments','Homepage traffic not converting to consultations'],
+      after: ['#1 "Best Botox in Bangkok" — Google Gemini','#2 "Best Fillers in Bangkok" — Google Gemini','+65% AI platform traffic (Google AI Overviews + Gemini)','+114% homepage traffic · +33% total organic clicks'],
+      metrics: [['#1','"Best Botox Bangkok"\n(Google Gemini)'],['+65%','AI platform\ntraffic growth'],['+114%','Homepage\ntraffic growth']]
+    },
+    'ibrokers': {
+      svc: 'SEO · 12-Month Programme · Insurance',
+      name: 'i-Brokers Insurance',
+      sub: 'Bangkok, Thailand · International Insurance Brokerage',
+      before: ['Low organic traffic and few leads despite strong regional presence','Poor keyword rankings across Thailand, Vietnam, Hong Kong, and SEA markets','123K monthly impressions — not converting to enquiries'],
+      after: ['Clicks grew 5× — 1,030 to 5,180 per month','Impressions grew 4× — 123K to 499K','20+ high-value keywords in Top 3 rankings across 7 markets','#1 "Expat health insurance Bali" · #1 "Best health insurance Bali"'],
+      metrics: [['5×','Click growth\n1,030 → 5,180'],['4×','Impression growth\n123K → 499K'],['20+','Keywords\nin Top 3']]
+    }
+  };
+
+  function openCase(id) {
+    const d = CASES[id]; if (!d) return;
+    document.getElementById('cs-svc').textContent = d.svc;
+    document.getElementById('cs-name').textContent = d.name;
+    document.getElementById('cs-sub').textContent = d.sub;
+    document.getElementById('cs-before').innerHTML = d.before.map(t => `<li>${t}</li>`).join('');
+    document.getElementById('cs-after').innerHTML = d.after.map(t => `<li>${t}</li>`).join('');
+    document.getElementById('cs-metrics').innerHTML = d.metrics.map(([n,l]) => `<div class="cs-m"><div class="cs-mn">${n}</div><div class="cs-ml">${l.replace(/\n/g,'<br>')}</div></div>`).join('');
+    document.getElementById('cs-modal').classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCase() {
+    document.getElementById('cs-modal').classList.remove('on');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('cs-modal').addEventListener('click', e => { if (e.target === document.getElementById('cs-modal')) closeCase(); });
 </script>
 
 </body>
