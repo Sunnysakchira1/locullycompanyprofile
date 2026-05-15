@@ -704,6 +704,46 @@
     line-height: 1.5; font-weight: 300;
   }
 
+  /* ── CHANNEL FLOW ── */
+  .ch-flow { display:flex; flex-direction:column; align-items:stretch; gap:0; }
+  .ch-item {
+    background: rgba(247,245,241,0.06); border: 1px solid rgba(247,245,241,0.12);
+    border-radius: 4px; padding: 12px 20px;
+    font-size: 13px; font-weight: 400; color: rgba(247,245,241,0.75);
+    letter-spacing: 0.04em; text-align: center;
+  }
+  .ch-item.ai { background: rgba(192,80,35,0.14); border-color: rgba(192,80,35,0.35); color: #d4714a; }
+  .ch-arrow { text-align:center; color:rgba(192,80,35,0.4); font-size:16px; line-height:1; padding:5px 0; }
+
+  /* ── PATHWAY GRID ── */
+  .pathway-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+  .pathway { border:1px solid var(--border-mid); border-radius:6px; overflow:hidden; display:flex; flex-direction:column; }
+  .pathway-head { padding:28px 28px 22px; background:var(--ink); }
+  .pathway-num { font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(192,80,35,0.85); margin-bottom:10px; }
+  .pathway-title { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--white); line-height:1.1; margin-bottom:8px; }
+  .pathway-desc { font-size:12px; color:rgba(247,245,241,0.4); font-weight:300; line-height:1.55; }
+  .pathway-body { padding:24px 28px 28px; background:var(--white); display:flex; flex-direction:column; gap:20px; flex:1; }
+  .phase-lbl { font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--terra); margin-bottom:5px; }
+  .phase-name { font-size:13px; font-weight:500; color:var(--ink); margin-bottom:6px; }
+  .phase-list { list-style:none; display:flex; flex-direction:column; gap:3px; }
+  .phase-list li { font-size:12px; color:var(--ink-light); font-weight:300; padding-left:12px; position:relative; line-height:1.5; }
+  .phase-list li::before { content:'·'; position:absolute; left:0; color:var(--terra); }
+  .pathway-foot { font-size:12px; color:var(--ink-light); font-style:italic; line-height:1.55; padding-top:16px; border-top:1px solid var(--border); margin-top:auto; }
+
+  /* ── COMBINE BLOCK ── */
+  .combine-block { background:var(--ink); border-radius:6px; padding:40px 48px; margin-top:24px; }
+  .combine-block h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; color:var(--white); margin-bottom:10px; }
+  .combine-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:24px; border-top:1px solid rgba(247,245,241,0.1); padding-top:24px; }
+  .combine-col h4 { font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
+  .combine-col p { font-size:13px; color:rgba(247,245,241,0.45); font-weight:300; line-height:1.65; }
+
+  /* ── WHY LOCULLY GRID ── */
+  .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border-mid); border-radius:6px; overflow:hidden; margin-top:40px; }
+  .why-item { background:var(--white); padding:22px 18px 20px; }
+  .why-tag { font-size:9px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
+  .why-title { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:6px; line-height:1.3; }
+  .why-desc { font-size:12px; color:var(--ink-light); font-weight:300; line-height:1.55; }
+
   /* Bullet lists inside capability / step cards */
   .svc-detail ul {
     list-style: none; margin-top: 10px;
@@ -771,6 +811,13 @@
     /* Dashboard walkthrough */
     .db-2col { grid-template-columns: 1fr; gap: 24px; }
 
+    /* New sections */
+    #discovery .container > div { grid-template-columns: 1fr; gap: 40px; }
+    .pathway-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .combine-cols { grid-template-columns: 1fr; gap: 16px; }
+    #fit .reveal.d1 { grid-template-columns: 1fr; }
+
     /* Proof grid */
     .proof-grid { grid-template-columns: 1fr; margin-top: 36px; gap: 12px; }
     .proof-item img { height: 180px; }
@@ -818,6 +865,7 @@
       <li><a href="#performance">Performance Marketing</a></li>
       <li><a href="#seo-aio">SEO & AI Visibility</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#fit">Who We Work With</a></li>
     </ul>
     <a href="#contact" class="nav-contact">Contact</a>
   </div>
@@ -873,7 +921,7 @@
           We operate as a <span class="key">dedicated growth partner — not a vendor.</span> Our work spans AI search optimisation, local lead generation, and performance advertising, executed by a <span class="key">locally based team that understands the Thai market.</span>
         </p>
         <div class="mission-pull">
-          <p>"When customers ask AI where to go, <span class="key">your business should be the answer.</span> That is what we build — every day, for every client."</p>
+          <p>"People are no longer just searching Google — they're asking ChatGPT where to go. <span class="key">We help businesses become the recommendation.</span>"</p>
         </div>
       </div>
 
@@ -914,6 +962,45 @@
     </div>
     <div class="reveal d1">
       <img src="images/clientlogos.jpg" alt="Locully clients — Form, Eatali, i-Brokers, Investors Clinic, Akira, Tony's, BigBoss, Amorretto, Jaidee Clear, The Iron Fairies, Study in India Expo, Cosmo Clinic" style="width: 100%; border-radius: 6px; display: block;">
+    </div>
+  </div>
+</section>
+
+<!-- HOW CUSTOMERS FIND BUSINESSES IN 2026 -->
+<section id="discovery" style="background: var(--ink); padding: 96px 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:start;">
+      <div class="reveal">
+        <div class="label" style="color:rgba(192,80,35,0.9); margin-bottom:16px;">Market Reality · 2026</div>
+        <h2 style="color:var(--white);">How customers find<br><em>businesses today</em></h2>
+        <p style="font-size:15px; color:rgba(247,245,241,0.6); margin-top:24px; font-weight:300; line-height:1.75;">
+          Customers now go to ChatGPT, Gemini, and Google AI before they ever scroll search results. They ask "best physio in Bangkok" or "where should I eat tonight" — and book whoever the AI names first.
+        </p>
+        <p style="font-size:15px; color:rgba(247,245,241,0.6); margin-top:16px; font-weight:300; line-height:1.75;">
+          Most business owners don't realise this is happening. Referrals feel steady. But competitors are quietly capturing every booking, every enquiry, every table reservation that comes through these channels — every single day.
+        </p>
+        <div style="margin-top:32px; padding:22px 24px; background:rgba(192,80,35,0.1); border:1px solid rgba(192,80,35,0.3); border-radius:4px;">
+          <p style="font-size:15px; color:var(--white); font-weight:300; line-height:1.65; font-style:italic;">
+            "If your business isn't on these platforms, you are not losing <em>visibility</em>. You are losing <strong style="font-weight:500; font-style:normal;">revenue</strong> — to someone who is."
+          </p>
+        </div>
+      </div>
+      <div class="reveal d1" style="padding-top:12px;">
+        <div class="ch-flow">
+          <div class="ch-item">Google Search</div>
+          <div class="ch-arrow">↓</div>
+          <div class="ch-item">Google Maps</div>
+          <div class="ch-arrow">↓</div>
+          <div class="ch-item ai">ChatGPT</div>
+          <div class="ch-arrow">↓</div>
+          <div class="ch-item ai">Google Gemini</div>
+          <div class="ch-arrow">↓</div>
+          <div class="ch-item ai">Google AI Overviews</div>
+          <div class="ch-arrow">↓</div>
+          <div class="ch-item ai">Perplexity</div>
+        </div>
+        <p style="font-size:11px; color:rgba(247,245,241,0.28); text-align:center; margin-top:16px; letter-spacing:0.06em;">Every channel above is where customers decide who to book in 2026</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1384,6 +1471,99 @@
   </div>
 </section>
 
+<!-- WHY BUSINESSES CHOOSE LOCULLY -->
+<section id="why-locully" style="padding: 96px 0; background: var(--cream);">
+  <div class="container">
+    <div class="reveal" style="max-width: 680px; margin-bottom: 48px;">
+      <div class="label" style="margin-bottom: 16px;">Why Businesses Choose Us</div>
+      <h2>Built for <em>Thailand's Market</em></h2>
+      <p class="intro" style="margin-top: 16px;">Generic agencies offer generic results. We were built for one market, measurable outcomes, and a deliberately small client list — so every engagement gets the full weight of the team.</p>
+    </div>
+    <div class="why-grid reveal d1">
+      <div class="why-item">
+        <div class="why-tag">01</div>
+        <div class="why-title">Thailand-Market Expertise</div>
+        <div class="why-desc">Locally based. We understand Thai consumer behaviour, platform nuances, and market seasonality that offshore agencies miss — and charge for.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">02</div>
+        <div class="why-title">AI-Native Positioning</div>
+        <div class="why-desc">We were building for ChatGPT and Gemini before most agencies had heard of AIO. Your business gets ahead of the shift, not behind it.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">03</div>
+        <div class="why-title">Founder-Led Strategy</div>
+        <div class="why-desc">Every engagement is led personally by the founder. No account managers, no diluted strategy, no handoffs to a junior team.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">04</div>
+        <div class="why-title">Revenue Attribution</div>
+        <div class="why-desc">Every baht tracked from click to booking. You always know what your spend produced — bookings, calls, patient volume, occupied tables.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">05</div>
+        <div class="why-title">Locally Based Team</div>
+        <div class="why-desc">In-market execution in Bangkok. Faster turnarounds, real-time responsiveness, no time-zone delays or overnight waits.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">06</div>
+        <div class="why-title">Limited Client Load</div>
+        <div class="why-desc">We keep the client list deliberately small to protect execution quality. You get focused attention, not a portfolio entry.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">07</div>
+        <div class="why-title">SEO + Paid Together</div>
+        <div class="why-desc">Organic and paid designed to reinforce each other. Each channel reduces the other's cost over time — compounding return on total spend.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-tag">08</div>
+        <div class="why-title">Performance-First</div>
+        <div class="why-desc">We structure campaigns around acquisition cost and revenue targets. If the numbers don't move, neither does the strategy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE'RE BEST SUITED FOR -->
+<section id="fit" style="padding: 72px 0; background: var(--white); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="reveal" style="max-width: 640px; margin-bottom: 40px;">
+      <div class="label" style="margin-bottom: 14px;">Who We Work With</div>
+      <h2>Who We're <em>Best Suited For</em></h2>
+    </div>
+    <div class="reveal d1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px;">
+      <div style="border: 1px solid var(--border-mid); border-radius: 6px; overflow: hidden;">
+        <div style="background: var(--ink); padding: 20px 24px;">
+          <div style="font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color: var(--terra); margin-bottom: 6px;">Best Suited For</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white);">We're a strong fit</div>
+        </div>
+        <div style="padding: 20px 24px 24px; background: var(--cream);">
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="font-size:13px; color:var(--ink-mid); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--terra);">✓</span> Multi-location businesses</li>
+            <li style="font-size:13px; color:var(--ink-mid); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--terra);">✓</span> Clinics & wellness brands</li>
+            <li style="font-size:13px; color:var(--ink-mid); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--terra);">✓</span> Hospitality businesses</li>
+            <li style="font-size:13px; color:var(--ink-mid); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--terra);">✓</span> Premium service providers</li>
+            <li style="font-size:13px; color:var(--ink-mid); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--terra);">✓</span> Businesses where one new customer has high lifetime value</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border: 1px solid var(--border-mid); border-radius: 6px; overflow: hidden;">
+        <div style="background: var(--cream-dark); padding: 20px 24px;">
+          <div style="font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-light); margin-bottom: 6px;">Probably Not For</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--ink);">Not a strong fit</div>
+        </div>
+        <div style="padding: 20px 24px 24px; background: var(--white);">
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="font-size:13px; color:var(--ink-light); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--ink-light);">×</span> Businesses seeking overnight results</li>
+            <li style="font-size:13px; color:var(--ink-light); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--ink-light);">×</span> Extremely low-ticket businesses</li>
+            <li style="font-size:13px; color:var(--ink-light); font-weight:300; padding-left:16px; position:relative; line-height:1.5;"><span style="position:absolute;left:0;color:var(--ink-light);">×</span> Brands without operational capacity to handle growth</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -1498,91 +1678,156 @@
   const CASES = {
     'hotel-pattaya': {
       svc: 'Meta Ads · Hospitality · 18+ Month Campaign',
-      name: 'Hotel Pattaya',
-      sub: 'Pattaya, Thailand · Hotel & Direct Bookings',
-      before: ['Heavy OTA dependence — losing 15–20% revenue per booking in commissions','No structured Meta Ads presence to capture direct booking intent','Seasonal demand spikes not being captured through owned channels'],
-      after: ['5,291 direct guest conversations generated over the campaign','20% increase in direct bookings, bypassing OTA commissions','฿66.40 average cost per lead — below Thai hospitality industry average','Campaign sustained consistently for 18+ months with seasonal peaks captured','Total ad spend managed: ฿351,305'],
-      metrics: [['5,291','Direct guest\nconversations'],['฿66','Average cost\nper lead'],['20%','Increase in\ndirect bookings']]
+      name: 'Hotel, Pattaya',
+      sub: 'Pattaya, Thailand · Direct Bookings',
+      before: [
+        'Every reservation routed through Agoda or Booking.com — hotel paid 15–20% commission on every booking',
+        'No owned channel to reach guests before they booked through an intermediary',
+        'Seasonal demand peaks not being captured — revenue left on the table every high season'
+      ],
+      after: [
+        '5,291 direct guest enquiries — each bypassing OTA commission entirely',
+        '20% increase in direct bookings — every converted guest improved net margin',
+        '฿66 average cost per direct enquiry — below Thai hospitality benchmarks',
+        'Campaign ran for 18+ months with seasonal peaks actively captured',
+        '฿351,305 total ad spend managed'
+      ],
+      metrics: [['5,291','Direct guest\nenquiries'],['฿66','Cost per\nenquiry'],['20%','More direct\nbookings']]
     },
     'achyut-pattaya': {
-      svc: 'Google Ads · Performance Max · F&B',
+      svc: 'Google Ads · Google Maps · F&B',
       name: 'Indian Restaurant, Pattaya',
       sub: 'Pattaya, Thailand · South Indian Restaurant',
-      before: ['Not appearing for "indian restaurant near me" in Pattaya tourist searches','Competitor brands (Dosa King, Shree Bhavan) dominating local search','Walk-in traffic from tourist searches not being captured'],
-      after: ['3,350 conversions (directions, calls, store visits) in a single month','2,608% actual ROAS — Google Ads dashboard confirmed figure','401 clicks → 315 conversions for "indian restaurant near me"','"Dosa near me" converting at 100% conversion rate','Google Maps driving 60% of all campaign results'],
-      metrics: [['2,608%','Actual ROAS\n(Google Ads)'],['3,350','Conversions\nper month'],['฿3.28','Cost per\nconversion']]
+      before: [
+        'Pattaya\'s Indian restaurant cluster is dense — walk-ins defaulted to whoever appeared first on Maps',
+        'Invisible for the searches that drove the most foot traffic: "indian restaurant near me," "dosa near me"',
+        'Tourist and expat demand was there — but it was going to competitors every day'
+      ],
+      after: [
+        '3,350 customers through the door in a single month — directions, calls, table visits all tracked',
+        '2,608% ROAS — ฿26 returned for every ฿1 in ad spend',
+        'Google Maps drove 60% of all results — ฿3.28 per customer acquired',
+        'Restaurant became the default booking for Indian food searches in Pattaya'
+      ],
+      metrics: [['2,608%','ROAS'],['3,350','Customers/month'],['฿3.28','Acquisition\ncost']]
     },
     'achyut-bangkok': {
-      svc: 'Google Ads · Performance Max · F&B',
+      svc: 'Google Ads · Google Maps · F&B',
       name: 'Indian Restaurant, Bangkok',
       sub: 'Sukhumvit, Bangkok · South Indian Restaurant',
-      before: ['Low brand awareness in Bangkok vs. established Pattaya location','Missing "near me" searches: dosa, south Indian food, pure veg queries','High competition from Indian restaurant cluster in Sukhumvit'],
-      after: ['952 conversions (directions + calls) in a single month on ฿4K spend','"Dosa in Bangkok" converted at ฿0.29 per conversion','"South Indian food near me" — 200% conversion rate','"Pure veg restaurants near me" — 255% conversion rate','65% overall campaign conversion rate'],
-      metrics: [['952','Conversions\nper month'],['฿4.34','Cost per\nconversion'],['65%','Campaign\nconversion rate']]
+      before: [
+        'New Sukhumvit location competing in Bangkok\'s crowded restaurant market with low brand awareness',
+        'Missing every high-value niche search: dosa, south Indian food, pure veg — all flowing to competitors',
+        '฿4K monthly budget with no structured campaign and no way to measure revenue impact'
+      ],
+      after: [
+        '952 customers acquired in a single month on ฿4K spend',
+        '65% overall conversion rate — 65 in every 100 ad interactions turned into a visit, call, or direction',
+        '"Dosa in Bangkok" at ฿0.29 per customer · "South Indian food near me" at 200% conversion rate',
+        '฿4.34 per customer acquired — restaurant now owns the niche South Indian category in Bangkok'
+      ],
+      metrics: [['952','Customers/month'],['฿4.34','Acquisition\ncost'],['65%','Conversion\nrate']]
     },
     'amorretto': {
       svc: 'Google Ads · Local SEO · F&B',
-      name: 'Amorretto Café & Bar',
+      name: 'Café & Bar, Bangkok',
       sub: 'Phattanakarn, Bangkok · Italian Bistro',
-      before: ['Low Google Maps visibility in Bangkok Italian food searches','Few calls and walk-ins generated from online discovery','Not ranking in top 3 local search results for Italian food'],
-      after: ['+80% increase in Google Maps visibility','50% increase in calls to the business','Top 3 rankings: "Italian food," "Italian Bistro," "Italian restaurant near me"','1,497% ROAS on Google Ads spend'],
-      metrics: [['1,497%','ROAS\n(Google Ads)'],['+80%','Google Maps\nvisibility'],['+50%','Increase in\nbusiness calls']]
+      before: [
+        'Strong food — but invisible to the customers searching for Italian bistro in Bangkok',
+        'Few inbound calls or walk-ins from online channels. Relying on word-of-mouth for new tables',
+        'Competitors with weaker menus were filling seats because they appeared on Maps first'
+      ],
+      after: [
+        '+80% more customers finding the restaurant via Google Maps',
+        '+50% increase in direct calls to book — measurable new reservation volume',
+        'Top 3 for "Italian food," "Italian bistro Bangkok," "Italian restaurant near me"',
+        '1,497% ROAS on Google Ads — paid advertising became the highest-return channel'
+      ],
+      metrics: [['1,497%','ROAS'],['+80%','More customers\nfrom Maps'],['+50%','Increase in\nbookings']]
     },
     'eatali': {
       svc: 'Local SEO · Google Ads · Meta Ads · F&B',
       name: 'Italian Restaurant, Pattaya',
       sub: 'Pattaya, Thailand · Italian Restaurant',
-      before: ['Invisible online despite strong local reputation in Pattaya','Not ranking for any Italian food searches in the city','Missing walk-in traffic from tourist "near me" queries'],
-      after: ['Top 3 ranking for "italian restaurant pattaya"','Top 3 ranking for "italian food pattaya"','Top 5 ranking for "best pizza pattaya"','Fully integrated Google Ads + Meta Ads + Local SEO running together'],
+      before: [
+        'Strong food, zero online presence — invisible to tourists searching for Italian food in Pattaya',
+        'Not appearing for any Italian food search in the city. New customers found the restaurant by accident',
+        'Competitors dominated every relevant search — Eatali was losing walk-in revenue to worse restaurants'
+      ],
+      after: [
+        'Top 3 for "italian restaurant pattaya" and "italian food pattaya" — the two highest-volume searches',
+        'Top 5 for "best pizza pattaya" — now appearing across all relevant tourist searches',
+        'Integrated Google Ads + Meta Ads + Local SEO running in parallel',
+        'Organic and paid both driving bookings — two acquisition channels instead of zero'
+      ],
       metrics: [['Top 3','"Italian restaurant\npattaya"'],['Top 3','"Italian food\npattaya"'],['Top 5','"Best pizza\npattaya"']]
     },
     'iron-fairies': {
-      svc: 'Google Ads · Hospitality · Live Music Venue',
+      svc: 'Google Ads · Hospitality · Bar & Venue',
       name: 'Bar & Venue, Bangkok',
       sub: 'Bangkok, Thailand · Bar & Live Music Venue',
-      before: ['Missing high-intent "near me" searches for bars and live music in Bangkok','Low conversion from Google Maps ad placements','No structured attribution across Search, Maps, and YouTube'],
-      after: ['34+ conversions from "bars near me," "live music bangkok," "jazz bar bangkok"','Attribution tracked across Google Maps, Search, and YouTube channels','April 2026 performance outperforming January 2026 — compounding results'],
-      metrics: [['34+','Conversions from\nnear me searches'],['3','Channels:\nSearch·Maps·YouTube'],['↑','Month-on-month\nimprovement']]
-    },
-    'akira': {
-      svc: 'Meta Ads · F&B · Hospitality',
-      name: 'AKiRA Pattaya',
-      sub: 'Pattaya, Thailand · Restaurant & Bar',
-      before: ['Limited Meta Ads presence','Reach and engagement not structured for conversion'],
-      after: ['Active Meta campaign driving reach, engagement, and direct conversions','Ongoing campaign — performance data in campaign screenshots above'],
-      metrics: [['Meta','Active\nplatform'],['↑','Reach &\nengagement'],['↑','Conversion\ntracking']]
-    },
-    'jaideeclear': {
-      svc: 'Meta Ads · Home Services',
-      name: 'JaiDeeClear',
-      sub: 'Bangkok, Thailand · Window Film & Tinting',
-      before: ['Low brand awareness in competitive window tinting market in Bangkok','No structured paid social presence for lead generation'],
-      after: ['Active Meta Ads campaigns targeting residential and commercial clients in Bangkok','Consistent lead flow — residential property, condos, offices'],
-      metrics: [['Meta','Active\nplatform'],['BKK','Primary\nmarket'],['↑','Consistent\nlead flow']]
+      before: [
+        'Missing the highest-intent venue searches: "bars near me," "live music bangkok," "jazz bar bangkok"',
+        'Customers searching for exactly what this venue offers — but finding competitors first',
+        'No way to measure which searches were actually driving covers and spend'
+      ],
+      after: [
+        '34+ customer acquisitions per month from near-me searches alone',
+        'Full attribution across Google Maps, Search, and YouTube — every channel measured',
+        'April 2026 outperforming January 2026 — each month compounds on the last'
+      ],
+      metrics: [['34+','Monthly\nacquisitions'],['3','Paid channels\nmeasured'],['↑','Month-on-month\ngrowth']]
     },
     'form-recovery': {
-      svc: 'SEO · AI Search Optimisation · Healthcare',
-      name: 'Form Recovery & Wellness',
-      sub: 'Bangkok, Thailand · Physiotherapy & Wellness Clinic',
-      before: ['Only 2% of target keywords in Top 5 positions','Not appearing in ChatGPT, Gemini, or Google AI Overview recommendations','3 AI-referred paid consultations per month'],
-      after: ['19% of target keywords in Top 5 within 3 weeks','#1 "Book physio session" · #2 "Physio Asoke" · #5 "Physiotherapy Bangkok"','Listed in Google AI Overviews for multiple high-intent queries','27 AI-referred paid consultations per month — 9× growth in 6 months'],
-      metrics: [['9×','AI consultation\ngrowth, 6 months'],['#1','"Book physio\nsession" (Google)'],['19%','Keywords\nin Top 5']]
+      svc: 'Search Optimisation · Healthcare · Bangkok',
+      name: 'Physiotherapy Clinic, Bangkok',
+      sub: 'Bangkok, Thailand · Physiotherapy & Wellness',
+      before: [
+        '3 paid consultations per month from online search — the clinic was excellent but unknown to the platforms where patients search',
+        'ChatGPT recommended Bangkok Hospital. Gemini listed hospital chains. This clinic did not appear',
+        'Competitors with worse outcomes were booked out because they showed up first — and the clinic had no answer'
+      ],
+      after: [
+        '27 paid consultations per month from online search — 9× growth in 6 months',
+        '#1 for "book physio session" · #2 "physio Asoke" · #5 "physiotherapy Bangkok"',
+        'Clinic now appears in ChatGPT, Gemini, and Google AI responses — ahead of Bangkok Hospital',
+        '1 in 4 patients referred from online search converts into a paid consultation'
+      ],
+      metrics: [['9×','Paid consultation\ngrowth'],['27','Monthly\nbookings'],['1 in 4','Enquiry to\nbooking rate']]
     },
     'cosmo': {
-      svc: 'SEO · AI Search Optimisation · Aesthetics',
-      name: 'Cosmo Clinic',
-      sub: 'Bangkok, Thailand · Aesthetic Medicine Clinic',
-      before: ['Low visibility in highly competitive Bangkok aesthetics market','Not appearing in AI recommendations for Botox, fillers, skin treatments','Homepage traffic not converting to consultations'],
-      after: ['#1 "Best Botox in Bangkok" — Google Gemini','#2 "Best Fillers in Bangkok" — Google Gemini','+65% AI platform traffic (Google AI Overviews + Gemini)','+114% homepage traffic · +33% total organic clicks'],
-      metrics: [['#1','"Best Botox Bangkok"\n(Google Gemini)'],['+65%','AI platform\ntraffic growth'],['+114%','Homepage\ntraffic growth']]
+      svc: 'Search Optimisation · Aesthetics · Bangkok',
+      name: 'Aesthetic Clinic, Bangkok',
+      sub: 'Bangkok, Thailand · Aesthetic Medicine',
+      before: [
+        'Bangkok aesthetics market dominated by hospital-adjacent clinics with large ad budgets',
+        'Patients asking ChatGPT and Gemini "best Botox Bangkok" were being sent to competitors — by default',
+        'Strong clinical results, low enquiry volume. New patients found the clinic through referral only'
+      ],
+      after: [
+        '#1 "Best Botox in Bangkok" on Google Gemini · #2 "Best Fillers in Bangkok" on Google Gemini',
+        '+65% increase in enquiries from AI-referred patients — a new acquisition channel created from scratch',
+        '+114% more patients reaching the homepage · +33% growth in total organic enquiries',
+        'Clinic now cited above hospital chains when patients ask AI for Bangkok aesthetics recommendations'
+      ],
+      metrics: [['#1','"Best Botox\nBangkok" (Gemini)'],['+65%','New enquiry\nchannel'],['+114%','Patient\ntraffic growth']]
     },
     'ibrokers': {
-      svc: 'SEO · 12-Month Programme · Insurance',
+      svc: 'Search Optimisation · Insurance · 12 Months',
       name: 'i-Brokers Insurance',
       sub: 'Bangkok, Thailand · International Insurance Brokerage',
-      before: ['Low organic traffic and few leads despite strong regional presence','Poor keyword rankings across Thailand, Vietnam, Hong Kong, and SEA markets','123K monthly impressions — not converting to enquiries'],
-      after: ['Clicks grew 5× — 1,030 to 5,180 per month','Impressions grew 4× — 123K to 499K','20+ high-value keywords in Top 3 rankings across 7 markets','#1 "Expat health insurance Bali" · #1 "Best health insurance Bali"'],
-      metrics: [['5×','Click growth\n1,030 → 5,180'],['4×','Impression growth\n123K → 499K'],['20+','Keywords\nin Top 3']]
+      before: [
+        '123K monthly impressions but only 1,030 clicks — appearing in search but not generating enquiry volume',
+        'Competing across Thailand, Vietnam, Hong Kong, and Bali without the authority to convert any market',
+        'Organic search produced no attributable lead flow. Growth relied entirely on referrals and paid'
+      ],
+      after: [
+        '5× more enquiries from organic search — 1,030 to 5,180 monthly',
+        '20+ lead-generating keywords in Top 3 across 7 markets',
+        '#1 "Expat health insurance Bali" · #1 "Best health insurance Bali"',
+        'Organic became a reliable, growing acquisition channel across Southeast Asia'
+      ],
+      metrics: [['5×','Enquiry growth\n1,030 → 5,180'],['20+','Top 3 lead\ngenerating terms'],['7','Markets with\nTop 3 positions']]
     }
   };
 
