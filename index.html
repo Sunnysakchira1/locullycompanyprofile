@@ -927,43 +927,51 @@
 
   /* ── AI PROMPT RANKINGS ── */
   .prompt-rankings-block {
-    background: var(--ink); border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border-mid); border-radius: 8px;
     padding: 32px 36px 28px; margin-top: 24px;
   }
   .prompt-rankings-intro {
-    font-size: 13px; color: rgba(247,245,241,0.4);
-    font-weight: 300; line-height: 1.55; margin-bottom: 24px;
+    font-size: 13px; color: var(--ink-light);
+    font-weight: 300; line-height: 1.55; margin-bottom: 28px;
     max-width: 580px;
   }
-  .prompt-tier { margin-bottom: 24px; }
-  .prompt-tier:last-child { margin-bottom: 0; }
-  .prompt-tier-hd { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .prompt-col-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+  }
+  .prompt-col-hd {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
   .prompt-tier-pill {
     font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 100px;
+    padding: 4px 11px; border-radius: 100px;
   }
-  .prompt-tier-pill.green { background: rgba(37,160,80,0.18); color: #7FD4A0; border: 1px solid rgba(37,160,80,0.25); }
-  .prompt-tier-pill.gold  { background: rgba(201,160,80,0.15); color: #D4B56F; border: 1px solid rgba(201,160,80,0.25); }
-  .prompt-tier-count { font-size: 10px; color: rgba(247,245,241,0.22); font-weight: 300; }
-  .prompt-rows { display: flex; flex-direction: column; gap: 6px; }
+  .prompt-tier-pill.green { background: rgba(37,160,80,0.12); color: #25A050; border: 1px solid rgba(37,160,80,0.25); }
+  .prompt-tier-pill.gold  { background: rgba(192,80,35,0.10); color: var(--terra-dark); border: 1px solid rgba(192,80,35,0.22); }
+  .prompt-tier-pill.slate { background: rgba(74,71,68,0.10); color: var(--ink-mid); border: 1px solid var(--border-mid); }
+  .prompt-col-count { font-size: 10px; color: var(--ink-light); font-weight: 300; }
+  .prompt-rows { display: flex; flex-direction: column; gap: 5px; }
   .prompt-row {
-    display: grid; grid-template-columns: 1fr auto auto;
-    align-items: center; gap: 20px;
-    padding: 11px 16px; border-radius: 5px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 10px; padding: 9px 12px; border-radius: 5px;
   }
   .prompt-row.green { background: rgba(37,160,80,0.06); border: 1px solid rgba(37,160,80,0.14); }
-  .prompt-row.gold  { background: rgba(247,245,241,0.04); border: 1px solid rgba(247,245,241,0.08); }
-  .prompt-text { font-size: 13px; color: rgba(247,245,241,0.88); line-height: 1.4; }
-  .prompt-plat { font-size: 10px; color: rgba(247,245,241,0.28); font-weight: 300; white-space: nowrap; }
-  .prompt-rank-tag { font-size: 13px; font-weight: 700; text-align: right; white-space: nowrap; min-width: 24px; }
-  .prompt-rank-tag.green { color: #7FD4A0; }
-  .prompt-rank-tag.gold  { color: #D4B56F; }
+  .prompt-row.gold  { background: rgba(192,80,35,0.05); border: 1px solid rgba(192,80,35,0.13); }
+  .prompt-row.slate { background: rgba(74,71,68,0.04); border: 1px solid var(--border); }
+  .prompt-text { font-size: 12px; color: var(--ink); line-height: 1.4; }
+  .prompt-rank-tag { font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+  .prompt-rank-tag.green { color: #25A050; }
+  .prompt-rank-tag.gold  { color: var(--terra); }
+  .prompt-rank-tag.slate { color: var(--ink-mid); }
 
+  @media (max-width: 1024px) {
+    .prompt-col-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 768px) {
-    .prompt-rankings-block { padding: 24px 20px 20px; }
-    .prompt-row { grid-template-columns: 1fr auto; gap: 12px; }
-    .prompt-plat { display: none; }
-    .prompt-text { font-size: 12px; }
+    .prompt-rankings-block { padding: 24px 18px 20px; }
+    .prompt-col-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .prompt-text { font-size: 11px; }
   }
 </style>
 </head>
@@ -1542,64 +1550,72 @@
     <div class="prompt-rankings-block reveal d1">
       <p class="prompt-rankings-intro">Verified across ChatGPT, Google Gemini, and Google AI Overviews — April–May 2026. Client names withheld for confidentiality.</p>
 
-      <!-- #1 Tier -->
-      <div class="prompt-tier">
-        <div class="prompt-tier-hd">
-          <span class="prompt-tier-pill green">Ranked #1</span>
-          <span class="prompt-tier-count">6 queries</span>
-        </div>
-        <div class="prompt-rows">
-          <div class="prompt-row green">
-            <span class="prompt-text">Best physiotherapy clinic Bangkok</span>
-            <span class="prompt-plat">ChatGPT · Physiotherapy</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-          <div class="prompt-row green">
-            <span class="prompt-text">Best Botox Bangkok</span>
-            <span class="prompt-plat">Google Gemini · Aesthetics</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-          <div class="prompt-row green">
-            <span class="prompt-text">Compare physiotherapy clinics in Bangkok</span>
-            <span class="prompt-plat">Google AI Overview · Physiotherapy</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-          <div class="prompt-row green">
-            <span class="prompt-text">Lymphatic drainage massage Bangkok</span>
-            <span class="prompt-plat">ChatGPT · Gemini · Google · Physiotherapy</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-          <div class="prompt-row green">
-            <span class="prompt-text">Best acupuncture Bangkok</span>
-            <span class="prompt-plat">AI Platforms · Physiotherapy</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-          <div class="prompt-row green">
-            <span class="prompt-text">Best physio clinic Thailand</span>
-            <span class="prompt-plat">Google Gemini · Physiotherapy</span>
-            <span class="prompt-rank-tag green">#1</span>
-          </div>
-        </div>
-      </div>
+      <div class="prompt-col-grid">
 
-      <!-- #2 Tier -->
-      <div class="prompt-tier">
-        <div class="prompt-tier-hd">
-          <span class="prompt-tier-pill gold">Ranked #2</span>
-          <span class="prompt-tier-count">2 queries</span>
-        </div>
-        <div class="prompt-rows">
-          <div class="prompt-row gold">
-            <span class="prompt-text">Best fillers Bangkok</span>
-            <span class="prompt-plat">Google Gemini · Aesthetics</span>
-            <span class="prompt-rank-tag gold">#2</span>
+        <!-- TOP 3 -->
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill green">Top 3</span>
+            <span class="prompt-col-count">13 queries</span>
           </div>
-          <div class="prompt-row gold">
-            <span class="prompt-text">Cupping therapy Bangkok</span>
-            <span class="prompt-plat">AI Platforms · Physiotherapy</span>
-            <span class="prompt-rank-tag gold">#2</span>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best physiotherapy clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Compare physiotherapy clinics Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Lymphatic drainage massage Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic Thailand</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best Botox clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best lip filler clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Ultherapy Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">HIFU treatment Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best skin whitening clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Skin whitening treatment Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best Ultherapy clinic Bangkok for jowls</span><span class="prompt-rank-tag green">#1</span></div>
+            <div class="prompt-row green"><span class="prompt-text">Cupping therapy Bangkok</span><span class="prompt-rank-tag green">#2</span></div>
           </div>
         </div>
+
+        <!-- TOP 5 -->
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill gold">Top 5</span>
+            <span class="prompt-col-count">11 queries</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row gold"><span class="prompt-text">Post-operative physiotherapy Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Sports physiotherapy Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Physio Asoke Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">IV drip Bangkok price</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best Ultherapy clinic Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best HIFU clinic Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best filler clinic Bangkok for under-eyes</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">#4</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best vitamin IV therapy Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best non-surgical facelift Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
+          </div>
+        </div>
+
+        <!-- TOP 10 -->
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill slate">Top 10</span>
+            <span class="prompt-col-count">10 queries</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row slate"><span class="prompt-text">Physiotherapist Bangkok</span><span class="prompt-rank-tag slate">#6</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Dry needling Bangkok</span><span class="prompt-rank-tag slate">#6</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Lymphatic drainage water retention Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Physio Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best beauty clinic Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best filler clinic Bangkok</span><span class="prompt-rank-tag slate">#8</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best IV drip clinic Bangkok</span><span class="prompt-rank-tag slate">#8</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Lip filler Bangkok price</span><span class="prompt-rank-tag slate">#8</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best NAD+ IV therapy Bangkok</span><span class="prompt-rank-tag slate">#9</span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best clinic for skin rejuvenation Bangkok</span><span class="prompt-rank-tag slate">#9</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1741,7 +1757,7 @@
             <div class="cp-role">Founder & CEO — Strategy, Partnerships</div>
             <div class="cp-contact">
               <a href="mailto:sunny@locully.org">sunny@locully.org</a> &nbsp;·&nbsp;
-              <a href="https://www.linkedin.com/in/sunnysak/" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/rachaphon-sakchiraphong/" target="_blank">LinkedIn</a>
             </div>
           </div>
           <div class="cp">
