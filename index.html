@@ -513,6 +513,42 @@
     text-decoration-thickness: 1.5px;
   }
 
+  /* ── DASHBOARD (full-size proof images) ── */
+  .dashboard-block { margin-top: 32px; }
+  .dashboard-block + .dashboard-block { margin-top: 40px; }
+  .dashboard-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .dashboard-label span { color: var(--ink-light); font-size: 11px; letter-spacing: 0.05em; text-transform: none; font-weight: 300; }
+  .dashboard-block img {
+    width: 100%; height: auto; display: block;
+    border-radius: 4px; border: 1px solid var(--border);
+    cursor: zoom-in;
+  }
+  .dashboard-2col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px;
+  }
+  .dashboard-2col .dashboard-block { margin-top: 0; }
+  @media (max-width: 768px) {
+    .dashboard-2col { grid-template-columns: 1fr; }
+  }
+
+  /* ── CLIENT TAGS ── */
+  .client-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border);
+  }
+  .client-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    padding: 5px 12px; border-radius: 2px;
+    background: var(--cream); border: 1px solid var(--border-mid);
+    color: var(--ink-mid);
+  }
+  .svc-section-alt .client-tags { border-top-color: rgba(247,245,241,0.08); }
+  .svc-section-alt .client-tag { background: rgba(247,245,241,0.05); border-color: rgba(247,245,241,0.12); color: rgba(247,245,241,0.55); }
+
   /* ── SCROLL REVEAL ── */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -644,9 +680,9 @@
   </a>
   <div class="nav-right">
     <ul class="nav-services">
+      <li><a href="#performance">Performance Marketing</a></li>
       <li><a href="#seo-aio">SEO & AI Visibility</a></li>
       <li><a href="#lead-gen">Lead Gen Partner</a></li>
-      <li><a href="#performance">Performance Marketing</a></li>
     </ul>
     <a href="#contact" class="nav-contact">Contact</a>
   </div>
@@ -757,8 +793,17 @@
     </div>
     <div class="svc-nav-grid reveal d1">
 
-      <a href="#seo-aio" class="svc-nav-card">
+      <a href="#performance" class="svc-nav-card">
         <div class="svc-num">01</div>
+        <div class="svc-nav-title">Performance Marketing</div>
+        <p class="svc-nav-desc">
+          Google Search, Meta, and programmatic advertising managed for measurable ROI. Every campaign is structured around cost-per-lead and revenue targets, not impressions.
+        </p>
+        <div class="svc-nav-anchor">View service details</div>
+      </a>
+
+      <a href="#seo-aio" class="svc-nav-card">
+        <div class="svc-num">02</div>
         <div class="svc-nav-title">SEO & AI Visibility</div>
         <p class="svc-nav-desc">
           Structured programmes to increase organic search rankings and ensure your brand is cited by AI platforms — ChatGPT, Gemini, Google AI Overviews, and Perplexity.
@@ -767,19 +812,10 @@
       </a>
 
       <a href="#lead-gen" class="svc-nav-card">
-        <div class="svc-num">02</div>
+        <div class="svc-num">03</div>
         <div class="svc-nav-title">Local Lead Generation Partner</div>
         <p class="svc-nav-desc">
           End-to-end lead generation for events, expos, and launches in Thailand. We manage the full pipeline — from campaign setup to registration to qualified attendance.
-        </p>
-        <div class="svc-nav-anchor">View service details</div>
-      </a>
-
-      <a href="#performance" class="svc-nav-card">
-        <div class="svc-num">03</div>
-        <div class="svc-nav-title">Performance Marketing</div>
-        <p class="svc-nav-desc">
-          Google Search, Meta, and programmatic advertising managed for measurable ROI. Every campaign is structured around cost-per-lead and revenue targets, not impressions.
         </p>
         <div class="svc-nav-anchor">View service details</div>
       </a>
@@ -789,13 +825,143 @@
 </section>
 
 <!-- ════════════════════════════════
-     SERVICE 01: SEO & AI VISIBILITY
+     SERVICE 01: PERFORMANCE MARKETING
      ════════════════════════════════ -->
-<section id="seo-aio" class="svc-section" style="background: var(--white);">
+<section id="performance" class="svc-section" style="background: var(--white);">
   <div class="container">
     <div class="svc-header">
       <div class="reveal">
         <div class="label">Service 01</div>
+        <h2>Performance <em>Marketing</em></h2>
+        <p class="intro">
+          Paid advertising managed with one objective: measurable return on investment. We manage Google Search, Google Display, Meta (Facebook & Instagram), and programmatic campaigns for businesses in Thailand.
+        </p>
+        <p class="intro" style="margin-top: 16px;">
+          Every campaign is structured around a cost-per-lead or cost-per-acquisition target established at briefing. Spend, conversions, and pipeline value are tracked and reported monthly.
+        </p>
+        <div class="client-tags reveal">
+          <span class="client-tag">AKiRA Pattaya</span>
+          <span class="client-tag">Hotel Pattaya</span>
+          <span class="client-tag">Eatali Soi 5</span>
+          <span class="client-tag">Amorretto Café & Bar</span>
+          <span class="client-tag">Opera Italian Restaurant</span>
+          <span class="client-tag">Achyut Bhavan Bangkok</span>
+          <span class="client-tag">Achyut Bhavan Pattaya</span>
+          <span class="client-tag">Tony's Italian Bangkok</span>
+          <span class="client-tag">The Iron Fairies</span>
+          <span class="client-tag">JaiDeeClear</span>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="svc-detail-grid">
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 01</div>
+            <h4>Google Search & Display</h4>
+            <p>Search campaign architecture, keyword strategy, Quality Score optimisation, and bid management. Display and remarketing for brand reinforcement across the consideration phase.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 02</div>
+            <h4>Meta — Facebook & Instagram</h4>
+            <p>Audience targeting, creative strategy, and campaign management across Meta platforms. Local Thai audience profiling using behavioural and demographic signals.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 03</div>
+            <h4>Landing Page & Conversion</h4>
+            <p>Campaign performance is only as strong as the destination. We design and optimise landing pages to convert paid traffic — reducing cost-per-lead at the conversion layer.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Capability 04</div>
+            <h4>Reporting & Attribution</h4>
+            <p>GA4, Google Ads, and Meta Business Suite consolidated into monthly reporting. Full attribution from ad click to booked appointment or completed purchase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achyut Bhavan — Enlarged Google Ads Dashboards -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 4px;">Google Ads — Achyut Bhavan, Pattaya & Bangkok</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 32px;">Performance Max campaigns. December 2025. Click any image to zoom.</p>
+    </div>
+
+    <!-- Full-width ROAS dashboard — the headline number -->
+    <div class="dashboard-block reveal">
+      <div class="dashboard-label">Pattaya — Performance Max ROAS <span>December 2025</span></div>
+      <img src="images/achyut/pmaxptydec.jpg" alt="Achyut Bhavan Pattaya 2,608% ROAS dashboard" onclick="lb(this.src)">
+    </div>
+
+    <!-- Full-width search categories — the growth percentages read clearly at this size -->
+    <div class="dashboard-block reveal">
+      <div class="dashboard-label">Search Category Performance <span>Clicks & growth vs. prior period</span></div>
+      <img src="images/achyut/gadsdec.jpg" alt="Achyut Bhavan search category growth" onclick="lb(this.src)">
+    </div>
+
+    <!-- Two dashboards side-by-side: campaign overview + Bangkok -->
+    <div class="dashboard-2col reveal">
+      <div class="dashboard-block">
+        <div class="dashboard-label">Campaign Overview — Both Locations <span>Dec 2025</span></div>
+        <img src="images/achyut/gadsperformancedec.jpg" alt="Achyut Bhavan campaign dashboard" onclick="lb(this.src)">
+      </div>
+      <div class="dashboard-block">
+        <div class="dashboard-label">Bangkok — Performance Max <span>525% ROAS · ฿4K spend</span></div>
+        <img src="images/achyut/pmaxbkkdec.jpg" alt="Achyut Bhavan Bangkok PMax dashboard" onclick="lb(this.src)">
+      </div>
+    </div>
+
+    <!-- Iron Fairies + Akira proof grid -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Campaign Results — Additional Clients</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">Google Ads and Meta performance — hospitality and F&B.</p>
+    </div>
+    <div class="proof-grid reveal" style="grid-template-columns: repeat(2,1fr); margin-top: 24px;">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/iron/conviron.jpg" alt="Iron Fairies conversions" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — The Iron Fairies Bangkok</span>
+          <div class="proof-desc">Conversion attribution across Maps, Search, and YouTube</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/iron/ironjanads.jpg" alt="Iron Fairies search categories" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Search Intent</span>
+          <div class="proof-desc">"bars near me" · "live music bangkok" · "jazz bar bangkok" — 34+ conversions</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/iron/ifperformanceapr.jpg" alt="Iron Fairies April performance" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Ads — Iron Fairies, April 2026</span>
+          <div class="proof-desc">Compounding results as campaign matures</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/akira/akira-ad-results.jpg" alt="Akira Meta ad results" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Meta Ads — AKiRA Pattaya</span>
+          <div class="proof-desc">Reach, engagement, and conversion metrics</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content & Creative -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Content & Creative</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Social media content produced across client campaigns — restaurants, retail, events, and F&B.</p>
+      <img src="images/social-content-grid.png" alt="Social media content grid" style="width: 100%; height: auto; border-radius: 6px; display: block; border: 1px solid var(--border); cursor: zoom-in;" onclick="lb(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SERVICE 02: SEO & AI VISIBILITY
+     ════════════════════════════════ -->
+<section id="seo-aio" class="svc-section" style="background: var(--cream);">
+  <div class="container">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="label">Service 02</div>
         <h2>SEO & <em>AI Visibility</em></h2>
         <p class="intro">
           Search is no longer just Google. An increasing share of product and service discovery now happens through AI platforms — ChatGPT, Gemini, Perplexity, and Google AI Overviews. Locully optimises for both.
@@ -803,6 +969,13 @@
         <p class="intro" style="margin-top: 16px;">
           We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation — and cause Google to rank you on page one.
         </p>
+        <div class="client-tags reveal">
+          <span class="client-tag">Form Recovery & Wellness</span>
+          <span class="client-tag">Cosmo Clinic</span>
+          <span class="client-tag">Valuation Masterclass</span>
+          <span class="client-tag">Eatali Soi 5</span>
+          <span class="client-tag">Tony's Italian Bangkok</span>
+        </div>
       </div>
 
       <div class="reveal d1">
@@ -829,7 +1002,7 @@
           </div>
         </div>
 
-        <div class="metrics-row">
+        <div class="metrics-row" style="border-top-color: var(--border);">
           <div class="metric">
             <div class="metric-n">10×</div>
             <div class="metric-l">Average AI mention growth within 90 days</div>
@@ -846,10 +1019,10 @@
       </div>
     </div>
 
-    <!-- Screenshots -->
+    <!-- AI Platform Screenshots -->
     <div class="reveal d3" style="margin-top: 48px;">
       <div class="label" style="margin-bottom: 8px;">Results — Live AI Platform Screenshots</div>
-      <p style="font-size:13px; color: var(--ink-light);">Client: Form Recovery & Wellness, Bangkok. Click to enlarge.</p>
+      <p style="font-size:13px; color: var(--ink-light);">Form Recovery & Wellness and Cosmo Clinic, Bangkok. Click to enlarge.</p>
     </div>
     <div class="proof-grid reveal d3" style="grid-template-columns: repeat(2,1fr);">
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
@@ -877,22 +1050,21 @@
         <img src="images/cosmo/bestfillersjan.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Google AI Overview</span>
-          <div class="proof-desc">"Best fillers Bangkok" — Client listed in top AI recommendations</div>
+          <div class="proof-desc">"Best fillers Bangkok" — Cosmo Clinic in top AI recommendations</div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ════════════════════════════════════
-     SERVICE 02: LOCAL LEAD GEN PARTNER
+     SERVICE 03: LOCAL LEAD GEN PARTNER
      ════════════════════════════════════ -->
 <section id="lead-gen" class="svc-section svc-section-alt">
   <div class="container">
     <div class="svc-header">
       <div class="reveal">
-        <div class="label">Service 02</div>
+        <div class="label">Service 03</div>
         <h2>Local Lead <em>Generation Partner</em></h2>
         <p class="intro">
           Locully operates as a dedicated local marketing partner for companies running events, expos, roadshows, and launches in Thailand. We build and manage the full lead generation pipeline — from campaign launch to confirmed attendance.
@@ -900,6 +1072,10 @@
         <p class="intro" style="margin-top: 16px; color: rgba(247,245,241,0.45);">
           This is not event promotion. It is structured lead acquisition — qualified registrations from a defined audience, managed end-to-end by a locally based team who understands the Thai market.
         </p>
+        <div class="client-tags reveal">
+          <span class="client-tag">Investors Clinic</span>
+          <span class="client-tag">Study in India Expo</span>
+        </div>
       </div>
 
       <div class="reveal d1">
@@ -978,7 +1154,7 @@
         <img src="images/sii/sii1.jpg" alt="Study in India Expo campaign" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Meta Ads — Study in India Expo</span>
-          <div class="proof-desc">Education expo lead gen — student acquisition campaign across Bangkok & Chiang Mai</div>
+          <div class="proof-desc">Education expo lead gen — student acquisition across Bangkok & Chiang Mai</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
@@ -995,131 +1171,6 @@
           <div class="proof-desc">Retargeting audience build — warm leads re-engaged ahead of event date</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     SERVICE 03: PERFORMANCE MARKETING
-     ════════════════════════════════ -->
-<section id="performance" class="svc-section" style="background: var(--cream);">
-  <div class="container">
-    <div class="svc-header">
-      <div class="reveal">
-        <div class="label">Service 03</div>
-        <h2>Performance <em>Marketing</em></h2>
-        <p class="intro">
-          Paid advertising managed with one objective: measurable return on investment. We manage Google Search, Google Display, Meta (Facebook & Instagram), and programmatic campaigns for businesses in Thailand.
-        </p>
-        <p class="intro" style="margin-top: 16px;">
-          Every campaign is structured around a cost-per-lead or cost-per-acquisition target established at briefing. Spend, conversions, and pipeline value are tracked and reported monthly.
-        </p>
-      </div>
-
-      <div class="reveal d1">
-        <div class="svc-detail-grid">
-          <div class="svc-detail">
-            <div class="svc-detail-num">Capability 01</div>
-            <h4>Google Search & Display</h4>
-            <p>Search campaign architecture, keyword strategy, Quality Score optimisation, and bid management. Display and remarketing for brand reinforcement across the consideration phase.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Capability 02</div>
-            <h4>Meta — Facebook & Instagram</h4>
-            <p>Audience targeting, creative strategy, and campaign management across Meta platforms. Local Thai audience profiling using behavioural and demographic signals.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Capability 03</div>
-            <h4>Landing Page & Conversion</h4>
-            <p>Campaign performance is only as strong as the destination. We design and optimise landing pages to convert paid traffic — reducing cost-per-lead at the conversion layer.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Capability 04</div>
-            <h4>Reporting & Attribution</h4>
-            <p>GA4, Google Ads, and Meta Business Suite consolidated into monthly reporting. Full attribution from ad click to booked appointment or completed purchase.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Google Ads Screenshots -->
-    <div class="reveal d3" style="margin-top: 48px;">
-      <div class="label" style="margin-bottom: 8px;">Google Ads — Campaign Results</div>
-      <p style="font-size:13px; color: var(--ink-light);">Live performance data across hospitality and F&B clients.</p>
-    </div>
-    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(2,1fr);">
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/iron/conviron.jpg" alt="Iron Fairies conversions" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Iron Fairies Bangkok</span>
-          <div class="proof-desc">Conversion attribution across Maps, Search, and YouTube — bar and live music venue</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/iron/ironjanads.jpg" alt="Iron Fairies search categories" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Search Intent</span>
-          <div class="proof-desc">"bars near me", "live music bangkok", "jazz bar bangkok" — 34+ conversions from high-intent searches</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/iron/ifperformanceapr.jpg" alt="Iron Fairies April performance" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Iron Fairies, April 2026</span>
-          <div class="proof-desc">Performance data — compounding results as campaign matures</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/akira/akira-ad-results.jpg" alt="Akira Meta ad results" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Meta Ads — AKiRA Pattaya</span>
-          <div class="proof-desc">Reach, engagement, and conversion metrics — hospitality F&B campaign</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Achyut Bhavan Google Ads Screenshots -->
-    <div class="reveal" style="margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Google Ads — Achyut Bhavan (Indian Restaurant, Pattaya & Bangkok)</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Performance Max — live campaign dashboards. December 2025.</p>
-    </div>
-    <div class="proof-grid reveal" style="grid-template-columns: repeat(2,1fr); margin-top: 0;">
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/achyut/pmaxptydec.jpg" alt="Achyut Bhavan Pattaya PMax ROAS" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Pattaya, Performance Max</span>
-          <div class="proof-desc">2,608% actual ROAS · 3.4K conversions · ฿9.15K spend — directions, store visits, contacts</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/achyut/pmaxbkkdec.jpg" alt="Achyut Bhavan Bangkok PMax" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Bangkok, Performance Max</span>
-          <div class="proof-desc">525% ROAS · 495 conversions · ฿4K spend — Maps driving 91% of results</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/achyut/gadsdec.jpg" alt="Achyut Bhavan search categories" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Search Categories</span>
-          <div class="proof-desc">"indian restaurant near me" +204% · "dosa near me" +550% · "south indian food near me" +1,000%</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/achyut/gadsperformancedec.jpg" alt="Achyut Bhavan campaign dashboard" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Ads — Campaign Dashboard</span>
-          <div class="proof-desc">Both locations: 6,544 clicks · 443K impressions · 3,583 directions generated</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Content & Creative -->
-    <div class="reveal" style="margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Content & Creative</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 24px;">Social media content produced across client campaigns — restaurants, retail, events, and F&B.</p>
-      <img src="images/social-content-grid.png" alt="Social media content grid — Achyut Bhavan, Eatali, JaiDeeClear, Study in India Expo" style="width: 100%; border-radius: 6px; display: block; border: 1px solid var(--border); cursor: pointer;" onclick="lb(this.src)">
     </div>
   </div>
 </section>
