@@ -935,35 +935,35 @@
     font-weight: 300; line-height: 1.55; margin-bottom: 24px;
     max-width: 580px;
   }
-  .prompt-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  .prompt-tier { margin-bottom: 24px; }
+  .prompt-tier:last-child { margin-bottom: 0; }
+  .prompt-tier-hd { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .prompt-tier-pill {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 100px;
   }
-  .prompt-card {
-    background: rgba(247,245,241,0.04); border: 1px solid rgba(247,245,241,0.09);
-    border-radius: 5px; padding: 16px 18px;
-    display: flex; flex-direction: column; gap: 10px;
-    transition: background 0.2s, border-color 0.2s;
+  .prompt-tier-pill.green { background: rgba(37,160,80,0.18); color: #7FD4A0; border: 1px solid rgba(37,160,80,0.25); }
+  .prompt-tier-pill.gold  { background: rgba(201,160,80,0.15); color: #D4B56F; border: 1px solid rgba(201,160,80,0.25); }
+  .prompt-tier-count { font-size: 10px; color: rgba(247,245,241,0.22); font-weight: 300; }
+  .prompt-rows { display: flex; flex-direction: column; gap: 6px; }
+  .prompt-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    align-items: center; gap: 20px;
+    padding: 11px 16px; border-radius: 5px;
   }
-  .prompt-card:hover { background: rgba(247,245,241,0.07); border-color: rgba(192,80,35,0.4); }
-  .prompt-badge {
-    font-size: 8px; font-weight: 600; letter-spacing: 0.2em;
-    text-transform: uppercase; color: rgba(192,80,35,0.75);
-  }
-  .prompt-q {
-    font-size: 13px; color: rgba(247,245,241,0.82); font-weight: 300;
-    line-height: 1.45; font-style: italic;
-    padding-left: 10px; border-left: 2px solid rgba(192,80,35,0.4);
-  }
-  .prompt-outcome { display: flex; align-items: baseline; gap: 8px; }
-  .prompt-rank {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 600; color: var(--terra); line-height: 1;
-  }
-  .prompt-who { font-size: 11px; color: rgba(247,245,241,0.28); font-weight: 300; }
+  .prompt-row.green { background: rgba(37,160,80,0.06); border: 1px solid rgba(37,160,80,0.14); }
+  .prompt-row.gold  { background: rgba(247,245,241,0.04); border: 1px solid rgba(247,245,241,0.08); }
+  .prompt-text { font-size: 13px; color: rgba(247,245,241,0.88); line-height: 1.4; }
+  .prompt-plat { font-size: 10px; color: rgba(247,245,241,0.28); font-weight: 300; white-space: nowrap; }
+  .prompt-rank-tag { font-size: 13px; font-weight: 700; text-align: right; white-space: nowrap; min-width: 24px; }
+  .prompt-rank-tag.green { color: #7FD4A0; }
+  .prompt-rank-tag.gold  { color: #D4B56F; }
 
   @media (max-width: 768px) {
-    .prompt-grid { grid-template-columns: 1fr; gap: 8px; }
     .prompt-rankings-block { padding: 24px 20px 20px; }
+    .prompt-row { grid-template-columns: 1fr auto; gap: 12px; }
+    .prompt-plat { display: none; }
+    .prompt-text { font-size: 12px; }
   }
 </style>
 </head>
@@ -1540,70 +1540,64 @@
       <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:560px;">These are actual queries customers type into ChatGPT, Gemini, and Google AI — and where our clients appear right now.</p>
     </div>
     <div class="prompt-rankings-block reveal d1">
-      <p class="prompt-rankings-intro">Tracked across ChatGPT, Google Gemini, Google AI Overviews, and Perplexity. Rankings as of April–May 2026.</p>
-      <div class="prompt-grid">
-        <div class="prompt-card">
-          <div class="prompt-badge">ChatGPT</div>
-          <div class="prompt-q">"best physiotherapy clinic Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness</div>
+      <p class="prompt-rankings-intro">Verified across ChatGPT, Google Gemini, and Google AI Overviews — April–May 2026. Client names withheld for confidentiality.</p>
+
+      <!-- #1 Tier -->
+      <div class="prompt-tier">
+        <div class="prompt-tier-hd">
+          <span class="prompt-tier-pill green">Ranked #1</span>
+          <span class="prompt-tier-count">6 queries</span>
+        </div>
+        <div class="prompt-rows">
+          <div class="prompt-row green">
+            <span class="prompt-text">Best physiotherapy clinic Bangkok</span>
+            <span class="prompt-plat">ChatGPT · Physiotherapy</span>
+            <span class="prompt-rank-tag green">#1</span>
+          </div>
+          <div class="prompt-row green">
+            <span class="prompt-text">Best Botox Bangkok</span>
+            <span class="prompt-plat">Google Gemini · Aesthetics</span>
+            <span class="prompt-rank-tag green">#1</span>
+          </div>
+          <div class="prompt-row green">
+            <span class="prompt-text">Compare physiotherapy clinics in Bangkok</span>
+            <span class="prompt-plat">Google AI Overview · Physiotherapy</span>
+            <span class="prompt-rank-tag green">#1</span>
+          </div>
+          <div class="prompt-row green">
+            <span class="prompt-text">Lymphatic drainage massage Bangkok</span>
+            <span class="prompt-plat">ChatGPT · Gemini · Google · Physiotherapy</span>
+            <span class="prompt-rank-tag green">#1</span>
+          </div>
+          <div class="prompt-row green">
+            <span class="prompt-text">Best acupuncture Bangkok</span>
+            <span class="prompt-plat">AI Platforms · Physiotherapy</span>
+            <span class="prompt-rank-tag green">#1</span>
+          </div>
+          <div class="prompt-row green">
+            <span class="prompt-text">Best physio clinic Thailand</span>
+            <span class="prompt-plat">Google Gemini · Physiotherapy</span>
+            <span class="prompt-rank-tag green">#1</span>
           </div>
         </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">Google Gemini</div>
-          <div class="prompt-q">"best Botox Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Cosmo Clinic</div>
-          </div>
+      </div>
+
+      <!-- #2 Tier -->
+      <div class="prompt-tier">
+        <div class="prompt-tier-hd">
+          <span class="prompt-tier-pill gold">Ranked #2</span>
+          <span class="prompt-tier-count">2 queries</span>
         </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">Google AI Overview</div>
-          <div class="prompt-q">"compare physiotherapy clinics in Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness</div>
+        <div class="prompt-rows">
+          <div class="prompt-row gold">
+            <span class="prompt-text">Best fillers Bangkok</span>
+            <span class="prompt-plat">Google Gemini · Aesthetics</span>
+            <span class="prompt-rank-tag gold">#2</span>
           </div>
-        </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">Google Gemini</div>
-          <div class="prompt-q">"best fillers Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#2</div>
-            <div class="prompt-who">Cosmo Clinic</div>
-          </div>
-        </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">AI Platforms · Google</div>
-          <div class="prompt-q">"lymphatic drainage massage Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness · 322 AI citations</div>
-          </div>
-        </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">Google Gemini</div>
-          <div class="prompt-q">"best physio clinic Thailand"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness</div>
-          </div>
-        </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">AI Platforms · Google</div>
-          <div class="prompt-q">"best acupuncture Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness</div>
-          </div>
-        </div>
-        <div class="prompt-card">
-          <div class="prompt-badge">AI Platforms · Google</div>
-          <div class="prompt-q">"cupping therapy Bangkok"</div>
-          <div class="prompt-outcome">
-            <div class="prompt-rank">#1</div>
-            <div class="prompt-who">Form Recovery &amp; Wellness</div>
+          <div class="prompt-row gold">
+            <span class="prompt-text">Cupping therapy Bangkok</span>
+            <span class="prompt-plat">AI Platforms · Physiotherapy</span>
+            <span class="prompt-rank-tag gold">#2</span>
           </div>
         </div>
       </div>
