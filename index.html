@@ -973,6 +973,132 @@
     .prompt-col-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
     .prompt-text { font-size: 11px; }
   }
+
+  /* ── AIO EVIDENCE COMPONENTS ── */
+  .stat-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border-mid); border-radius: 8px;
+    background: var(--white); margin-top: 24px;
+  }
+  .ss-item { padding: 24px 26px; }
+  .ss-item + .ss-item { border-left: 1px solid var(--border); }
+  .ss-n {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    font-weight: 300; line-height: 1; color: var(--ink); letter-spacing: -0.01em;
+  }
+  .ss-l {
+    font-size: 11.5px; color: var(--ink-light); font-weight: 300;
+    line-height: 1.5; margin-top: 10px;
+  }
+
+  .engine-split {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;
+  }
+  .es-card {
+    background: var(--white); border: 1px solid var(--border-mid);
+    border-radius: 6px; padding: 22px 22px 20px;
+  }
+  .es-brand {
+    font-family: 'Cormorant Garamond', serif; font-size: 21px;
+    font-weight: 400; line-height: 1.2; margin-bottom: 3px;
+  }
+  .es-sub {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-light); font-weight: 500; margin-bottom: 18px;
+  }
+  .es-row { margin-bottom: 15px; }
+  .es-row:last-child { margin-bottom: 0; }
+  .es-eng {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11.5px; color: var(--ink-mid); margin-bottom: 6px;
+  }
+  .es-val { font-weight: 600; font-size: 14px; color: var(--ink); }
+  .es-track { height: 5px; background: var(--cream-dark); border-radius: 3px; overflow: hidden; }
+  .es-fill { height: 100%; border-radius: 3px; background: var(--terra); }
+  .es-fill.g { background: #3E7C5A; }
+  .es-note {
+    font-size: 10.5px; color: var(--ink-light); font-weight: 300;
+    line-height: 1.5; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .trend-block {
+    border: 1px solid var(--border-mid); border-radius: 8px;
+    padding: 30px 34px 26px; margin-top: 24px;
+  }
+  .tr-row { display: grid; grid-template-columns: 200px 1fr 128px; gap: 26px; align-items: center; padding: 18px 0; }
+  .tr-row + .tr-row { border-top: 1px solid var(--border); }
+  .tr-name { font-size: 13px; font-weight: 500; line-height: 1.35; }
+  .tr-name span { display: block; font-size: 10px; color: var(--ink-light); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+  .tr-bars { display: flex; align-items: flex-end; gap: 4px; height: 76px; }
+  .tr-bars { border-bottom: 1px solid var(--border-mid); }
+  .tr-bar { flex: 1; background: rgba(192,80,35,0.22); border-radius: 2px 2px 0 0; min-height: 3px; }
+  .tr-bar.first, .tr-bar.last { background: var(--terra); }
+  .tr-bar.hi { background: rgba(192,80,35,0.48); }
+  .tr-delta { text-align: right; }
+  .tr-d-n { font-family: 'Cormorant Garamond', serif; font-size: 27px; font-weight: 400; line-height: 1.05; white-space: nowrap; }
+  .tr-d-l { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-top: 4px; }
+
+  .ev-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+  .ev-item {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden; cursor: zoom-in;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .ev-item:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(26,25,24,0.1); }
+  .ev-item img { width: 100%; display: block; height: 170px; object-fit: cover; object-position: top left; }
+  .ev-body { padding: 14px 16px 18px; }
+  .ev-tag {
+    display: inline-block; font-size: 9px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 7px;
+  }
+  .ev-tag.before { color: #9B3232; }
+  .ev-tag.after  { color: #3E7C5A; }
+  .ev-cap { font-size: 11.5px; color: var(--ink-mid); font-weight: 300; line-height: 1.5; }
+
+  .conv-block {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px;
+    align-items: center; background: var(--ink); color: var(--white);
+    border-radius: 8px; padding: 44px 48px; margin-top: 24px;
+  }
+  .conv-big { font-family: 'Cormorant Garamond', serif; font-size: 84px; font-weight: 300; line-height: 0.95; color: var(--terra); }
+  .conv-big-l { font-size: 12.5px; color: rgba(247,245,241,0.62); font-weight: 300; line-height: 1.55; margin-top: 14px; }
+  .conv-copy p { font-size: 14px; color: rgba(247,245,241,0.82); font-weight: 300; line-height: 1.7; }
+  .conv-copy p + p { margin-top: 14px; }
+  .num-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+  .num-card {
+    background: var(--white); border: 1px solid var(--border-mid);
+    border-radius: 6px; padding: 22px 22px 24px;
+  }
+  .num-n {
+    font-family: 'Cormorant Garamond', serif; font-size: 34px;
+    font-weight: 300; line-height: 1; letter-spacing: -0.01em; color: var(--terra);
+  }
+  .num-n span { font-size: 17px; color: var(--ink-light); letter-spacing: 0; }
+  .num-l {
+    font-size: 11.5px; color: var(--ink-mid); font-weight: 300;
+    line-height: 1.6; margin-top: 12px;
+  }
+  .num-l strong { font-weight: 600; color: var(--ink); }
+  @media (max-width: 1024px) { .num-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px)  { .num-grid { grid-template-columns: 1fr; } }
+  .conv-copy em { font-style: normal; color: var(--white); font-weight: 500; }
+
+  @media (max-width: 900px) {
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .ss-item:nth-child(3) { border-left: none; }
+    .ss-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+    .engine-split { grid-template-columns: 1fr; }
+    .ev-strip { grid-template-columns: repeat(2, 1fr); }
+    .tr-row { grid-template-columns: 1fr; gap: 10px; }
+    .tr-delta { text-align: left; }
+    .conv-block { grid-template-columns: 1fr; gap: 28px; padding: 32px 26px; }
+    .conv-big { font-size: 62px; }
+    .trend-block { padding: 22px 18px 18px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1507,31 +1633,37 @@
     <div class="svc-header">
       <div class="reveal">
         <div class="label">Service 02</div>
-        <h2>SEO & <em>AI Visibility</em></h2>
+        <h2>SEO &amp; <em>AI Visibility</em></h2>
         <p class="intro">
-          Search is no longer just Google. An increasing share of product and service discovery now happens through AI platforms — ChatGPT, Gemini, Perplexity, and Google AI Overviews. Locully optimises for both.
+          Search is no longer just Google. An increasing share of product and service discovery now happens through AI platforms &mdash; ChatGPT, Gemini, Perplexity, and Google AI Overviews. Locully optimises for both.
         </p>
         <p class="intro" style="margin-top: 16px;">
-          We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation — and cause Google to rank you on page one.
+          We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation &mdash; and cause Google to rank you on page one. Then we measure it, every 72 hours, and show you the raw answers.
         </p>
         <div class="client-cards reveal">
           <div class="client-card" onclick="openCase('form-recovery')">
-            <div class="cc-service">SEO · AI Visibility</div>
-            <div class="cc-name">Form Recovery & Wellness</div>
-            <div class="cc-metric">9×</div>
-            <div class="cc-label">AI consultation growth in 6 months</div>
+            <div class="cc-service">SEO &middot; AI Visibility</div>
+            <div class="cc-name">Form Recovery &amp; Wellness</div>
+            <div class="cc-metric">40/mo</div>
+            <div class="cc-label">Paid consultations sourced from AI &mdash; from zero</div>
+          </div>
+          <div class="client-card" onclick="openCase('genesis')">
+            <div class="cc-service">SEO &middot; AI Visibility</div>
+            <div class="cc-name">IVF Clinic, Bangkok</div>
+            <div class="cc-metric">0 &rarr; 242</div>
+            <div class="cc-label">AI responses citing the clinic &middot; 2 months</div>
           </div>
           <div class="client-card" onclick="openCase('cosmo')">
-            <div class="cc-service">SEO · AI Visibility</div>
+            <div class="cc-service">SEO &middot; AI Visibility</div>
             <div class="cc-name">Cosmo Clinic</div>
-            <div class="cc-metric">#1</div>
-            <div class="cc-label">"Best Botox Bangkok" on Gemini AI</div>
+            <div class="cc-metric">2&times;</div>
+            <div class="cc-label">AI citation rate in 6 weeks</div>
           </div>
           <div class="client-card" onclick="openCase('ibrokers')">
-            <div class="cc-service">SEO · 12 Months</div>
+            <div class="cc-service">SEO &middot; 12 Months</div>
             <div class="cc-name">i-Brokers Insurance</div>
-            <div class="cc-metric">5×</div>
-            <div class="cc-label">Click growth · 1,030 → 5,180/month</div>
+            <div class="cc-metric">5&times;</div>
+            <div class="cc-label">Click growth &middot; 1,030 &rarr; 5,180/month</div>
           </div>
         </div>
       </div>
@@ -1541,187 +1673,378 @@
           <div class="svc-detail">
             <div class="svc-detail-num">Step 01</div>
             <h4>AI Visibility Audit</h4>
-            <p>We analyse your brand across all major AI platforms and benchmark it against competitors. This establishes a clear baseline and identifies the specific gaps driving missed recommendations.</p>
+            <p>We analyse your brand across all major AI platforms and benchmark it against competitors. This establishes a clear baseline and identifies the specific gaps driving missed recommendations &mdash; including the technical blocks most sites do not know they have.</p>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Step 02</div>
-            <h4>Technical & Content Foundation</h4>
+            <h4>Technical &amp; Content Foundation</h4>
             <p>On-page SEO, schema markup, and structured content specifically formatted to be cited by AI models. We build the pages that AI engines pull from when answering user queries.</p>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Step 03</div>
-            <h4>Authority & Backlink Building</h4>
+            <h4>Authority &amp; Backlink Building</h4>
             <p>Editorial placements on DR50+ publications, digital PR, and citation building across authoritative directories. The trust signals that AI and Google both require to recommend a source.</p>
           </div>
           <div class="svc-detail">
             <div class="svc-detail-num">Step 04</div>
-            <h4>Monitoring & Compounding</h4>
-            <p>Monthly tracking of AI citations, keyword positions, and organic traffic. Visibility compounds over time — each asset built continues to earn citations and rankings beyond the campaign period.</p>
+            <h4>Monitoring &amp; Compounding</h4>
+            <p>Every 72 hours we re-run your prompt set across live AI search and store the full answer text &mdash; not a score, the actual response. Visibility compounds: each asset built continues to earn citations and rankings beyond the campaign period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ MEASUREMENT INFRASTRUCTURE ══ -->
+    <div class="reveal" style="margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">How We Prove It</div>
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:640px; margin-bottom:14px;">Most agencies report AI visibility from a screenshot. We run a tracker.</h3>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
+        Locully operates its own AI visibility collector. Every 72 hours it puts each client&rsquo;s prompt set through live AI search, stores the complete answer, records whether the brand was named, where in the answer it appeared, and every competitor named alongside it. Clients log into the dashboard and read the raw responses themselves.
+      </p>
+    </div>
+    <div class="stat-strip reveal d1">
+      <div class="ss-item"><div class="ss-n">69</div><div class="ss-l">Commercial prompts tracked across three healthcare clients &mdash; the questions patients actually type</div></div>
+      <div class="ss-item"><div class="ss-n">1,104</div><div class="ss-l">Full AI answers captured and stored since 20 July 2026 &mdash; auditable, not summarised</div></div>
+      <div class="ss-item"><div class="ss-n">72h</div><div class="ss-l">Collection interval. Automated, versioned, and running whether or not anyone asks for a report</div></div>
+      <div class="ss-item"><div class="ss-n">2</div><div class="ss-l">Engines measured on their own terms &mdash; ChatGPT and Google AI Overviews behave differently</div></div>
+    </div>
+
+    <!-- ══ TWO-ENGINE MEASUREMENT ══ -->
+    <div class="reveal" style="margin-top: 64px;">
+      <div class="label" style="margin-bottom: 8px;">The Two-Engine Problem</div>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
+        ChatGPT <em style="font-style:normal;color:var(--ink);font-weight:500">names brands</em> in its answer. Google AI Overviews <em style="font-style:normal;color:var(--ink);font-weight:500">names almost none</em> &mdash; it cites source websites instead. Measure both with one metric and you will under-report one of them by 4&times;. We measure each engine on the signal it actually emits.
+      </p>
+    </div>
+    <div class="engine-split reveal d1">
+      <div class="es-card">
+        <div class="es-brand">Form Recovery &amp; Wellness</div>
+        <div class="es-sub">Physiotherapy &middot; Bangkok</div>
+        <div class="es-row">
+          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">50.6%</span></div>
+          <div class="es-track"><div class="es-fill" style="width:50.6%"></div></div>
+        </div>
+        <div class="es-row">
+          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">80.6%</span></div>
+          <div class="es-track"><div class="es-fill g" style="width:80.6%"></div></div>
+        </div>
+        <div class="es-note">Cited by Google&rsquo;s AI in 4 of every 5 answers in its category. On ChatGPT it is named outright in half.</div>
+      </div>
+      <div class="es-card">
+        <div class="es-brand">IVF Clinic, Bangkok</div>
+        <div class="es-sub">Fertility &middot; SET-listed</div>
+        <div class="es-row">
+          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">19.7%</span></div>
+          <div class="es-track"><div class="es-fill" style="width:19.7%"></div></div>
+        </div>
+        <div class="es-row">
+          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">36.7%</span></div>
+          <div class="es-track"><div class="es-fill g" style="width:36.7%"></div></div>
+        </div>
+        <div class="es-note">Two months in, from a standing start of zero on both engines. The trajectory matters more than the level.</div>
+      </div>
+      <div class="es-card">
+        <div class="es-brand">Cosmo Clinic</div>
+        <div class="es-sub">Aesthetics &middot; Bangkok</div>
+        <div class="es-row">
+          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">3.5%</span></div>
+          <div class="es-track"><div class="es-fill" style="width:3.5%"></div></div>
+        </div>
+        <div class="es-row">
+          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">42.6%</span></div>
+          <div class="es-track"><div class="es-fill g" style="width:42.6%"></div></div>
+        </div>
+        <div class="es-note">A 12&times; gap between engines in the same period. Report one number and you describe the wrong business.</div>
+      </div>
+    </div>
+    <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:14px; line-height:1.6; max-width:720px;">
+      Per-response exports, 25&ndash;30 August 2026. Rates are measured against each platform&rsquo;s own broad prompt set (83&ndash;137 responses per engine, per brand), so they are not comparable between clients &mdash; only between engines for the same client.
+    </p>
+
+    <!-- ══ TREND ══ -->
+    <div class="reveal" style="margin-top: 64px;">
+      <div class="label" style="margin-bottom: 8px;">Six Weeks, Measured Every 72 Hours</div>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
+        Share of tracked prompts where the client is named in the AI answer. Sixteen collection runs, 20 July &rarr; 31 August 2026. No cherry-picked window &mdash; every run we took, in order, dips included.
+      </p>
+    </div>
+    <div class="trend-block reveal d1">
+      <div class="tr-row">
+        <div class="tr-name">Form Recovery &amp; Wellness<span>22 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:35%" title="31.8%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:45%" title="40.9%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:66%" title="59.1%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar hi" style="height:86%" title="77.3%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar" style="height:61%" title="54.5%"></div><div class="tr-bar" style="height:76%" title="68.2%"></div><div class="tr-bar last" style="height:71%" title="63.6%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">36 &rarr; 64%</div><div class="tr-d-l">peak 77%</div></div>
+      </div>
+      <div class="tr-row">
+        <div class="tr-name">IVF Clinic, Bangkok<span>18 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:31%" title="27.8%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:37%" title="33.3%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar hi" style="height:93%" title="83.3%"></div><div class="tr-bar last" style="height:80%" title="72.2%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">28 &rarr; 72%</div><div class="tr-d-l">peak 83%</div></div>
+      </div>
+      <div class="tr-row">
+        <div class="tr-name">Cosmo Clinic<span>29 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:11%" title="10.3%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:34%" title="31.0%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar" style="height:31%" title="27.6%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar hi" style="height:46%" title="41.4%"></div><div class="tr-bar last" style="height:38%" title="34.5%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">17 &rarr; 35%</div><div class="tr-d-l">peak 41%</div></div>
+      </div>
+    </div>
+
+    <!-- ══ VERIFIED RANKINGS ══ -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Verified AI Placements</div>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:600px;">These are actual queries customers type into AI search &mdash; and where our clients were named in the answer on the most recent collection run.</p>
+    </div>
+    <div class="prompt-rankings-block reveal d1">
+      <p class="prompt-rankings-intro">Every placement from the collection run of <strong>31 August 2026</strong>, live AI search, across three clinical categories. Nothing selected, nothing reordered &mdash; this is the run.</p>
+
+      <div class="prompt-col-grid">
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill green">Physiotherapy &amp; TCM</span>
+            <span class="prompt-col-count">11 placements</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture in Bangkok for pain relief</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best English-speaking physiotherapist in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for sports injuries</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/17</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Lymphatic drainage after liposuction Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/13</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physiotherapy clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/19</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physiotherapist in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/9</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best lymphatic drainage massage in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Lymphatic drainage massage Bangkok price</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/10</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Physio clinic near Asoke BTS</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/9</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best cupping therapy in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/11</span></span></div>
+          </div>
+        </div>
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill gold">Fertility &amp; IVF</span>
+            <span class="prompt-col-count">8 placements</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row gold"><span class="prompt-text">Best IUI clinic in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best clinic for PGT-A testing in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/17</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">IUI Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/7</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best place for egg freezing in Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Egg freezing Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/26</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">ICSI Bangkok price</span><span class="prompt-rank-tag slate">8<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best fertility clinic in Thailand</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">IVF success rates Bangkok</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/25</span></span></div>
+          </div>
+        </div>
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill slate">Aesthetics</span>
+            <span class="prompt-col-count">6 placements</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best filler clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best skin whitening clinic in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/19</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best lip filler clinic in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best Ultherapy clinic in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/18</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best Ultherapy clinic in Bangkok for jowls</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/15</span></span></div>
           </div>
         </div>
 
       </div>
+      <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:20px; letter-spacing:0.02em;">
+        Reads as <strong style="color:var(--ink-mid)">position / providers named</strong> &mdash; &ldquo;1/16&rdquo; means named first out of sixteen clinics in that answer.
+        Row colour marks the band: <span style="color:#2F6B4A;font-weight:600">top 3</span> &middot;
+        <span style="color:#8A6A18;font-weight:600">4&ndash;5</span> &middot;
+        <span style="color:var(--ink-mid);font-weight:600">6+</span>.
+      </p>
+      </div>
+      <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:22px; padding-top:18px; border-top:1px solid var(--border); line-height:1.6;">
+        Full denominator, same run: <strong style="color:var(--ink-mid)">37 of 69 tracked prompts</strong> named a client in the answer. Across all sixteen runs, <strong style="color:var(--ink-mid)">21 prompts have been named first</strong> and 33 have placed in the top three at least once. We publish the misses alongside the wins &mdash; a tracker that only ever shows wins is not a tracker.
+      </p>
     </div>
 
-    <!-- AI Visibility Dashboard — enlarged with walkthrough -->
-    <div class="reveal d3" style="margin-top: 48px; margin-bottom: 16px;">
-      <div class="label" style="margin-bottom: 4px;">AI Visibility — Tracking Dashboard</div>
-      <p style="font-size:13px; color: var(--ink-light);">AI mention rate tracked across ChatGPT, Gemini, Perplexity, and Google AIO. Form Recovery & Wellness, Bangkok.</p>
+    <!-- ══ GENESIS CASE — BEFORE / AFTER ══ -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Case Evidence &mdash; IVF Clinic, Bangkok</div>
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:660px; margin-bottom:14px;">A SET-listed IVF clinic, invisible to every AI engine. The cause was four lines in a config file.</h3>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
+        A fertility clinic listed on the Stock Exchange of Thailand &mdash; 2,000+ patients a year, 60&ndash;65% ICSI success rate, three branches, a seven-doctor team. In June 2026 it appeared in <strong>zero</strong> AI answers on any engine. Not because the clinic was weak &mdash; because its <code style="font-family:ui-monospace,monospace;font-size:12.5px;background:var(--cream-dark);padding:1px 5px;border-radius:3px;">robots.txt</code> was blocking GPTBot, ClaudeBot, Google-Extended and CCBot from reading the site at all. A default setting nobody had chosen. We found it, specified the fix, and rebuilt the English content stack on top of it.
+      </p>
     </div>
-    <div class="db-2col reveal d3">
-      <div class="db-2col-img">
-        <img src="images/form/AIVisibilityGrowth.jpg" alt="AI visibility growth dashboard — 26.3% mention rate" onclick="lb(this.src)" onerror="this.parentNode.style.display='none'">
+    <div class="ev-strip reveal d1">
+      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/ivf-case/robots-ai-crawlers-blocked.jpg" alt="robots.txt blocking every AI crawler" onerror="this.parentNode.style.display='none'">
+        <div class="ev-body">
+          <span class="ev-tag before">Before &middot; the cause</span>
+          <div class="ev-cap">Eight AI crawlers set to <strong>Disallow: /</strong> &mdash; GPTBot, ClaudeBot, Google-Extended, CCBot and more. The models could not read the site.</div>
+        </div>
       </div>
-      <div class="db-2col-text">
-        <div class="db-walk-head">What this tracks</div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">26.3%</div>
-          <div class="db-walk-l">AI mention rate for "physiotherapy Bangkok" queries — cited in more than 1 in 4 AI responses, ahead of Bangkok Hospital</div>
+      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/ivf-case/chatgpt-client-absent.jpg" alt="ChatGPT top IVF clinics Bangkok - client absent" onerror="this.parentNode.style.display='none'">
+        <div class="ev-body">
+          <span class="ev-tag before">Before &middot; the effect</span>
+          <div class="ev-cap">&ldquo;Top IVF clinics in Bangkok&rdquo; on ChatGPT. Five clinics recommended. The SET-listed one is not among them.</div>
         </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">0 → 26%</div>
-          <div class="db-walk-l">Starting from zero AI presence. Within 6 months, the clinic became the category leader in AI recommendations across Bangkok</div>
+      </div>
+      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/ivf-case/ai-responses-0-to-242.jpg" alt="0 to 242 AI responses" onerror="this.parentNode.style.display='none'">
+        <div class="ev-body">
+          <span class="ev-tag after">After &middot; two months</span>
+          <div class="ev-cap"><strong>0 &rarr; 242 AI responses</strong> citing the clinic across 81 pages &mdash; 141 in Google AI Overviews, plus AI Mode, Perplexity, Copilot, ChatGPT and Gemini.</div>
         </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">5 platforms</div>
-          <div class="db-walk-l">Tracked across ChatGPT, Google Gemini, Perplexity, Google AI Overviews, and Claude — not just one channel</div>
+      </div>
+      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/ivf-case/gsc-jun-vs-aug.jpg" alt="Search Console June vs August" onerror="this.parentNode.style.display='none'">
+        <div class="ev-body">
+          <span class="ev-tag after">After &middot; two months</span>
+          <div class="ev-cap">Search Console, June vs August: impressions <strong>15.8K &rarr; 153K</strong>, clicks <strong>99 &rarr; 487</strong>, average position <strong>32.7 &rarr; 16.3</strong>.</div>
         </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">27/month</div>
-          <div class="db-walk-l">Paid consultations per month traced directly to AI referrals. Real bookings — not traffic estimates</div>
-        </div>
+      </div>
+    </div>
+    <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:14px; line-height:1.6; max-width:720px;">
+      August is a 28-day window against June&rsquo;s 30 &mdash; the growth is understated, not flattered. Engagement began 9 June 2026, so June is the pre-engagement baseline and the result represents two months of delivery.
+    </p>
+
+    <!-- ══ CONVERSION VALUE ══ -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Why It Is Worth Paying For</div>
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:660px; margin-bottom:14px;">Citations are the input. Booked, paid patients are the output.</h3>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
+        Every figure below is from one client &mdash; a Bangkok physiotherapy and wellness group &mdash; reconciled against its own sales ledger, consultation tracker and GA4. Not modelled, not estimated.
+      </p>
+    </div>
+    <div class="conv-block reveal d1">
+      <div>
+        <div class="conv-big">3.9&times;</div>
+        <div class="conv-big-l">AI-referred visitors convert 3.9&times; better than organic search visitors on the same site &mdash; 14.5% vs 3.7% session key-event rate, full-month GA4.</div>
+      </div>
+      <div class="conv-copy">
+        <p>Citation counts are a means, not an end. The reason AI visibility is worth budget is that the traffic arrives <em>pre-qualified</em> &mdash; the model has already answered the research question and endorsed you as the answer. What lands on your site is a decision, not a browse.</p>
+        <p>AI sessions stayed flat while AI conversions rose <em>60%</em> in the same month. That is a quality effect, not a volume effect &mdash; which is why we report a <em>rate</em>. A rate survives scrutiny.</p>
+        <p>The clinic went from <em>zero</em> AI-sourced paid consultations to a peak month of <em>38</em>, and now averages <em>40 a month</em>. Confirmed paid bookings &mdash; not leads, not clicks, not traffic estimates.</p>
       </div>
     </div>
 
-    <!-- Live AI Platform Screenshots -->
-    <div class="reveal d3" style="margin-top: 48px;">
+    <div class="reveal d1" style="margin-top: 20px;">
+      <div class="num-grid">
+        <div class="num-card">
+          <div class="num-n">40<span>/mo</span></div>
+          <div class="num-l">Paid consultations now sourced from AI each month, against zero a year earlier. Peak month to date: 38 during the ramp.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">฿694K&ndash;936K</div>
+          <div class="num-l">AI-sourced revenue in the first half of 2026 alone &mdash; <strong>100% incremental</strong>, because the channel did not exist twelve months earlier.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">96%</div>
+          <div class="num-l">Of AI-sourced patients are <strong>new to the clinic</strong>. This is pure discovery, not existing patients rerouting through a new channel.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">฿6,951</div>
+          <div class="num-l">Average value of an AI-sourced booking &mdash; within 1% of a Google-sourced booking (฿7,025). Same quality of patient, additional volume.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">22&ndash;30%</div>
+          <div class="num-l">Share of total clinic revenue now attributable to search and AI combined. Google-sourced consultations grew 5% year on year &mdash; <strong>AI supplied the growth.</strong></div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">54&ndash;57%</div>
+          <div class="num-l">Of AI-sourced patients are international visitors &mdash; the highest-value, hardest-to-reach segment, arriving without a baht of media spend.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">17.6%</div>
+          <div class="num-l">Share of voice across the category &mdash; the most-cited domain of any provider, <strong>4.3&times;</strong> the nearest single-clinic competitor.</div>
+        </div>
+        <div class="num-card">
+          <div class="num-n">4,009</div>
+          <div class="num-l">Organic clicks in July 2026 &mdash; the clinic&rsquo;s first 4,000-click month, +12% on June, with average position improving 8.44 &rarr; 7.79.</div>
+        </div>
+      </div>
+      <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:16px; line-height:1.6; max-width:760px;">
+        Sources: clinic sales ledger (11,942 transactions, Jan&ndash;Jun 2026), consultation tracker, GA4 channel export, Google Search Console, and AI prompt-response exports. Client anonymised at their request. Revenue figures are gross revenue, not margin.
+      </p>
+    </div>
+
+    <!-- ══ LIVE SCREENSHOTS ══ -->
+    <div class="reveal" style="margin-top: 64px;">
       <div class="label" style="margin-bottom: 8px;">Live AI Platform Screenshots</div>
-      <p style="font-size:13px; color: var(--ink-light);">Form Recovery & Wellness and Cosmo Clinic, Bangkok. Click to enlarge.</p>
+      <p style="font-size:13px; color: var(--ink-light);">Client answers captured directly from the platforms. Click to enlarge.</p>
     </div>
-    <div class="proof-grid reveal d3" style="grid-template-columns: repeat(3,1fr);">
+    <div class="proof-grid reveal d1" style="grid-template-columns: repeat(3,1fr); margin-top: 20px;">
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
         <img src="images/form/chatgptbestphysiojan.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">ChatGPT</span>
-          <div class="proof-desc">"Best physiotherapy clinic Bangkok" — Client ranked #1</div>
+          <div class="proof-desc">&ldquo;Best physiotherapy clinic Bangkok&rdquo; &mdash; client named first</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
         <img src="images/form/physiothgemini.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Google Gemini</span>
-          <div class="proof-desc">"Best physio clinic Thailand" — listed first with full detail</div>
+          <div class="proof-desc">&ldquo;Best physio clinic Thailand&rdquo; &mdash; listed first with full detail</div>
         </div>
       </div>
       <div class="proof-item" onclick="lb(this.querySelector('img').src)">
         <img src="images/cosmo/bestfillersjan.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
         <div class="proof-cap">
           <span class="proof-platform">Google AI Overview</span>
-          <div class="proof-desc">"Best fillers Bangkok" — Cosmo Clinic recommended</div>
+          <div class="proof-desc">&ldquo;Best fillers Bangkok&rdquo; &mdash; aesthetic clinic recommended</div>
         </div>
       </div>
     </div>
 
-    <!-- AI Prompt Rankings -->
-    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Verified AI Rankings</div>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:560px;">These are actual queries customers type into ChatGPT, Gemini, and Google AI — and where our clients appear right now.</p>
+    <!-- ══ DASHBOARD ══ -->
+    <div class="reveal d1" style="margin-top: 64px; margin-bottom: 16px;">
+      <div class="label" style="margin-bottom: 4px;">Client Dashboard &mdash; What You Log Into</div>
+      <p style="font-size:13px; color: var(--ink-light);">Every client gets their own login. Prompts, positions, competitors, and the full stored answer text &mdash; not a monthly PDF. Example client view; figures shown are from the date on the panel, not today.</p>
     </div>
-    <div class="prompt-rankings-block reveal d1">
-      <p class="prompt-rankings-intro">Verified across ChatGPT, Google Gemini, and Google AI Overviews — April–May 2026. Client names withheld for confidentiality.</p>
-
-      <div class="prompt-col-grid">
-
-        <!-- TOP 3 -->
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill green">Top 3</span>
-            <span class="prompt-col-count">13 queries</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row green"><span class="prompt-text">Best physiotherapy clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Compare physiotherapy clinics Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Lymphatic drainage massage Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best acupuncture Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physio clinic Thailand</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best Botox clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best lip filler clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Ultherapy Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">HIFU treatment Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best skin whitening clinic Bangkok</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Skin whitening treatment Bangkok price</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best Ultherapy clinic Bangkok for jowls</span><span class="prompt-rank-tag green">#1</span></div>
-            <div class="prompt-row green"><span class="prompt-text">Cupping therapy Bangkok</span><span class="prompt-rank-tag green">#2</span></div>
-          </div>
+    <div class="db-2col reveal d1">
+      <div class="db-2col-img">
+        <img src="images/form/AIVisibilityGrowth.jpg" alt="AI visibility growth dashboard" onclick="lb(this.src)" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="db-2col-text">
+        <div class="db-walk-head">What this tracks</div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Every prompt</div>
+          <div class="db-walk-l">Your full commercial prompt set, re-run every 72 hours &mdash; the questions your patients actually ask, not vanity keywords</div>
         </div>
-
-        <!-- TOP 5 -->
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill gold">Top 5</span>
-            <span class="prompt-col-count">11 queries</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row gold"><span class="prompt-text">Post-operative physiotherapy Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Sports physiotherapy Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Physio Asoke Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">IV drip Bangkok price</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best Ultherapy clinic Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best HIFU clinic Bangkok</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best filler clinic Bangkok for under-eyes</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">#4</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best vitamin IV therapy Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best non-surgical facelift Bangkok</span><span class="prompt-rank-tag gold">#5</span></div>
-          </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Position, not presence</div>
+          <div class="db-walk-l">Being named 20th of 34 is not the same as being named first. We record where in the answer you appear and how many rivals appear with you</div>
         </div>
-
-        <!-- TOP 10 -->
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill slate">Top 10</span>
-            <span class="prompt-col-count">10 queries</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row slate"><span class="prompt-text">Physiotherapist Bangkok</span><span class="prompt-rank-tag slate">#6</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Dry needling Bangkok</span><span class="prompt-rank-tag slate">#6</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Lymphatic drainage water retention Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Physio Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best beauty clinic Bangkok</span><span class="prompt-rank-tag slate">#7</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best filler clinic Bangkok</span><span class="prompt-rank-tag slate">#8</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best IV drip clinic Bangkok</span><span class="prompt-rank-tag slate">#8</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Lip filler Bangkok price</span><span class="prompt-rank-tag slate">#8</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best NAD+ IV therapy Bangkok</span><span class="prompt-rank-tag slate">#9</span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best clinic for skin rejuvenation Bangkok</span><span class="prompt-rank-tag slate">#9</span></div>
-          </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Competitor set</div>
+          <div class="db-walk-l">Every brand the model named alongside you, on every run &mdash; so you can see exactly who is taking the recommendation</div>
         </div>
-
+        <div class="db-walk-item">
+          <div class="db-walk-n">The raw answer</div>
+          <div class="db-walk-l">The complete stored response text. If a number in your report looks wrong, you can read the source and check it yourself</div>
+        </div>
       </div>
     </div>
 
-    <!-- Local SEO Results — client cards -->
+    <!-- ══ LOCAL SEO ══ -->
     <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Local SEO — Organic Ranking Results</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">F&B and healthcare clients in Bangkok and Pattaya. Click a card to see full results.</p>
+      <div class="label" style="margin-bottom: 8px;">Local SEO &mdash; Organic Ranking Results</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">F&amp;B and healthcare clients in Bangkok and Pattaya. Click a card to see full results.</p>
     </div>
     <div class="client-cards reveal" style="margin-top: 24px; border-top: none; padding-top: 0;">
       <div class="client-card" onclick="openCase('eatali')">
-        <div class="cc-service">Local SEO · Pattaya</div>
+        <div class="cc-service">Local SEO &middot; Pattaya</div>
         <div class="cc-name">Italian Restaurant, Pattaya</div>
         <div class="cc-metric">Top 3</div>
-        <div class="cc-label">"Italian restaurant pattaya"</div>
+        <div class="cc-label">&ldquo;Italian restaurant pattaya&rdquo;</div>
       </div>
       <div class="client-card" onclick="openCase('amorretto')">
-        <div class="cc-service">Local SEO · Google Maps</div>
-        <div class="cc-name">Café & Bar, Bangkok</div>
+        <div class="cc-service">Local SEO &middot; Google Maps</div>
+        <div class="cc-name">Caf&eacute; &amp; Bar, Bangkok</div>
         <div class="cc-metric">+80%</div>
         <div class="cc-label">Google Maps visibility growth</div>
       </div>
       <div class="client-card" onclick="openCase('form-recovery')">
-        <div class="cc-service">SEO · Healthcare · Bangkok</div>
+        <div class="cc-service">SEO &middot; Healthcare &middot; Bangkok</div>
         <div class="cc-name">Physiotherapy Clinic</div>
-        <div class="cc-metric">19%</div>
-        <div class="cc-label">Keywords in Top 5 within 3 weeks</div>
+        <div class="cc-metric">4,009</div>
+        <div class="cc-label">Organic clicks in July 2026 &mdash; first 4K month</div>
       </div>
     </div>
   </div>
@@ -2058,19 +2381,24 @@
       name: 'Physiotherapy Clinic, Bangkok',
       sub: 'Bangkok, Thailand · Physiotherapy & Wellness',
       before: [
-        '3 paid consultations per month from online search — a clinic with excellent clinical results and zero digital presence',
+        'Zero paid consultations sourced from AI search — a clinic with excellent clinical results, 4.9★ from 730+ Google reviews, and no presence in the answers patients were actually reading',
         'Every AI platform sent patients elsewhere: ChatGPT cited Bangkok Hospital, Gemini listed hospital chains, Google AIO returned competitors',
         'Physiotherapy is a high-LTV service — each missed patient represents ฿8,000–20,000+ in lost consultation revenue'
       ],
       after: [
-        '27 paid consultations per month — 9× growth in 6 months — each additional consultation direct consultation revenue recovered from AI platforms',
-        '100% AI visibility across all 129 tracked physiotherapy prompts — clinic appears in every relevant ChatGPT, Gemini, and Google AIO response',
-        '190 AI responses citing the clinic across 59 pages · 221 ChatGPT crawl events in April alone (all-time high)',
-        'Lymphatic drainage cluster: 92% AI visibility · 322 total AI citations · average rank #2 across all platforms',
-        'expatsinbangkok.com guide generated 70 additional AI citations — amplification beyond the clinic\'s own pages',
-        '+32% more calls and direction requests month-on-month (181 → 239 monthly click-to-call events)'
+        'From zero to a peak of 38 AI-sourced paid consultations in a single month, now averaging 40 a month — confirmed paid bookings, not leads, not clicks',
+        'AI-referred visitors convert 3.9× better than organic — 14.5% vs 3.7% session key-event rate (full-month GA4). AI sessions stayed flat while AI conversions rose 60%',
+        'Named in 4 of 5 Google AI Overview answers in its category (80.6% domain citation rate) and named outright in half of all ChatGPT answers (50.6%)',
+        'Named FIRST in the AI answer on 5 of its highest-intent queries — including "best English-speaking physiotherapist in Bangkok" (1st of 16 clinics named) and "best physio clinic in Bangkok for sports injuries" (1st of 17)',
+        'Tracker share of prompts named rose 36% → 64% over six weeks of 72-hour collection runs, peaking at 77% — in a category dominated by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani',
+        '4,009 organic clicks in July 2026 — the clinic\'s first 4,000-click month · 284 ChatGPT crawl visits across 68 pages in the same month',
+        '155 AI citations across 39 of the clinic\'s own pages, plus 47 third-party citations from 11 external domains — WhatClinic 20 answers, GoWabi 14, Reddit 13, Instagram 11',
+        '฿694K–936K in AI-sourced revenue in H1 2026 alone — 100% incremental, because the channel did not exist a year earlier. Search and AI combined now represent 22–30% of total clinic revenue',
+        '96% of AI-sourced patients are new to the clinic and 54–57% are international visitors — pure discovery, in the highest-value segment, with zero media spend',
+        'An AI-sourced booking is worth ฿6,951 against a Google-sourced booking at ฿7,025 — parity on value, entirely additional on volume',
+        '17.6% category share of voice — the most-cited domain of any provider in the category, 4.3× the nearest single-clinic competitor'
       ],
-      metrics: [['9×','Paid consultation\ngrowth in 6 months'],['100%','AI visibility across\nall physio prompts'],['322','Lymphatic AI\ncitations']]
+      metrics: [['40/mo','AI-sourced paid\nconsultations, from zero'],['3.9×','AI converts better\nthan organic'],['฿694K+','AI-sourced revenue\nH1 2026, incremental']]
     },
     'cosmo': {
       svc: 'AI Visibility · Search Optimisation · Aesthetics · Bangkok',
@@ -2087,9 +2415,32 @@
         '95 Google AIO citation instances across 8 treatment clusters · +373% sessions from ChatGPT (331 in Mar–Apr)',
         'Form completion rate: 41% → 68% — more enquiries, higher intent, fewer drop-offs',
         'ExpatsinBangkok referral channel: 5 → 32 sessions (+540%) with 6.25% booking conversion rate',
-        '+83.5% total sessions · +42% organic clicks · +229% key booking events — all from organic and AI, no paid ads'
+        '+83.5% total sessions · +42% organic clicks · +229% key booking events — all from organic and AI, no paid ads',
+        'Cited in 42.6% of Google AI Overview answers in its category — the clinic\'s AI presence sits almost entirely on Google, a 12× gap against ChatGPT that would be invisible to a single-engine report',
+        '#3 aesthetic clinic in Bangkok by total AI citations — 150 AI responses across 28 pages, ahead of every aggregator in the category',
+        'Tracker share of prompts named doubled — 17% → 35% over six weeks — while the DR 73 editorial placement (highest in the clinic\'s history) went live'
       ],
-      metrics: [['+357%','Form submissions\nin one month'],['26/31','AI prompts\nciting clinic'],['฿15–50K+','Per procedure\nrevenue per enquiry']]
+      metrics: [['+357%','Form submissions\nin one month'],['42.6%','Google AI Overview\ncitation rate'],['#3','Aesthetic clinic in\nBangkok by AI citations']]
+    },
+    'genesis': {
+      svc: 'AI Visibility · Search Optimisation · Fertility · Bangkok',
+      name: 'IVF Clinic, Bangkok',
+      sub: 'Bangkok, Thailand · Fertility & IVF · SET-listed',
+      before: [
+        'A fertility clinic listed on the Stock Exchange of Thailand — 2,000+ patients a year, 60–65% ICSI success rate, 3 branches, 7 doctors — appearing in zero AI answers on any engine',
+        'robots.txt was blocking GPTBot, ClaudeBot, Google-Extended, CCBot and four more AI crawlers with Disallow: / — a Cloudflare default nobody had chosen. The models could not read the site at all',
+        'Ahrefs read 0 AI Overview citations, 0 ChatGPT, 0 Perplexity, 0 Gemini. "Top IVF clinics in Bangkok" on ChatGPT named five clinics; the SET-listed one was not among them',
+        'English pages served Thai body copy. Core Web Vitals failed at 21/100. 15.8K monthly impressions and 99 clicks across the entire English site'
+      ],
+      after: [
+        '0 → 242 AI responses citing the clinic across 81 pages in two months — 141 of them in Google AI Overviews, plus Google AI Mode, Perplexity, Copilot, ChatGPT and Gemini',
+        'Search Console, June vs August: impressions 15.8K → 153K (×9.7), clicks 99 → 487 (×4.9), average position 32.7 → 16.3 — and August is a 28-day window against June\'s 30, so the growth is understated',
+        'Tracker share of prompts named rose 28% → 72% over six weeks, peaking at 83% — the fastest ramp of any client on the tracker',
+        'Named in the AI answer on 13 of 18 tracked fertility prompts, including "best IUI clinic in Bangkok" (4th of 16) and "best clinic for PGT-A testing in Bangkok" (5th of 17)',
+        'Has been named FIRST at least once on 10 separate commercial prompts — including "best IVF clinic in Bangkok", "best ICSI clinic in Bangkok" and "egg freezing Bangkok price"',
+        'Real enquiries now arriving through the AI-cited directory profiles built during the engagement — WhatClinic and PlacidWay among them'
+      ],
+      metrics: [['0 → 242','AI responses citing\nthe clinic'],['×9.7','Search impressions\nin 2 months'],['↑16.4','Average position\n32.7 → 16.3']]
     },
     'ibrokers': {
       svc: 'Search Optimisation · Insurance · 12 Months',
