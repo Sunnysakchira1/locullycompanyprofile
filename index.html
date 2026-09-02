@@ -571,24 +571,22 @@
     display: none; position: fixed; inset: 0;
     background: rgba(26,25,24,0.9); z-index: 1001;
     align-items: flex-start; justify-content: center;
-    padding: 60px 20px 40px; overflow-y: auto;
+    padding: 48px 20px 40px; overflow-y: auto;
   }
   #cs-modal.on { display: flex; }
   .cs-inner {
     background: var(--white); border-radius: 6px;
-    max-width: 660px; width: 100%; position: relative; overflow: hidden;
+    max-width: 820px; width: 100%; position: relative; overflow: hidden;
     margin: auto;
   }
-  .cs-head {
-    background: var(--ink); padding: 32px 36px 28px;
-  }
+  .cs-head { background: var(--ink); padding: 34px 40px 0; }
   .cs-svc-tag {
     font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--terra); margin-bottom: 10px;
   }
   .cs-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 30px; font-weight: 600; color: var(--white); line-height: 1.05; margin-bottom: 6px;
+    font-size: 32px; font-weight: 600; color: var(--white); line-height: 1.05; margin-bottom: 6px;
   }
   .cs-subtitle { font-size: 13px; color: rgba(247,245,241,0.38); font-weight: 300; }
   #cs-close {
@@ -596,41 +594,129 @@
     font-size: 26px; color: rgba(247,245,241,0.35); cursor: pointer; transition: color 0.2s; z-index: 2;
   }
   #cs-close:hover { color: var(--white); }
-  .cs-body { padding: 32px 36px 36px; }
-  .cs-ba {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-    background: var(--border); border: 1px solid var(--border-mid); border-radius: 4px;
-    overflow: hidden; margin-bottom: 24px;
+
+  /* ── HERO: one number, dominant ── */
+  .cs-hero {
+    margin-top: 30px; padding: 26px 0 30px;
+    border-top: 1px solid rgba(247,245,241,0.12);
+    display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: center;
   }
-  .cs-before, .cs-after { padding: 22px 22px 18px; }
-  .cs-before { background: var(--white); }
-  .cs-after { background: var(--cream); }
-  .cs-ba-lbl {
-    font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-    margin-bottom: 12px;
+  .cs-hero-n {
+    font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 300;
+    line-height: 0.92; color: var(--terra); letter-spacing: -0.015em; white-space: nowrap;
   }
-  .cs-before .cs-ba-lbl { color: var(--ink-light); }
-  .cs-after .cs-ba-lbl { color: var(--terra); }
-  .cs-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .cs-list li { font-size: 13px; color: var(--ink-mid); line-height: 1.5; font-weight: 300; padding-left: 14px; position: relative; }
-  .cs-list li::before { content: '·'; position: absolute; left: 0; color: var(--ink-light); }
-  .cs-after .cs-list li::before { color: var(--terra); }
-  .cs-metrics-row {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-    border: 1px solid var(--border-mid); border-radius: 4px; overflow: hidden;
+  .cs-hero-l { font-size: 14px; color: var(--white); font-weight: 500; line-height: 1.4; }
+  .cs-hero-d { font-size: 12.5px; color: rgba(247,245,241,0.55); font-weight: 300; line-height: 1.6; margin-top: 7px; }
+
+  .cs-body { padding: 30px 40px 34px; }
+  .cs-sec + .cs-sec { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .cs-sec-lbl {
+    font-size: 9.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 16px; display: flex; align-items: baseline; gap: 12px;
   }
-  .cs-m { padding: 18px 12px; text-align: center; border-right: 1px solid var(--border); }
-  .cs-m:last-child { border-right: none; }
-  .cs-mn { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--terra); line-height: 1; letter-spacing: -0.5px; margin-bottom: 5px; }
-  .cs-ml { font-size: 11px; color: var(--ink-light); line-height: 1.4; }
-  @media (max-width: 600px) {
-    .cs-ba { grid-template-columns: 1fr; }
-    .cs-metrics-row { grid-template-columns: 1fr 1fr; }
-    .cs-m:nth-child(3) { grid-column: 1/-1; border-right: none; border-top: 1px solid var(--border); }
-    .cs-body { padding: 24px 20px; }
-    .cs-head { padding: 24px 20px; }
-    .client-cards { grid-template-columns: repeat(2, 1fr); }
+  .cs-sec-note {
+    font-size: 9px; letter-spacing: 0.08em; text-transform: none;
+    color: var(--ink-light); font-weight: 400;
   }
+  .cs-sit { font-size: 13.5px; color: var(--ink-mid); font-weight: 300; line-height: 1.75; }
+
+  /* ── SHIFT ROWS ── */
+  .cs-shift { border: 1px solid var(--border-mid); border-radius: 5px; overflow: hidden; }
+  .cs-r {
+    display: grid; grid-template-columns: 1.15fr 1fr 22px 1.15fr;
+    gap: 14px; align-items: center;
+    padding: 13px 18px; background: var(--white);
+  }
+  .cs-r + .cs-r { border-top: 1px solid var(--border); }
+  .cs-r:hover { background: var(--cream); }
+  .cs-r-k { font-size: 11.5px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+  .cs-r-b {
+    font-size: 12px; color: var(--ink-light); font-weight: 300; line-height: 1.4;
+  }
+  .cs-r-arrow { color: var(--border-mid); font-size: 13px; text-align: center; }
+  .cs-r-a {
+    font-size: 12.5px; color: var(--ink); font-weight: 600; line-height: 1.4;
+  }
+  .cs-r-a em { font-style: normal; color: var(--terra); }
+  .cs-src {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 5px; font-size: 8.5px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-light); background: var(--cream-dark);
+    padding: 2px 6px; border-radius: 3px; border: none;
+    font-family: inherit; cursor: default;
+  }
+  button.cs-src { cursor: pointer; color: var(--terra); background: rgba(192,80,35,0.10); transition: background 0.18s; }
+  button.cs-src:hover { background: rgba(192,80,35,0.20); }
+
+  /* ── EVIDENCE ── */
+  .cs-ev { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .cs-ev-item {
+    border: 1px solid var(--border); border-radius: 5px; overflow: hidden;
+    background: var(--cream); cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cs-ev-item:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(26,25,24,0.1); }
+  .cs-ev-item img { width: 100%; display: block; height: 130px; object-fit: cover; object-position: top left; }
+  .cs-ev-b { padding: 12px 14px 15px; }
+  .cs-ev-t {
+    font-size: 8.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 6px;
+  }
+  .cs-ev-c { font-size: 11px; color: var(--ink-mid); font-weight: 300; line-height: 1.5; }
+  .cs-ev-c strong { font-weight: 600; color: var(--ink); }
+
+  /* ── WORK ── */
+  .cs-work { list-style: none; counter-reset: w; }
+  .cs-work li {
+    counter-increment: w; position: relative; padding-left: 34px;
+    font-size: 12.5px; color: var(--ink-mid); font-weight: 300; line-height: 1.7;
+  }
+  .cs-work li + li { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .cs-work li::before {
+    content: counter(w,decimal-leading-zero);
+    position: absolute; left: 0; top: 0;
+    font-family: 'Cormorant Garamond', serif; font-size: 15px;
+    color: var(--terra); font-weight: 600;
+  }
+  .cs-work li + li::before { top: 14px; }
+  .cs-work code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px;
+    background: var(--cream-dark); padding: 1px 5px; border-radius: 3px; color: var(--ink);
+  }
+
+  /* ── SUPPORTING NUMBERS ── */
+  .cs-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .cs-num {
+    background: var(--cream); border: 1px solid var(--border); border-radius: 5px;
+    padding: 16px 16px 18px;
+  }
+  .cs-num-n {
+    font-family: 'Cormorant Garamond', serif; font-size: 27px; font-weight: 400;
+    line-height: 1; color: var(--terra); letter-spacing: -0.01em;
+  }
+  .cs-num-l { font-size: 10.5px; color: var(--ink-mid); font-weight: 300; line-height: 1.55; margin-top: 8px; }
+
+  .cs-foot {
+    margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--border);
+    font-size: 10.5px; color: var(--ink-light); font-weight: 300; line-height: 1.6;
+  }
+
+  @media (max-width: 760px) {
+    #cs-modal { padding: 20px 12px; }
+    .cs-head { padding: 26px 22px 0; }
+    .cs-body { padding: 24px 22px 28px; }
+    .cs-title { font-size: 26px; }
+    .cs-hero { grid-template-columns: 1fr; gap: 14px; margin-top: 22px; padding: 20px 0 24px; }
+    .cs-hero-n { font-size: 46px; white-space: normal; }
+    .cs-r { grid-template-columns: 1fr; gap: 6px; padding: 15px 15px 17px; }
+    .cs-r-arrow { display: none; }
+    .cs-r-k { font-size: 12px; margin-bottom: 3px; }
+    .cs-r-b::before { content: 'Before — '; color: var(--ink-light); font-weight: 500; }
+    .cs-r-a::before { content: 'After — '; color: var(--terra); font-weight: 600; }
+    .cs-ev, .cs-nums { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) { .client-cards { grid-template-columns: repeat(2, 1fr); } }
 
   /* ── SCROLL REVEAL ── */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -2191,19 +2277,36 @@
       <div class="cs-svc-tag" id="cs-svc"></div>
       <div class="cs-title" id="cs-name"></div>
       <div class="cs-subtitle" id="cs-sub"></div>
+      <div class="cs-hero" id="cs-hero"></div>
     </div>
     <div class="cs-body">
-      <div class="cs-ba">
-        <div class="cs-before">
-          <div class="cs-ba-lbl">Before</div>
-          <ul class="cs-list" id="cs-before"></ul>
-        </div>
-        <div class="cs-after">
-          <div class="cs-ba-lbl">After</div>
-          <ul class="cs-list" id="cs-after"></ul>
-        </div>
+
+      <div class="cs-sec" id="cs-sit-wrap">
+        <div class="cs-sec-lbl">The situation</div>
+        <p class="cs-sit" id="cs-sit"></p>
       </div>
-      <div class="cs-metrics-row" id="cs-metrics"></div>
+
+      <div class="cs-sec">
+        <div class="cs-sec-lbl">The shift<span class="cs-sec-note">every line traceable to its source</span></div>
+        <div class="cs-shift" id="cs-shift"></div>
+      </div>
+
+      <div class="cs-sec" id="cs-ev-wrap">
+        <div class="cs-sec-lbl">The evidence<span class="cs-sec-note">click to enlarge</span></div>
+        <div class="cs-ev" id="cs-ev"></div>
+      </div>
+
+      <div class="cs-sec" id="cs-work-wrap">
+        <div class="cs-sec-lbl">What we did</div>
+        <ol class="cs-work" id="cs-work"></ol>
+      </div>
+
+      <div class="cs-sec" id="cs-nums-wrap">
+        <div class="cs-sec-lbl">Supporting numbers</div>
+        <div class="cs-nums" id="cs-nums"></div>
+      </div>
+
+      <div class="cs-foot" id="cs-foot"></div>
     </div>
   </div>
 </div>
@@ -2254,223 +2357,362 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLb(); closeCase(); } });
 
   // Case study data
+  // shift rows: [dimension, before, after, sourceCode, evidenceIndex|null]
+  const SRC = {
+    GSC:  'Google Search Console',
+    GA4:  'Google Analytics 4',
+    AH:   'Ahrefs',
+    TRK:  'Locully AI tracker — stored answers',
+    AMP:  'Amplitude per-response export',
+    LED:  'Client sales ledger',
+    GADS: 'Google Ads',
+    META: 'Meta Ads Manager',
+    SERP: 'Live SERP & Maps check',
+    SITE: 'Live site audit'
+  };
+
   const CASES = {
-    'hotel-pattaya': {
-      svc: 'Meta Ads · Hospitality · 18+ Month Campaign',
-      name: 'Hotel, Pattaya',
-      sub: 'Pattaya, Thailand · Direct Bookings',
-      before: [
-        'Every reservation routed through Agoda or Booking.com — hotel paid 15–20% OTA commission on every booking',
-        'No owned channel to capture demand before guests booked through an intermediary',
-        'Seasonal peaks not captured — high-margin direct revenue left on the table every quarter'
-      ],
-      after: [
-        '5,291 direct guest enquiries generated — each one bypassing OTA commission entirely',
-        '฿30,000/month in ad spend generating ฿150,000–180,000 in direct booking revenue — 5–6× ROAS',
-        '20% increase in direct bookings — every converted guest improved net margin vs OTA rate',
-        '฿66 cost per direct enquiry — well below Thai hospitality benchmarks',
-        '18+ month campaign — seasonal peaks actively captured and managed in real time'
-      ],
-      metrics: [['5,291','Direct guest\nenquiries'],['5–6×','ROAS · ฿30K spend\n→ ฿150–180K revenue'],['฿66','Cost per\ndirect enquiry']]
-    },
-    'achyut-pattaya': {
-      svc: 'Google Ads · Google Maps · F&B',
-      name: 'Indian Restaurant, Pattaya',
-      sub: 'Pattaya, Thailand · South Indian Restaurant',
-      before: [
-        'Pattaya\'s Indian restaurant cluster is dense — walk-ins defaulted to whoever appeared first on Maps',
-        'Invisible for the searches that drove the most foot traffic: "indian restaurant near me," "dosa near me"',
-        'Tourist and expat demand was there — but it was going to competitors every day'
-      ],
-      after: [
-        '3,350 conversions in a single month — directions, calls, and Maps interactions attributed to Google Ads',
-        'Assuming 10 conversions = 1 in-store visit → 350+ estimated in-store visits driven by Google Ads',
-        '฿3 cost per conversion → ฿30 cost per IN-STORE VISIT — one of the lowest acquisition costs in Thai F&B',
-        '2,608% ROAS — ฿26 in measurable revenue returned for every ฿1 in ad spend',
-        'Google Maps drove 60% of all conversions — restaurant became the default for Indian food searches in Pattaya'
-      ],
-      metrics: [['3,350','Tracked\nconversions/month'],['350+','Estimated\nin-store visits'],['฿30','Cost per\nin-store visit']]
-    },
-    'achyut-bangkok': {
-      svc: 'Google Ads · Google Maps · F&B',
-      name: 'Indian Restaurant, Bangkok',
-      sub: 'Sukhumvit, Bangkok · South Indian Restaurant',
-      before: [
-        'New Sukhumvit location competing in Bangkok\'s crowded restaurant market with zero online visibility',
-        'Missing every high-value niche search: dosa, south Indian food, pure veg — all flowing to competitors',
-        '฿4K monthly budget with no structure, no attribution, and no measurable revenue from digital spend'
-      ],
-      after: [
-        '952 customers acquired in a single month on ฿4,000 in spend — cost fully covered by a fraction of table revenue',
-        '65% overall conversion rate — 65 in every 100 ad interactions turned into a visit, call, or direction',
-        '"Dosa in Bangkok" at ฿0.29 per customer · "South Indian food near me" at 200% conversion rate',
-        '฿4.34 per customer acquired — restaurant now owns the niche South Indian category in Bangkok'
-      ],
-      metrics: [['952','Customers/month'],['฿4.34','Acquisition\ncost'],['65%','Conversion\nrate']]
-    },
-    'amorretto': {
-      svc: 'Google Ads · Local SEO · F&B',
-      name: 'Café & Bar, Bangkok',
-      sub: 'Phattanakarn, Bangkok · Italian Bistro',
-      before: [
-        'Strong food — but invisible to the customers searching for Italian bistro in Bangkok',
-        'Few inbound calls or walk-ins from online channels. Relying on word-of-mouth for new tables',
-        'Competitors with weaker menus were filling seats because they appeared on Maps first'
-      ],
-      after: [
-        '+80% more customers finding the restaurant via Google Maps',
-        '+50% increase in direct calls to book — measurable new reservation volume',
-        'Top 3 for "Italian food," "Italian bistro Bangkok," "Italian restaurant near me"',
-        '1,497% ROAS on Google Ads — paid advertising became the highest-return channel'
-      ],
-      metrics: [['1,497%','ROAS'],['+80%','More customers\nfrom Maps'],['+50%','Increase in\nbookings']]
-    },
-    'eatali': {
-      svc: 'Local SEO · Google Ads · Meta Ads · F&B',
-      name: 'Italian Restaurant, Pattaya',
-      sub: 'Pattaya, Thailand · Italian Restaurant',
-      before: [
-        'Strong food, zero online presence — invisible to tourists and expats searching for Italian food in Pattaya',
-        'Not appearing for a single Italian food search. New customers found the restaurant by accident or not at all',
-        'Competitors with weaker menus dominated every search — walk-in revenue was going elsewhere every night'
-      ],
-      after: [
-        'Top 3 for "italian restaurant pattaya" and "italian food pattaya" — the two highest-volume searches in the category',
-        'Top 5 for "best pizza pattaya" — visible across every relevant tourist and expat search',
-        'Walk-in revenue now driven by owned search rankings and paid ads — not chance or word of mouth',
-        'Google Ads + Meta Ads + Local SEO running together — three channels each pulling new covers'
-      ],
-      metrics: [['Top 3','"Italian restaurant\npattaya"'],['Top 3','"Italian food\npattaya"'],['Top 5','"Best pizza\npattaya"']]
-    },
-    'opera': {
-      svc: 'Google Ads · Performance Max · Restaurant · Bangkok',
-      name: 'Italian Restaurant, Bangkok',
-      sub: 'Bangkok, Thailand · Fine-Dining Italian',
-      before: [
-        'A rebranded landmark — one of Bangkok\'s oldest Italian restaurants — but paying restaurant-industry ad costs of ฿50–150 per conversion',
-        'Budget spread thin across Search, Display and YouTube with no clarity on which channel actually drove diners',
-        'Brand search barely registering — new diners in Sukhumvit were finding competitors first'
-      ],
-      after: [
-        '1,589 conversions in the first 35 days at ฿16.45 each — more than 3× cheaper than the restaurant benchmark',
-        'Google Maps identified as the core engine — 71% of all conversions at just ฿12.86 per direction request',
-        '147,513 impressions across Search, Maps, Display and YouTube — reaching diners at every stage of the decision',
-        'Brand search compounding: "opera italian restaurant" converting at 13.4% — the highest-intent term in the account'
-      ],
-      metrics: [['1,589','Conversions\nin 35 days'],['฿16.45','Cost per\nconversion'],['71%','Conversions\nfrom Maps']]
-    },
-    'iron-fairies': {
-      svc: 'Google Ads · Hospitality · Bar & Venue',
-      name: 'Bar & Venue, Bangkok',
-      sub: 'Bangkok, Thailand · Bar & Live Music Venue',
-      before: [
-        'Missing the highest-intent venue searches: "bars near me," "live music bangkok," "jazz bar bangkok"',
-        'Customers searching for exactly what this venue offers — finding competitors first, every night',
-        'No attribution: no way to know which channels were actually driving covers and per-head spend'
-      ],
-      after: [
-        '34+ paying customer acquisitions per month from near-me searches alone — each one tracked to the seat',
-        'Full revenue attribution across Google Maps, Search, and YouTube — every channel tied to covers driven',
-        'Month-on-month growth sustained: April 2026 outperformed January — each campaign period builds on the last',
-        'Near-me search now a reliable, measurable revenue channel — not a line item without attribution'
-      ],
-      metrics: [['34+','Monthly\nacquisitions'],['3','Channels with\nfull attribution'],['↑','Month-on-month\nrevenue growth']]
-    },
     'form-recovery': {
       svc: 'AI Visibility · Search Optimisation · Healthcare · Bangkok',
       name: 'Physiotherapy Clinic, Bangkok',
-      sub: 'Bangkok, Thailand · Physiotherapy & Wellness',
-      before: [
-        'Zero paid consultations sourced from AI search — a clinic with excellent clinical results, 4.9★ from 730+ Google reviews, and no presence in the answers patients were actually reading',
-        'Every AI platform sent patients elsewhere: ChatGPT cited Bangkok Hospital, Gemini listed hospital chains, Google AIO returned competitors',
-        'Physiotherapy is a high-LTV service — each missed patient represents ฿8,000–20,000+ in lost consultation revenue'
+      sub: 'Bangkok, Thailand · Physiotherapy, TCM & Wellness',
+      hero: ['0 → 40', 'AI-sourced paid consultations per month', 'Confirmed paid bookings traced to ChatGPT, Perplexity and Google AI Overviews. Not leads. Not clicks. Not traffic estimates.'],
+      situation: 'A premium physiotherapy, acupuncture and wellness group across Sukhumvit. 4.9★ from 730+ Google reviews and genuinely strong clinical outcomes — and completely absent from the AI answers its own patients were reading. This is a category owned by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani. An independent clinic had no way in through conventional search.',
+      shift: [
+        ['AI-sourced paid consultations', '0 per month', '40 per month', 'LED', null],
+        ['ChatGPT', 'Absent — it recommended Bangkok Hospital', 'Named in 50.6% of answers', 'AMP', 0],
+        ['Google AI Overviews', 'Not cited', 'Site cited in 80.6% of answers', 'AMP', null],
+        ['Tracked prompt coverage', '36% of prompts named', '64% named, peak 77%', 'TRK', null],
+        ['&ldquo;Best English-speaking physiotherapist in Bangkok&rdquo;', 'Not named', 'Named 1st of 16 clinics', 'TRK', null],
+        ['&ldquo;Best physio clinic Thailand&rdquo; on Gemini', 'Not listed', 'Listed first, with full detail', 'SERP', 1],
+        ['Monthly organic clicks', '3,296', '4,009 — first 4,000-click month', 'GSC', null],
+        ['Visitor-to-enquiry rate', '3.7% from organic search', '14.5% from AI referrals', 'GA4', null],
+        ['Category share of voice', 'Not measurable', '17.6% — 4.3× nearest rival', 'AH', null]
       ],
-      after: [
-        'From zero to a peak of 38 AI-sourced paid consultations in a single month, now averaging 40 a month — confirmed paid bookings, not leads, not clicks',
-        'AI-referred visitors convert 3.9× better than organic — 14.5% vs 3.7% session key-event rate (full-month GA4). AI sessions stayed flat while AI conversions rose 60%',
-        'Named in 4 of 5 Google AI Overview answers in its category (80.6% domain citation rate) and named outright in half of all ChatGPT answers (50.6%)',
-        'Named FIRST in the AI answer on 5 of its highest-intent queries — including "best English-speaking physiotherapist in Bangkok" (1st of 16 clinics named) and "best physio clinic in Bangkok for sports injuries" (1st of 17)',
-        'Tracker share of prompts named rose 36% → 64% over six weeks of 72-hour collection runs, peaking at 77% — in a category dominated by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani',
-        '4,009 organic clicks in July 2026 — the clinic\'s first 4,000-click month · 284 ChatGPT crawl visits across 68 pages in the same month',
-        '155 AI citations across 39 of the clinic\'s own pages, plus 47 third-party citations from 11 external domains — WhatClinic 20 answers, GoWabi 14, Reddit 13, Instagram 11',
-        '฿694K–936K in AI-sourced revenue in H1 2026 alone — 100% incremental, because the channel did not exist a year earlier. Search and AI combined now represent 22–30% of total clinic revenue',
-        '96% of AI-sourced patients are new to the clinic and 54–57% are international visitors — pure discovery, in the highest-value segment, with zero media spend',
-        'An AI-sourced booking is worth ฿6,951 against a Google-sourced booking at ฿7,025 — parity on value, entirely additional on volume',
-        '17.6% category share of voice — the most-cited domain of any provider in the category, 4.3× the nearest single-clinic competitor'
+      evidence: [
+        ['images/form/chatgptbestphysiojan.jpg', 'ChatGPT', '&ldquo;Best physiotherapy clinic Bangkok&rdquo; — the clinic is named first in the answer, above the hospital groups.'],
+        ['images/form/physiothgemini.jpg', 'Google Gemini', '&ldquo;Best physio clinic Thailand&rdquo; — listed first, with the clinic&rsquo;s locations and specialisms quoted back.'],
+        ['images/form/AIVisibilityGrowth.jpg', 'Locully tracker', 'The client&rsquo;s own dashboard view — mention rate, average rank and citation count, updated every 72 hours.']
       ],
-      metrics: [['40/mo','AI-sourced paid\nconsultations, from zero'],['3.9×','AI converts better\nthan organic'],['฿694K+','AI-sourced revenue\nH1 2026, incremental']]
-    },
-    'cosmo': {
-      svc: 'AI Visibility · Search Optimisation · Aesthetics · Bangkok',
-      name: 'Aesthetic Clinic, Bangkok',
-      sub: 'Bangkok, Thailand · Aesthetic Medicine',
-      before: [
-        '7 form submissions across all of January and February combined — high-quality clinic with almost no online patient acquisition',
-        'Patients asking AI "best Botox Bangkok" or "best fillers Bangkok" were sent to hospital chains and larger competitors by default',
-        'Aesthetic treatments are high-ticket (฿15,000–50,000+ per procedure) — every lost enquiry is significant lost revenue'
+      work: [
+        'Shipped the infrastructure a model needs before it will quote you: a 94-entry <code>llms.txt</code>, an <code>/llm-info/</code> reference page, and answer blocks written as citable units rather than prose.',
+        'Built the formats AI actually pulls from — &ldquo;best clinic&rdquo; roundups, a post-op rehab hub with five procedure children, and a diagnostic &ldquo;10 signs&rdquo; format that now carries the site&rsquo;s highest-CTR queries.',
+        'Earned the third-party citations sitting underneath AI answers in this category: WhatClinic, GoWabi, Reddit and ExpatsinBangkok.',
+        'Stood up 72-hour prompt tracking across 22 commercial prompts, storing the full answer text — so every figure above can be checked against its source, by the client, at any time.'
       ],
-      after: [
-        '32 form submissions in March alone — +357% increase, highest patient enquiry month in the clinic\'s history',
-        '26 of 31 AI prompts now cite the clinic — 19.2 AI citations per day across ChatGPT, Gemini, and Google AIO',
-        '95 Google AIO citation instances across 8 treatment clusters · +373% sessions from ChatGPT (331 in Mar–Apr)',
-        'Form completion rate: 41% → 68% — more enquiries, higher intent, fewer drop-offs',
-        'ExpatsinBangkok referral channel: 5 → 32 sessions (+540%) with 6.25% booking conversion rate',
-        '+83.5% total sessions · +42% organic clicks · +229% key booking events — all from organic and AI, no paid ads',
-        'Cited in 42.6% of Google AI Overview answers in its category — the clinic\'s AI presence sits almost entirely on Google, a 12× gap against ChatGPT that would be invisible to a single-engine report',
-        '#3 aesthetic clinic in Bangkok by total AI citations — 150 AI responses across 28 pages, ahead of every aggregator in the category',
-        'Tracker share of prompts named doubled — 17% → 35% over six weeks — while the DR 73 editorial placement (highest in the clinic\'s history) went live'
-      ],
-      metrics: [['+357%','Form submissions\nin one month'],['42.6%','Google AI Overview\ncitation rate'],['#3','Aesthetic clinic in\nBangkok by AI citations']]
+      numbers: [
+        ['155', 'AI citations across 39 of the clinic&rsquo;s own pages', 'AH'],
+        ['47', 'Third-party citations from 11 external domains', 'AH'],
+        ['284', 'ChatGPT crawl visits across 68 pages in one month', 'SITE'],
+        ['96%', 'Of AI-sourced patients are new to the clinic — pure discovery', 'LED'],
+        ['฿6,951', 'Value of an AI booking, against ฿7,025 from Google — parity', 'LED'],
+        ['22–30%', 'Of total clinic revenue now from search and AI combined', 'LED']
+      ]
     },
     'genesis': {
       svc: 'AI Visibility · Search Optimisation · Fertility · Bangkok',
       name: 'IVF Clinic, Bangkok',
       sub: 'Bangkok, Thailand · Fertility & IVF · SET-listed',
-      before: [
-        'A fertility clinic listed on the Stock Exchange of Thailand — 2,000+ patients a year, 60–65% ICSI success rate, 3 branches, 7 doctors — appearing in zero AI answers on any engine',
-        'robots.txt was blocking GPTBot, ClaudeBot, Google-Extended, CCBot and four more AI crawlers with Disallow: / — a Cloudflare default nobody had chosen. The models could not read the site at all',
-        'Ahrefs read 0 AI Overview citations, 0 ChatGPT, 0 Perplexity, 0 Gemini. "Top IVF clinics in Bangkok" on ChatGPT named five clinics; the SET-listed one was not among them',
-        'English pages served Thai body copy. Core Web Vitals failed at 21/100. 15.8K monthly impressions and 99 clicks across the entire English site'
+      hero: ['0 → 242', 'AI responses citing the clinic, in two months', 'From total invisibility on every engine to 242 citations across 81 pages — 141 of them inside Google AI Overviews.'],
+      situation: 'A fertility clinic listed on the Stock Exchange of Thailand. 2,000+ patients a year, a 60–65% ICSI success rate, three branches, a seven-doctor team. In June 2026 it appeared in zero AI answers on any engine. The cause was not the clinic, the doctors or the outcomes — it was four lines in a configuration file that nobody had chosen to put there.',
+      shift: [
+        ['AI crawler access', '8 crawlers blocked at robots.txt', 'All allowed', 'SITE', 0],
+        ['ChatGPT — &ldquo;Top IVF clinics in Bangkok&rdquo;', 'Absent from all five recommended', 'Cited across the category', 'SERP', 1],
+        ['AI responses citing the clinic', '0', '242, across 81 pages', 'AH', 2],
+        ['Google AI Overview citations', '0', '141, across 47 pages', 'AH', 2],
+        ['Engines citing the clinic', 'None', '6 — AI Overviews, AI Mode, ChatGPT, Gemini, Perplexity, Copilot', 'AH', 2],
+        ['Monthly search impressions', '15.8K', '153K', 'GSC', 3],
+        ['Monthly search clicks', '99', '487', 'GSC', 3],
+        ['Average search position', '32.7', '16.3', 'GSC', 3],
+        ['Tracked prompt coverage', '28% of prompts named', '72% named, peak 83%', 'TRK', null],
+        ['English content', 'Pages served Thai body copy', 'Rebuilt as a native English stack', 'SITE', null]
       ],
-      after: [
-        '0 → 242 AI responses citing the clinic across 81 pages in two months — 141 of them in Google AI Overviews, plus Google AI Mode, Perplexity, Copilot, ChatGPT and Gemini',
-        'Search Console, June vs August: impressions 15.8K → 153K (×9.7), clicks 99 → 487 (×4.9), average position 32.7 → 16.3 — and August is a 28-day window against June\'s 30, so the growth is understated',
-        'Tracker share of prompts named rose 28% → 72% over six weeks, peaking at 83% — the fastest ramp of any client on the tracker',
-        'Named in the AI answer on 13 of 18 tracked fertility prompts, including "best IUI clinic in Bangkok" (4th of 16) and "best clinic for PGT-A testing in Bangkok" (5th of 17)',
-        'Has been named FIRST at least once on 10 separate commercial prompts — including "best IVF clinic in Bangkok", "best ICSI clinic in Bangkok" and "egg freezing Bangkok price"',
-        'Real enquiries now arriving through the AI-cited directory profiles built during the engagement — WhatClinic and PlacidWay among them'
+      evidence: [
+        ['images/ivf-case/robots-ai-crawlers-blocked.jpg', 'The cause', 'Eight AI crawlers set to <strong>Disallow: /</strong> — GPTBot, ClaudeBot, Google-Extended, CCBot and four more, inside a Cloudflare managed block. A platform default, not a decision.'],
+        ['images/ivf-case/chatgpt-client-absent.jpg', 'The effect', '&ldquo;Top IVF clinics in Bangkok&rdquo; on ChatGPT. Five clinics recommended in detail. The SET-listed one is not among them.'],
+        ['images/ivf-case/ai-responses-0-to-242.jpg', 'Two months later', 'Ahrefs AI index: <strong>0 → 242</strong> AI responses across 81 pages, 141 of them in Google AI Overviews. Client domain redacted.'],
+        ['images/ivf-case/gsc-jun-vs-aug.jpg', 'Two months later', 'Search Console, August against June: impressions <strong>15.8K → 153K</strong>, clicks <strong>99 → 487</strong>, average position <strong>32.7 → 16.3</strong>.']
       ],
-      metrics: [['0 → 242','AI responses citing\nthe clinic'],['×9.7','Search impressions\nin 2 months'],['↑16.4','Average position\n32.7 → 16.3']]
+      work: [
+        'Found the root cause. <code>robots.txt</code> was blocking GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, Amazonbot, Applebot-Extended and meta-externalagent — a Cloudflare managed default rather than a decision anyone had made. We identified it and specified the fix.',
+        'Rebuilt the English content stack. The <code>/en/</code> pages were serving Thai body copy, so they ranked for nothing and gave the models nothing in English to quote.',
+        'Built the bottom-of-funnel pillar cluster — IVF/ICSI, IUI, egg freezing, PGT-A and a foreigner guide — each with a named physician byline and Physician schema tied to the licence number. This is YMYL content; anonymous authorship is disqualifying.',
+        'Placed the clinic on the directories the models actually quote for fertility in Bangkok: WhatClinic, PlacidWay, Bookimed and ThailandClinics. Real patient enquiries now arrive through those profiles.'
+      ],
+      numbers: [
+        ['2', 'Months of delivery — June was the pre-engagement baseline', 'GSC'],
+        ['81', 'Of the clinic&rsquo;s own pages now cited in AI answers', 'AH'],
+        ['10', 'Commercial prompts where it has been named first at least once', 'TRK'],
+        ['13/18', 'Tracked fertility prompts naming the clinic on the latest run', 'TRK'],
+        ['28 vs 30', 'Days in the after window against the before — growth is understated', 'GSC'],
+        ['+130', 'Google AI Overview citations gained in the period', 'AH']
+      ]
+    },
+    'cosmo': {
+      svc: 'AI Visibility · Search Optimisation · Aesthetics · Bangkok',
+      name: 'Aesthetic Clinic, Bangkok',
+      sub: 'Bangkok, Thailand · Non-Surgical Aesthetic Medicine',
+      hero: ['7 → 32', 'Patient enquiries, in a single month', 'Seven form submissions across January and February combined, against 32 in March alone — the highest enquiry month in the clinic&rsquo;s history.'],
+      situation: 'A non-surgical aesthetics clinic competing for high-ticket expat and medical-tourism demand — Botox, fillers, Ultherapy, HIFU, IV therapy. Patients asking AI &ldquo;best Botox Bangkok&rdquo; or &ldquo;best fillers Bangkok&rdquo; were being routed to hospital chains and larger competitors by default.',
+      shift: [
+        ['Form submissions', '7 across Jan + Feb combined', '32 in March alone', 'GA4', null],
+        ['Form completion rate', '41%', '68%', 'GA4', null],
+        ['Google AI Overviews', 'Not cited', 'Cited in 42.6% of category answers', 'AMP', 0],
+        ['Sessions from ChatGPT', '70 per period', '331 per period — +373%', 'GA4', null],
+        ['Key booking events', '24', '79 — +229%', 'GA4', null],
+        ['Rank by AI citations in category', 'Unranked', '#3 aesthetic clinic in Bangkok', 'AMP', null],
+        ['Tracked prompt coverage', '17% of prompts named', '35% named, peak 41%', 'TRK', null],
+        ['Highest-authority backlink', 'Nothing above DR 40', 'DR 73 editorial placement', 'AH', null]
+      ],
+      evidence: [
+        ['images/cosmo/bestfillersjan.jpg', 'Google AI Overview', '&ldquo;Best fillers Bangkok&rdquo; — the clinic is recommended by name, first in the ranked list, with its differentiator quoted back.']
+      ],
+      work: [
+        'Built the decision-stage content the models quote — &ldquo;best clinic&rdquo; roundups and &ldquo;how to choose&rdquo; guides across Botox, fillers, Ultherapy, HIFU, NAD+ and skin whitening. Those pages are now the clinic&rsquo;s most-cited assets.',
+        'Built a complete Sculptra cluster from nothing: five interlinked pages, all now AI-cited.',
+        'Earned editorial placements on luxurytravelmagazine.com (DR 73 — the clinic&rsquo;s highest-ever link), kulfiy.com (DR 62) and cleverthai.com (DR 53).',
+        'Fixed the technical floor underneath it: PageSpeed desktop +32% and mobile +52%, and a full schema graph across the service pages.'
+      ],
+      numbers: [
+        ['150', 'AI responses citing the clinic, across 28 pages', 'AMP'],
+        ['95', 'Google AI Overview citation instances across 8 treatment clusters', 'AMP'],
+        ['16', 'Own pages cited in Google AI Overviews', 'AMP'],
+        ['12×', 'Gap between its Google AIO rate and its ChatGPT rate', 'AMP'],
+        ['+83.5%', 'Total sessions — from organic and AI, with no paid ads', 'GA4'],
+        ['2×', 'Tracked prompt coverage, over six weeks', 'TRK']
+      ]
     },
     'ibrokers': {
       svc: 'Search Optimisation · Insurance · 12 Months',
       name: 'i-Brokers Insurance',
       sub: 'Bangkok, Thailand · International Insurance Brokerage',
-      before: [
-        '123K monthly impressions but only 1,030 clicks — visible in search, generating almost no leads',
-        'Competing across Thailand, Vietnam, Hong Kong, and Bali without the domain authority to rank in any of them',
-        'Organic produced zero attributable pipeline. Growth depended entirely on referrals — no scalable channel'
+      hero: ['1,030 → 5,180', 'Monthly enquiries from organic search', 'A 5× increase over twelve months, with no ongoing ad spend required to hold it.'],
+      situation: 'An international insurance brokerage visible in search but generating almost nothing from it — 123K monthly impressions against 1,030 clicks. It was competing across Thailand, Vietnam, Hong Kong and Bali without the domain authority to rank properly in any of them, and organic produced no attributable pipeline. Growth depended entirely on referrals.',
+      shift: [
+        ['Monthly organic enquiries', '1,030', '5,180', 'GSC', null],
+        ['Top-3 lead-generating keywords', 'None', '20+', 'AH', null],
+        ['Markets with Top-3 positions', '0 of 7', '7 of 7', 'AH', null],
+        ['&ldquo;Expat health insurance Bali&rdquo;', 'Not ranking', '#1', 'SERP', null],
+        ['&ldquo;Best health insurance Bali&rdquo;', 'Not ranking', '#1', 'SERP', null],
+        ['Organic as an acquisition channel', 'No attributable pipeline', 'Primary channel, no ad spend', 'GA4', null],
+        ['Growth dependency', 'Referrals only', 'Self-compounding organic', 'GA4', null]
       ],
-      after: [
-        '5× more enquiries from organic — 1,030 to 5,180 monthly — each enquiry a qualified insurance lead',
-        'Insurance policies are high-LTV: a single converted lead can represent ฿30,000–100,000+ in annual premium revenue',
-        '20+ lead-generating keywords in Top 3 across 7 markets — pipeline distributed across Southeast Asia',
-        '#1 "Expat health insurance Bali" · #1 "Best health insurance Bali" — category ownership in key markets',
-        'Organic became a reliable, self-compounding acquisition channel — no ad spend required to maintain'
+      numbers: [
+        ['12', 'Months of delivery', 'GSC'],
+        ['4', 'Countries targeted — Thailand, Vietnam, Hong Kong, Bali', 'AH'],
+        ['฿30K–100K+', 'Annual premium value of a single converted lead', 'LED'],
+        ['฿0', 'Ongoing ad spend required to hold the positions', 'GADS']
+      ]
+    },
+    'hotel-pattaya': {
+      svc: 'Meta Ads · Hospitality · 18+ Month Campaign',
+      name: 'Hotel, Pattaya',
+      sub: 'Pattaya, Thailand · Direct Bookings',
+      hero: ['5,291', 'Direct guest enquiries, each bypassing OTA commission', '฿30,000 a month in ad spend returning ฿150,000–180,000 in direct booking revenue.'],
+      situation: 'Every reservation was routing through Agoda or Booking.com, and the hotel paid 15–20% OTA commission on all of it. There was no owned channel capturing demand before a guest reached an intermediary, and seasonal peaks passed each quarter without the high-margin direct revenue being captured.',
+      shift: [
+        ['Booking channel', 'Agoda and Booking.com', 'Direct, owned demand capture', 'META', null],
+        ['Commission per booking', '15–20% to the OTA', '฿66 cost per enquiry', 'META', null],
+        ['Direct guest enquiries', 'Effectively none', '5,291', 'META', null],
+        ['Direct bookings', 'Baseline', '+20%', 'META', null],
+        ['Return on ad spend', 'No paid channel', '5–6× — ฿30K spend, ฿150–180K revenue', 'META', null],
+        ['Seasonal peaks', 'Passed uncaptured', 'Actively managed in real time', 'META', null]
       ],
-      metrics: [['5×','Enquiry growth\n1,030 → 5,180'],['20+','Top 3 lead\ngenerating terms'],['7','Markets with\nTop 3 positions']]
+      numbers: [
+        ['18+', 'Months the campaign has run continuously', 'META'],
+        ['฿66', 'Cost per direct enquiry — below Thai hospitality benchmarks', 'META'],
+        ['15–20%', 'OTA commission avoided on every direct booking', 'LED']
+      ]
+    },
+    'achyut-pattaya': {
+      svc: 'Google Ads · Google Maps · F&B',
+      name: 'Indian Restaurant, Pattaya',
+      sub: 'Pattaya, Thailand · South Indian Restaurant',
+      hero: ['฿30', 'Cost per in-store visit', 'One of the lowest customer acquisition costs in Thai F&amp;B — from 3,350 tracked conversions a month at ฿3 each.'],
+      situation: 'Pattaya&rsquo;s Indian restaurant cluster is dense, and walk-ins default to whoever appears first on Maps. The restaurant was invisible for the searches driving the most foot traffic — &ldquo;indian restaurant near me&rdquo;, &ldquo;dosa near me&rdquo;. Tourist and expat demand existed; it was going to competitors daily.',
+      shift: [
+        ['Tracked conversions per month', 'Not measured', '3,350', 'GADS', 0],
+        ['Estimated in-store visits', 'Unknown', '350+ per month', 'GADS', null],
+        ['Cost per conversion', 'No attribution', '฿3', 'GADS', 0],
+        ['Cost per in-store visit', 'No attribution', '฿30', 'GADS', null],
+        ['Return on ad spend', 'None', '2,608% — ฿26 back per ฿1', 'GADS', null],
+        ['Google Maps', 'Invisible for category searches', '60% of all conversions', 'GADS', 1]
+      ],
+      evidence: [
+        ['images/achyut/gadsperformancedec.jpg', 'Google Ads', 'Campaign performance — conversions and cost per conversion for the month.'],
+        ['images/achyut/pmaxptydec.jpg', 'Performance Max', 'Channel breakdown showing Maps as the dominant conversion source.']
+      ],
+      numbers: [
+        ['฿3', 'Cost per tracked conversion', 'GADS'],
+        ['60%', 'Share of conversions coming from Google Maps', 'GADS'],
+        ['10:1', 'Conversions-to-visit ratio used — deliberately conservative', 'GADS']
+      ]
+    },
+    'achyut-bangkok': {
+      svc: 'Google Ads · Google Maps · F&B',
+      name: 'Indian Restaurant, Bangkok',
+      sub: 'Sukhumvit, Bangkok · South Indian Restaurant',
+      hero: ['฿4.34', 'To acquire one customer', '952 customers in a single month on a ฿4,000 budget — the cost covered by a fraction of one table&rsquo;s revenue.'],
+      situation: 'A new Sukhumvit location entering Bangkok&rsquo;s most crowded restaurant market with zero online visibility. It was missing every high-value niche search — dosa, south Indian, pure veg — and running a ฿4,000 monthly budget with no structure, no attribution and no measurable revenue.',
+      shift: [
+        ['Customers acquired per month', 'Not tracked', '952', 'GADS', 0],
+        ['Cost per customer', 'Unknown', '฿4.34', 'GADS', 0],
+        ['Overall conversion rate', 'No attribution', '65%', 'GADS', null],
+        ['&ldquo;Dosa in Bangkok&rdquo;', 'Not competing', '฿0.29 per customer', 'GADS', null],
+        ['&ldquo;South Indian food near me&rdquo;', 'Not competing', '200% conversion rate', 'GADS', null],
+        ['Budget structure', '฿4K, unstructured', 'Same ฿4K, fully attributed', 'GADS', 1]
+      ],
+      evidence: [
+        ['images/achyut/gadsdec.jpg', 'Google Ads', 'Account performance for the month — conversions, cost and conversion rate.'],
+        ['images/achyut/pmaxbkkdec.jpg', 'Performance Max', 'Bangkok campaign breakdown by channel and search term.']
+      ],
+      numbers: [
+        ['฿4,000', 'Monthly budget — unchanged throughout', 'GADS'],
+        ['฿4.34', 'Cost to acquire one customer', 'GADS'],
+        ['65', 'Of every 100 ad interactions became a visit, call or direction', 'GADS']
+      ]
+    },
+    'amorretto': {
+      svc: 'Google Ads · Local SEO · F&B',
+      name: 'Café & Bar, Bangkok',
+      sub: 'Phattanakarn, Bangkok · Italian Bistro',
+      hero: ['1,497%', 'Return on ad spend', 'Paid search became the highest-return channel in the business, alongside +80% more customers arriving through Google Maps.'],
+      situation: 'Strong food, invisible to the people searching for an Italian bistro in Bangkok. Few inbound calls or walk-ins came from online channels, and the restaurant relied on word of mouth while competitors with weaker menus filled seats simply by appearing on Maps first.',
+      shift: [
+        ['Customers finding it via Maps', 'Baseline', '+80%', 'GADS', null],
+        ['Direct calls to book', 'Baseline', '+50%', 'GADS', null],
+        ['&ldquo;Italian food&rdquo; / &ldquo;Italian bistro Bangkok&rdquo;', 'Not ranking', 'Top 3', 'SERP', null],
+        ['&ldquo;Italian restaurant near me&rdquo;', 'Not ranking', 'Top 3', 'SERP', null],
+        ['Return on ad spend', 'No paid channel', '1,497%', 'GADS', null],
+        ['New customer source', 'Word of mouth', 'Owned search and Maps', 'GA4', null]
+      ]
+    },
+    'eatali': {
+      svc: 'Local SEO · Google Ads · Meta Ads · F&B',
+      name: 'Italian Restaurant, Pattaya',
+      sub: 'Pattaya, Thailand · Italian Restaurant',
+      hero: ['Top 3', 'For both highest-volume searches in the category', '&ldquo;Italian restaurant pattaya&rdquo; and &ldquo;italian food pattaya&rdquo; — from not ranking for a single Italian food search.'],
+      situation: 'Strong food and zero online presence — invisible to the tourists and expats searching for Italian food in Pattaya. It appeared for not a single Italian food search, so new customers arrived by accident or not at all, while weaker competitors dominated every result.',
+      shift: [
+        ['&ldquo;Italian restaurant pattaya&rdquo;', 'Not ranking', 'Top 3', 'SERP', null],
+        ['&ldquo;Italian food pattaya&rdquo;', 'Not ranking', 'Top 3', 'SERP', null],
+        ['&ldquo;Best pizza pattaya&rdquo;', 'Not ranking', 'Top 5', 'SERP', null],
+        ['Walk-in revenue driver', 'Chance and word of mouth', 'Owned rankings and paid ads', 'GA4', null],
+        ['Channels running', 'None', 'Local SEO + Google Ads + Meta Ads', 'GADS', null]
+      ]
+    },
+    'opera': {
+      svc: 'Google Ads · Performance Max · Restaurant · Bangkok',
+      name: 'Italian Restaurant, Bangkok',
+      sub: 'Bangkok, Thailand · Fine-Dining Italian',
+      hero: ['฿16.45', 'Cost per conversion', 'More than 3× cheaper than the restaurant-industry benchmark of ฿50–150, across 1,589 conversions in the first 35 days.'],
+      situation: 'A rebranded landmark — one of Bangkok&rsquo;s oldest Italian restaurants — paying restaurant-industry ad costs of ฿50–150 per conversion. Budget was spread thin across Search, Display and YouTube with no clarity on which channel actually produced diners, and brand search barely registered.',
+      shift: [
+        ['Cost per conversion', '฿50–150 industry benchmark', '฿16.45', 'GADS', 0],
+        ['Conversions', 'Not attributed', '1,589 in the first 35 days', 'GADS', 0],
+        ['Core conversion engine', 'Unknown', 'Google Maps — 71% at ฿12.86 each', 'GADS', 1],
+        ['Impressions', 'Unmeasured', '147,513 across Search, Maps, Display, YouTube', 'GADS', 0],
+        ['Brand search', 'Barely registering', '13.4% conversion rate — highest-intent term', 'GADS', null],
+        ['Budget allocation', 'Spread thin, unclear', 'Concentrated on what converts', 'GADS', 0]
+      ],
+      evidence: [
+        ['images/opera/opera-channel-flow.jpg', 'Google Ads', 'Channel flow — where the conversions actually came from across Search, Maps, Display and YouTube.'],
+        ['images/opera/opera-maps-ad.jpg', 'Google Maps', 'The Maps placement that produced 71% of all conversions at ฿12.86 per direction request.']
+      ],
+      numbers: [
+        ['35', 'Days to the result', 'GADS'],
+        ['฿12.86', 'Cost per direction request from Maps', 'GADS'],
+        ['3×', 'Cheaper than the restaurant-industry conversion benchmark', 'GADS']
+      ]
+    },
+    'iron-fairies': {
+      svc: 'Google Ads · Hospitality · Bar & Venue',
+      name: 'Bar & Venue, Bangkok',
+      sub: 'Bangkok, Thailand · Bar & Live Music Venue',
+      hero: ['34+', 'Paying customers a month from near-me search alone', 'Each one tracked to the seat, across three channels with full revenue attribution.'],
+      situation: 'A venue missing the highest-intent searches it should have owned — &ldquo;bars near me&rdquo;, &ldquo;live music bangkok&rdquo;, &ldquo;jazz bar bangkok&rdquo;. Customers searching for exactly what it offered were finding competitors first, every night, and there was no attribution to show which channels were driving covers.',
+      shift: [
+        ['Near-me search', 'Competitors found first', '34+ paying customers per month', 'GADS', 0],
+        ['Attribution', 'None', 'Full — across Maps, Search and YouTube', 'GADS', 1],
+        ['Revenue tracking', 'No link to covers', 'Every channel tied to covers driven', 'GADS', 1],
+        ['Month-on-month trend', 'Flat and unmeasured', 'Sustained — April outperformed January', 'GADS', 2]
+      ],
+      evidence: [
+        ['images/iron/conviron.jpg', 'Google Ads', 'Conversions by campaign — near-me search isolated as its own measurable channel.'],
+        ['images/iron/ironjanads.jpg', 'Google Ads', 'Search category breakdown showing which venue intents actually convert.'],
+        ['images/iron/ifperformanceapr.jpg', 'Google Ads', 'April performance against the January baseline — each period building on the last.']
+      ]
     }
   };
 
+  let CS_EV = [];
+  function csEv(i) { const e = CS_EV[i]; if (e) lb(e[0]); }
+
   function openCase(id) {
     const d = CASES[id]; if (!d) return;
-    document.getElementById('cs-svc').textContent = d.svc;
+    CS_EV = d.evidence || [];
+
+    document.getElementById('cs-svc').textContent  = d.svc;
     document.getElementById('cs-name').textContent = d.name;
-    document.getElementById('cs-sub').textContent = d.sub;
-    document.getElementById('cs-before').innerHTML = d.before.map(t => `<li>${t}</li>`).join('');
-    document.getElementById('cs-after').innerHTML = d.after.map(t => `<li>${t}</li>`).join('');
-    document.getElementById('cs-metrics').innerHTML = d.metrics.map(([n,l]) => `<div class="cs-m"><div class="cs-mn">${n}</div><div class="cs-ml">${l.replace(/\n/g,'<br>')}</div></div>`).join('');
+    document.getElementById('cs-sub').textContent  = d.sub;
+
+    // hero — one dominant number
+    document.getElementById('cs-hero').innerHTML =
+      `<div class="cs-hero-n">${d.hero[0]}</div>
+       <div><div class="cs-hero-l">${d.hero[1]}</div><div class="cs-hero-d">${d.hero[2]}</div></div>`;
+
+    document.getElementById('cs-sit').innerHTML = d.situation;
+
+    // shift rows, each with its source
+    document.getElementById('cs-shift').innerHTML = d.shift.map(([k, b, a, src, ev]) => {
+      const label = SRC[src] || src;
+      const chip = (ev === null || ev === undefined)
+        ? `<span class="cs-src" title="Source: ${label}">${src}</span>`
+        : `<button class="cs-src" onclick="csEv(${ev})" title="Source: ${label} — click to view">${src} <span aria-hidden="true">&#10530;</span></button>`;
+      return `<div class="cs-r">
+        <div class="cs-r-k">${k}</div>
+        <div class="cs-r-b">${b}</div>
+        <div class="cs-r-arrow">&rarr;</div>
+        <div class="cs-r-a">${a}<br>${chip}</div>
+      </div>`;
+    }).join('');
+
+    // evidence
+    const evWrap = document.getElementById('cs-ev-wrap');
+    if (CS_EV.length) {
+      evWrap.style.display = '';
+      document.getElementById('cs-ev').innerHTML = CS_EV.map(([src, tag, cap], i) =>
+        `<div class="cs-ev-item" onclick="csEv(${i})">
+           <img src="${src}" alt="${tag}" onerror="this.parentNode.style.display='none'">
+           <div class="cs-ev-b"><div class="cs-ev-t">${tag}</div><div class="cs-ev-c">${cap}</div></div>
+         </div>`).join('');
+    } else { evWrap.style.display = 'none'; document.getElementById('cs-ev').innerHTML = ''; }
+
+    // what we did
+    const wWrap = document.getElementById('cs-work-wrap');
+    if (d.work && d.work.length) {
+      wWrap.style.display = '';
+      document.getElementById('cs-work').innerHTML = d.work.map(t => `<li>${t}</li>`).join('');
+    } else { wWrap.style.display = 'none'; document.getElementById('cs-work').innerHTML = ''; }
+
+    // supporting numbers
+    const nWrap = document.getElementById('cs-nums-wrap');
+    if (d.numbers && d.numbers.length) {
+      nWrap.style.display = '';
+      document.getElementById('cs-nums').innerHTML = d.numbers.map(([n, l, src]) =>
+        `<div class="cs-num"><div class="cs-num-n">${n}</div><div class="cs-num-l">${l}</div>
+         <span class="cs-src" title="Source: ${SRC[src] || src}">${src}</span></div>`).join('');
+    } else { nWrap.style.display = 'none'; document.getElementById('cs-nums').innerHTML = ''; }
+
+    // footer — the full source list for this case
+    const used = [...new Set([...d.shift.map(r => r[3]), ...((d.numbers || []).map(n => n[2]))])];
+    document.getElementById('cs-foot').innerHTML =
+      'Sources on this page: ' + used.map(c => SRC[c] || c).join(' · ') +
+      '. Client anonymised. Figures are measured, not modelled &mdash; ask and we will show you the underlying export.';
+
     document.getElementById('cs-modal').classList.add('on');
+    document.querySelector('#cs-modal .cs-inner').scrollTop = 0;
+    document.getElementById('cs-modal').scrollTop = 0;
     document.body.style.overflow = 'hidden';
   }
   function closeCase() {
