@@ -1094,9 +1094,15 @@
     border-color: var(--border-mid); font-weight: 600;
   }
   .grow {
-    font-weight: 700; color: var(--ink);
-    border-bottom: 3px solid var(--terra); padding-bottom: 3px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 7px;
+    text-decoration-color: rgba(192,80,35,0.55);
+    text-decoration-skip-ink: none;
   }
+  .cc-metric .grow, .db-walk-n .grow, .conv-big .grow { text-decoration-color: rgba(192,80,35,0.85); }
+  .cc-delta { margin-top: 8px; }
   .ss-delta { margin-top: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .ss-n .grow { display: inline-block; }
   .tr-d-x { margin-top: 7px; display: flex; justify-content: flex-end; }
@@ -1493,7 +1499,7 @@
           <div class="client-card" onclick="openCase('amorretto')">
             <div class="cc-service">Google Ads · Local SEO</div>
             <div class="cc-name">Café & Bar, Bangkok</div>
-            <div class="cc-metric">1,497%</div>
+            <div class="cc-metric"><span class="grow">1,497%</span></div>
             <div class="cc-label">ROAS · +80% Maps visibility</div>
           </div>
           <div class="client-card" onclick="openCase('eatali')">
@@ -1612,7 +1618,7 @@
       <div class="db-2col-text">
         <div class="db-walk-head">What this shows</div>
         <div class="db-walk-item">
-          <div class="db-walk-n">2,608%</div>
+          <div class="db-walk-n"><span class="grow">2,608%</span></div>
           <div class="db-walk-l">ROAS — every ฿1 in ad spend returned ฿26 in measurable customer actions, confirmed directly in the Google Ads dashboard</div>
         </div>
         <div class="db-walk-item">
@@ -1641,15 +1647,15 @@
       <div class="db-2col-text">
         <div class="db-walk-head">Reading the numbers</div>
         <div class="db-walk-item">
-          <div class="db-walk-n">+204%</div>
+          <div class="db-walk-n"><span class="grow">+204%</span></div>
           <div class="db-walk-l">"Indian restaurant near me" — Bangkok's most searched Indian food term, now fully captured</div>
         </div>
         <div class="db-walk-item">
-          <div class="db-walk-n">+550%</div>
+          <div class="db-walk-n"><span class="grow">+550%</span></div>
           <div class="db-walk-l">"Dosa near me" — specific buyers, not browsers. Converting at ฿0.29 each because intent matches exactly</div>
         </div>
         <div class="db-walk-item">
-          <div class="db-walk-n">&gt;+1,000%</div>
+          <div class="db-walk-n"><span class="grow">&gt;+1,000%</span></div>
           <div class="db-walk-l">"South Indian food near me" — niche queries convert at 80–100% because only one type of restaurant satisfies that search</div>
         </div>
         <div class="db-walk-item">
@@ -1815,19 +1821,22 @@
           <div class="client-card" onclick="openCase('genesis')">
             <div class="cc-service">SEO &middot; AI Visibility</div>
             <div class="cc-name">IVF Clinic, Bangkok</div>
-            <div class="cc-metric">0 &rarr; 242</div>
+            <div class="cc-metric"><span class="grow">0 &rarr; 242</span></div>
+            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>from zero in 2 months</span></div>
             <div class="cc-label">AI responses citing the clinic &middot; 2 months</div>
           </div>
           <div class="client-card" onclick="openCase('cosmo')">
             <div class="cc-service">SEO &middot; AI Visibility</div>
             <div class="cc-name">Aesthetic Clinic, Bangkok</div>
-            <div class="cc-metric">2.7&times;</div>
+            <div class="cc-metric"><span class="grow">2.7&times;</span></div>
+            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>+170%</span></div>
             <div class="cc-label">AI citation rate in seven weeks</div>
           </div>
           <div class="client-card" onclick="openCase('ibrokers')">
             <div class="cc-service">SEO &middot; 12 Months</div>
             <div class="cc-name">Insurance Broker, Bangkok</div>
-            <div class="cc-metric">5&times;</div>
+            <div class="cc-metric"><span class="grow">5&times;</span></div>
+            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>+403%</span></div>
             <div class="cc-label">Click growth &middot; 1,030 &rarr; 5,180/month</div>
           </div>
         </div>
@@ -2115,7 +2124,7 @@
     </div>
     <div class="conv-block reveal d1">
       <div>
-        <div class="conv-big">3.9&times;</div>
+        <div class="conv-big"><span class="grow">3.9&times;</span></div>
         <div class="conv-big-l">AI-referred visitors convert 3.9&times; better than organic search visitors on the same site &mdash; 14.5% vs 3.7% session key-event rate, full-month GA4.</div>
       </div>
       <div class="conv-copy">
@@ -2239,7 +2248,7 @@
       <div class="client-card" onclick="openCase('amorretto')">
         <div class="cc-service">Local SEO &middot; Google Maps</div>
         <div class="cc-name">Caf&eacute; &amp; Bar, Bangkok</div>
-        <div class="cc-metric">+80%</div>
+        <div class="cc-metric"><span class="grow">+80%</span></div>
         <div class="cc-label">Google Maps visibility growth</div>
       </div>
       <div class="client-card" onclick="openCase('form-recovery')">
