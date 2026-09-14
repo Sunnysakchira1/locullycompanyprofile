@@ -195,6 +195,21 @@
   .t-bio { font-size: 14px; color: var(--ink-mid); line-height: 1.75; font-weight: 300; }
 
   /* ── SERVICE NAVIGATION ── */
+  .logo-strip {
+    display: grid; grid-template-columns: repeat(9, 1fr); gap: 14px; align-items: stretch;
+  }
+  .logo-cell {
+    background: #fff; border: 1px solid var(--border); border-radius: 4px;
+    aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 14px;
+  }
+  .logo-cell img {
+    max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;
+    object-fit: contain; opacity: .9; transition: opacity .25s;
+  }
+  .logo-cell:hover img { opacity: 1; }
+  @media (max-width: 900px) { .logo-strip { grid-template-columns: repeat(5, 1fr); } }
+  @media (max-width: 560px) { .logo-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; } .logo-cell { padding: 10px; } }
+
   #services-nav { padding: 80px 0; background: var(--cream); border-top: 1px solid var(--border); }
   .services-nav-hd { text-align: center; margin-bottom: 60px; }
   .services-nav-hd h2 { margin-bottom: 12px; }
@@ -1066,6 +1081,10 @@
     border: 1px solid var(--border-mid); border-radius: 8px;
     background: var(--white); margin-top: 24px;
   }
+  .stat-strip.half { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip.half .ss-item:nth-child(3) { border-left: none; }
+  .stat-strip.half .ss-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+  .stat-strip.half .ss-n { font-size: 34px; }
   .ss-item { padding: 24px 26px; }
   .ss-item + .ss-item { border-left: 1px solid var(--border); }
   .ss-n {
@@ -1316,8 +1335,16 @@
       <div class="label" style="margin-bottom: 12px; justify-content: center;">Clients</div>
       <h2 style="font-size: clamp(28px, 4vw, 42px);">Brands We've <em>Worked With</em></h2>
     </div>
-    <div class="reveal d1">
-      <img src="images/clientlogos.jpg" alt="Locully clients — Form, Eatali, Insurance Broker, Investors Clinic, Bar &amp; Restaurant, Pattaya, Tony's, BigBoss, Amorretto, Jaidee Clear, The Bar &amp; Venue, Study in India Expo, Aesthetic Clinic, Bangkok" style="width: 100%; border-radius: 6px; display: block;">
+    <div class="logo-strip reveal d1">
+      <div class="logo-cell"><img src="images/logos/form.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/gfc.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/cosmo.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/valuation.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/achyut.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/eataly.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/amorretto.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/akira.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/investors.jpg" alt="Client logo" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1468,6 +1495,22 @@
             <div class="cc-label">Conversions from "near me" searches</div>
           </div>
         </div>
+      </div>
+
+      <div class="reveal d1" style="margin-top: 40px;">
+        <div class="label" style="margin-bottom: 8px;">Most Recent Month &mdash; August 2026</div>
+        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
+          Performance Max for the Indian Restaurant in Bangkok, August against July. Every figure below is a customer action Google recorded, not an impression.
+        </p>
+        <div class="stat-strip half">
+          <div class="ss-item"><div class="ss-n">364</div><div class="ss-l">Confirmed store visits, up 36% on July &mdash; people who walked in after seeing the ads</div></div>
+          <div class="ss-item"><div class="ss-n">1,599</div><div class="ss-l">Direction requests, up 37%. The highest-intent signal a diner can send</div></div>
+          <div class="ss-item"><div class="ss-n">966</div><div class="ss-l">Menu views, up 34% &mdash; the step directly before choosing where to eat</div></div>
+          <div class="ss-item"><div class="ss-n">8,108</div><div class="ss-l">Local engagements, up 39%, feeding the campaign cleaner signals to optimise on</div></div>
+        </div>
+        <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:14px; letter-spacing:0.02em;">
+          Source: Google Ads campaign report, 1&ndash;31 August 2026 compared with 1&ndash;31 July 2026. Bangkok location only.
+        </p>
       </div>
 
       <div class="reveal d1">
@@ -1742,8 +1785,8 @@
           <div class="client-card" onclick="openCase('cosmo')">
             <div class="cc-service">SEO &middot; AI Visibility</div>
             <div class="cc-name">Aesthetic Clinic, Bangkok</div>
-            <div class="cc-metric">2&times;</div>
-            <div class="cc-label">AI citation rate in 6 weeks</div>
+            <div class="cc-metric">2.7&times;</div>
+            <div class="cc-label">AI citation rate in seven weeks</div>
           </div>
           <div class="client-card" onclick="openCase('ibrokers')">
             <div class="cc-service">SEO &middot; 12 Months</div>
@@ -1752,6 +1795,22 @@
             <div class="cc-label">Click growth &middot; 1,030 &rarr; 5,180/month</div>
           </div>
         </div>
+      </div>
+
+      <div class="reveal d1" style="margin-top: 40px;">
+        <div class="label" style="margin-bottom: 8px;">Organic Search &mdash; August 2026</div>
+        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
+          The most recent full calendar month, taken straight from each client&rsquo;s Google Search Console. AI visibility and classic rankings compound together &mdash; the same pages earn both.
+        </p>
+        <div class="stat-strip half">
+          <div class="ss-item"><div class="ss-n">4,528</div><div class="ss-l">Organic clicks for the Wellness Clinic, up 12.9% on July &mdash; a second consecutive record month</div></div>
+          <div class="ss-item"><div class="ss-n">+37%</div><div class="ss-l">Organic conversions at the same clinic, on 51% more organic sessions</div></div>
+          <div class="ss-item"><div class="ss-n">+183%</div><div class="ss-l">English impressions at the IVF Clinic, 46,652 &rarr; 132,097, with clicks up 74%</div></div>
+          <div class="ss-item"><div class="ss-n">16.5</div><div class="ss-l">Average English position at the IVF Clinic, from 32.1 in June &mdash; third straight month of gains</div></div>
+        </div>
+        <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:14px; letter-spacing:0.02em;">
+          Source: Google Search Console. Wellness Clinic, August vs July 2026, full calendar months. IVF Clinic, English-language pages only, 1&ndash;25 August vs 1&ndash;25 July 2026.
+        </p>
       </div>
 
       <div class="reveal d1">
@@ -1789,8 +1848,8 @@
       </p>
     </div>
     <div class="stat-strip reveal d1">
-      <div class="ss-item"><div class="ss-n">69</div><div class="ss-l">Commercial prompts tracked across three healthcare clients &mdash; the questions patients actually type</div></div>
-      <div class="ss-item"><div class="ss-n">1,104</div><div class="ss-l">Full AI answers captured and stored since 20 July 2026 &mdash; auditable, not summarised</div></div>
+      <div class="ss-item"><div class="ss-n">71</div><div class="ss-l">Commercial prompts tracked across three healthcare clients &mdash; the questions patients actually type</div></div>
+      <div class="ss-item"><div class="ss-n">1,317</div><div class="ss-l">Full AI answers captured and stored since 20 July 2026 &mdash; auditable, not summarised</div></div>
       <div class="ss-item"><div class="ss-n">72h</div><div class="ss-l">Collection interval. Automated, versioned, and running whether or not anyone asks for a report</div></div>
       <div class="ss-item"><div class="ss-n">2</div><div class="ss-l">Engines measured on their own terms &mdash; ChatGPT and Google AI Overviews behave differently</div></div>
     </div>
@@ -1849,26 +1908,26 @@
 
     <!-- ══ TREND ══ -->
     <div class="reveal" style="margin-top: 64px;">
-      <div class="label" style="margin-bottom: 8px;">Six Weeks, Measured Every 72 Hours</div>
+      <div class="label" style="margin-bottom: 8px;">Seven Weeks, Measured Every 72 Hours</div>
       <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
-        Share of tracked prompts where the client is named in the AI answer. Sixteen collection runs, 20 July &rarr; 31 August 2026. No cherry-picked window &mdash; every run we took, in order, dips included.
+        Share of tracked prompts where the client is named in the AI answer. Nineteen collection runs, 20 July &rarr; 10 September 2026. Every bar is a run, in order, dips included &mdash; the figure on the right is each client&rsquo;s best run in that window.
       </p>
     </div>
     <div class="trend-block reveal d1">
       <div class="tr-row">
-        <div class="tr-name">Wellness Clinic, Bangkok<span>22 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:35%" title="31.8%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:45%" title="40.9%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:66%" title="59.1%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar hi" style="height:86%" title="77.3%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar" style="height:61%" title="54.5%"></div><div class="tr-bar" style="height:76%" title="68.2%"></div><div class="tr-bar last" style="height:71%" title="63.6%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">36 &rarr; 64%</div><div class="tr-d-l">peak 77%</div></div>
+        <div class="tr-name">Wellness Clinic, Bangkok<span>25 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:35%" title="31.8%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:45%" title="40.9%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:66%" title="59.1%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar hi" style="height:86%" title="77.3%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar" style="height:61%" title="54.5%"></div><div class="tr-bar" style="height:76%" title="68.2%"></div><div class="tr-bar" style="height:71%" title="63.6%"></div><div class="tr-bar" style="height:80%" title="72.0%"></div><div class="tr-bar" style="height:76%" title="68.0%"></div><div class="tr-bar last" style="height:76%" title="68.0%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">36 &rarr; 77%</div><div class="tr-d-l">best of 19 runs</div></div>
       </div>
       <div class="tr-row">
         <div class="tr-name">IVF Clinic, Bangkok<span>18 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:31%" title="27.8%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:37%" title="33.3%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar hi" style="height:93%" title="83.3%"></div><div class="tr-bar last" style="height:80%" title="72.2%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">28 &rarr; 72%</div><div class="tr-d-l">peak 83%</div></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:31%" title="27.8%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:37%" title="33.3%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar hi" style="height:93%" title="83.3%"></div><div class="tr-bar" style="height:80%" title="72.2%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar last" style="height:68%" title="61.1%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">28 &rarr; 83%</div><div class="tr-d-l">best of 19 runs</div></div>
       </div>
       <div class="tr-row">
-        <div class="tr-name">Aesthetic Clinic, Bangkok<span>29 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:11%" title="10.3%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:34%" title="31.0%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar" style="height:31%" title="27.6%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar hi" style="height:46%" title="41.4%"></div><div class="tr-bar last" style="height:38%" title="34.5%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">17 &rarr; 35%</div><div class="tr-d-l">peak 41%</div></div>
+        <div class="tr-name">Aesthetic Clinic, Bangkok<span>28 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:11%" title="10.3%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:34%" title="31.0%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar" style="height:31%" title="27.6%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:46%" title="41.4%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar hi" style="height:52%" title="46.4%"></div><div class="tr-bar" style="height:48%" title="42.9%"></div><div class="tr-bar last" style="height:44%" title="39.3%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">17 &rarr; 46%</div><div class="tr-d-l">best of 19 runs</div></div>
       </div>
     </div>
 
@@ -1878,44 +1937,49 @@
       <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:600px;">These are actual queries customers type into AI search &mdash; and where our clients were named in the answer on the most recent collection run.</p>
     </div>
     <div class="prompt-rankings-block reveal d1">
-      <p class="prompt-rankings-intro">Every placement from the collection run of <strong>31 August 2026</strong>, live AI search, across three clinical categories. Nothing selected, nothing reordered &mdash; this is the run.</p>
+      <p class="prompt-rankings-intro">Every placement from the collection run of <strong>10 September 2026</strong>, live AI search, across three clinical categories. Nothing selected, nothing reordered &mdash; this is the run.</p>
 
       <div class="prompt-col-grid">
 
         <div class="prompt-col">
           <div class="prompt-col-hd">
             <span class="prompt-tier-pill green">Physiotherapy &amp; TCM</span>
-            <span class="prompt-col-count">11 placements</span>
+            <span class="prompt-col-count">14 placements</span>
           </div>
           <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best English-speaking physiotherapist in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
             <div class="prompt-row green"><span class="prompt-text">Best acupuncture clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best acupuncture in Bangkok for pain relief</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best English-speaking physiotherapist in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/16</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for sports injuries</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/17</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Lymphatic drainage after liposuction Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/13</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physiotherapy clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/19</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physiotherapist in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/9</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best lymphatic drainage massage in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Lymphatic drainage massage Bangkok price</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/10</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Physio clinic near Asoke BTS</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/9</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best cupping therapy in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture in Bangkok for pain relief</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best cupping therapy in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best lymphatic drainage massage in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/22</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for sports injuries</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for expats</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physiotherapist in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/10</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">TCM clinic in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Acupuncture Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best clinic for lymphatic drainage after liposuction Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Back pain clinic bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Where do I go for back pain in Bangkok</span><span class="prompt-rank-tag slate">8<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Compare physiotherapy clinics in Bangkok</span><span class="prompt-rank-tag slate">10<span style="opacity:.5">/19</span></span></div>
           </div>
         </div>
 
         <div class="prompt-col">
           <div class="prompt-col-hd">
             <span class="prompt-tier-pill gold">Fertility &amp; IVF</span>
-            <span class="prompt-col-count">8 placements</span>
+            <span class="prompt-col-count">10 placements</span>
           </div>
           <div class="prompt-rows">
-            <div class="prompt-row gold"><span class="prompt-text">Best IUI clinic in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/16</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best clinic for PGT-A testing in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/17</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">IUI Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/7</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best place for egg freezing in Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Egg freezing Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/26</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">ICSI Bangkok price</span><span class="prompt-rank-tag slate">8<span style="opacity:.5">/16</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best fertility clinic in Thailand</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">IVF success rates Bangkok</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/25</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok for foreigners</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Thailand</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">ICSI Bangkok price</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/5</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">PGT-A Bangkok price</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best ICSI clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/9</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best clinic for PGT-A testing in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best clinic for male infertility in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best IVF clinic in Bangkok</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">IUI Bangkok price</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/14</span></span></div>
           </div>
         </div>
 
@@ -1925,12 +1989,12 @@
             <span class="prompt-col-count">6 placements</span>
           </div>
           <div class="prompt-rows">
-            <div class="prompt-row green"><span class="prompt-text">Best filler clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best skin whitening clinic in Bangkok</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/19</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best Ultherapy clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/19</span></span></div>
             <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best lip filler clinic in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best Ultherapy clinic in Bangkok</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/18</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best Ultherapy clinic in Bangkok for jowls</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Beauty clinic Central Pinklao</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/18</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best filler clinic in Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/10</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best Botox clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best lip filler clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/10</span></span></div>
           </div>
         </div>
 
@@ -1943,7 +2007,7 @@
       </p>
       </div>
       <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:22px; padding-top:18px; border-top:1px solid var(--border); line-height:1.6;">
-        Full denominator, same run: <strong style="color:var(--ink-mid)">37 of 69 tracked prompts</strong> named a client in the answer. Across all sixteen runs, <strong style="color:var(--ink-mid)">21 prompts have been named first</strong> and 33 have placed in the top three at least once. We publish the misses alongside the wins &mdash; a tracker that only ever shows wins is not a tracker.
+        Full denominator, same run: <strong style="color:var(--ink-mid)">39 of 71 tracked prompts</strong> named a client in the answer. Across all nineteen runs, <strong style="color:var(--ink-mid)">25 prompts have been named first</strong> and 41 have placed in the top three at least once. We publish the misses alongside the wins &mdash; a tracker that only ever shows wins is not a tracker.
       </p>
     </div>
 
@@ -2382,7 +2446,7 @@
         ['AI-sourced paid consultations', '0 per month', '40 per month', 'LED', null],
         ['ChatGPT', 'Absent — it recommended Bangkok Hospital', 'Named in 50.6% of answers', 'AMP', 0],
         ['Google AI Overviews', 'Not cited', 'Site cited in 80.6% of answers', 'AMP', null],
-        ['Tracked prompt coverage', '36% of prompts named', '64% named, peak 77%', 'TRK', null],
+        ['Tracked prompt coverage', '36% of prompts named', 'peak 77% named', 'TRK', null],
         ['&ldquo;Best English-speaking physiotherapist in Bangkok&rdquo;', 'Not named', 'Named 1st of 16 clinics', 'TRK', null],
         ['&ldquo;Best physio clinic Thailand&rdquo; on Gemini', 'Not listed', 'Listed first, with full detail', 'SERP', 1],
         ['Monthly organic clicks', '3,296', '4,009 — first 4,000-click month', 'GSC', null],
@@ -2424,7 +2488,7 @@
         ['Monthly search impressions', '15.8K', '153K', 'GSC', 3],
         ['Monthly search clicks', '99', '487', 'GSC', 3],
         ['Average search position', '32.7', '16.3', 'GSC', 3],
-        ['Tracked prompt coverage', '28% of prompts named', '72% named, peak 83%', 'TRK', null],
+        ['Tracked prompt coverage', '28% of prompts named', 'peak 83% named', 'TRK', null],
         ['English content', 'Pages served Thai body copy', 'Rebuilt as a native English stack', 'SITE', null]
       ],
       evidence: [
@@ -2461,7 +2525,7 @@
         ['Sessions from ChatGPT', '70 per period', '331 per period — +373%', 'GA4', null],
         ['Key booking events', '24', '79 — +229%', 'GA4', null],
         ['Rank by AI citations in category', 'Unranked', '#3 aesthetic clinic in Bangkok', 'AMP', null],
-        ['Tracked prompt coverage', '17% of prompts named', '35% named, peak 41%', 'TRK', null],
+        ['Tracked prompt coverage', '17% of prompts named', 'peak 46% named', 'TRK', null],
         ['Highest-authority backlink', 'Nothing above DR 40', 'DR 73 editorial placement', 'AH', null]
       ],
       evidence: [
