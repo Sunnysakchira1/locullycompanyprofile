@@ -9,16 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream:      #EDEAE3;
-    --cream-dark: #E3DFD7;
-    --ink:        #1A1918;
-    --ink-mid:    #4A4744;
-    --ink-light:  #8B867F;
-    --terra:      #C05023;
-    --terra-dark: #963D1A;
-    --white:      #F7F5F1;
-    --border:     rgba(26,25,24,0.10);
-    --border-mid: rgba(26,25,24,0.18);
+    --cream:      #f8f6f3;
+    --cream-dark: #f3f1ed;
+    --ink:        #14213d;
+    --ink-mid:    #4f5a75;
+    --ink-light:  #6a7488;
+    --terra:      #e26a2c;
+    --terra-dark: #c2521a;
+    --white:      #ffffff;
+    --border:     rgba(20,33,61,0.10);
+    --border-mid: rgba(20,33,61,0.18);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,13 +77,13 @@
   }
   #cover::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(192,80,35,0.12) 0%, transparent 65%);
+    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(226,106,44,0.12) 0%, transparent 65%);
     pointer-events: none;
   }
   #cover::after {
     content: ''; position: absolute;
     left: 52px; top: 0; bottom: 0; width: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(192,80,35,0.35) 30%, rgba(192,80,35,0.35) 70%, transparent);
+    background: linear-gradient(to bottom, transparent, rgba(226,106,44,0.35) 30%, rgba(226,106,44,0.35) 70%, transparent);
   }
   .cover-inner {
     max-width: 1160px; margin: 0 auto; width: 100%;
@@ -109,7 +109,7 @@
   }
   .cover-h1 em { font-style: normal; font-weight: 700; color: var(--terra); }
   .cover-desc {
-    font-size: 17px; color: rgba(247,245,241,0.5);
+    font-size: 17px; color: rgba(255,255,255,0.5);
     line-height: 1.8; font-weight: 300; max-width: 440px;
   }
   .cover-meta {
@@ -117,16 +117,16 @@
     display: flex; flex-direction: column; gap: 32px;
   }
   .cover-meta-row {
-    border-top: 1px solid rgba(247,245,241,0.08);
+    border-top: 1px solid rgba(255,255,255,0.08);
     padding-top: 24px;
   }
   .cover-meta-label {
     font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(247,245,241,0.28); margin-bottom: 8px;
+    color: rgba(255,255,255,0.28); margin-bottom: 8px;
   }
   .cover-meta-value {
     font-family: 'Google Sans', 'Noto Sans', system-ui, -apple-system, sans-serif;
-    font-size: 18px; color: rgba(247,245,241,0.75);
+    font-size: 18px; color: rgba(255,255,255,0.75);
     font-weight: 400;
   }
 
@@ -263,7 +263,7 @@
   .svc-section-alt .label { color: var(--terra); }
   .svc-section-alt h2 { color: var(--white); }
   .svc-section-alt h2 em { color: var(--terra); }
-  .svc-section-alt .intro { color: rgba(247,245,241,0.45); }
+  .svc-section-alt .intro { color: rgba(255,255,255,0.45); }
 
   .svc-header {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -295,12 +295,12 @@
 
   /* Dark variant detail grid */
   .svc-section-alt .svc-detail {
-    background: rgba(247,245,241,0.03);
-    border-color: rgba(247,245,241,0.07);
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.07);
   }
-  .svc-section-alt .svc-detail:hover { background: rgba(247,245,241,0.06); }
+  .svc-section-alt .svc-detail:hover { background: rgba(255,255,255,0.06); }
   .svc-section-alt .svc-detail h4 { color: var(--white); }
-  .svc-section-alt .svc-detail p { color: rgba(247,245,241,0.4); }
+  .svc-section-alt .svc-detail p { color: rgba(255,255,255,0.4); }
   .svc-section-alt .svc-detail-num { color: var(--terra); }
 
   /* Metrics row */
@@ -320,9 +320,9 @@
   }
   .metric-l { font-size: 13px; color: var(--ink-light); line-height: 1.45; font-weight: 300; }
 
-  .svc-section-alt .metrics-row { border-top-color: rgba(247,245,241,0.08); }
-  .svc-section-alt .metric { border-left-color: rgba(247,245,241,0.08); }
-  .svc-section-alt .metric-l { color: rgba(247,245,241,0.35); }
+  .svc-section-alt .metrics-row { border-top-color: rgba(255,255,255,0.08); }
+  .svc-section-alt .metric { border-left-color: rgba(255,255,255,0.08); }
+  .svc-section-alt .metric-l { color: rgba(255,255,255,0.35); }
 
   /* ── PROOF IMAGES ── */
   .proof-grid {
@@ -335,7 +335,7 @@
     border-radius: 4px; overflow: hidden;
     cursor: pointer; transition: transform 0.25s, box-shadow 0.25s;
   }
-  .proof-item:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(26,25,24,0.1); }
+  .proof-item:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(20,33,61,0.1); }
   .proof-item img {
     width: 100%; display: block;
     height: 200px; object-fit: cover; object-position: top;
@@ -353,12 +353,12 @@
 
   /* Dark proof grid */
   .svc-section-alt .proof-item {
-    background: rgba(247,245,241,0.04);
-    border-color: rgba(247,245,241,0.08);
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
   }
   .svc-section-alt .proof-item img { background: #1E1D1C; }
-  .svc-section-alt .proof-cap { border-top-color: rgba(247,245,241,0.06); }
-  .svc-section-alt .proof-desc { color: rgba(247,245,241,0.4); }
+  .svc-section-alt .proof-cap { border-top-color: rgba(255,255,255,0.06); }
+  .svc-section-alt .proof-desc { color: rgba(255,255,255,0.4); }
 
   /* ── CASE STUDY ── */
   #case { padding: 120px 0; background: var(--white); border-top: 1px solid var(--border); }
@@ -434,11 +434,11 @@
   footer {
     background: var(--ink); padding: 44px 52px;
     display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid rgba(247,245,241,0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
   footer img { height: 24px; width: auto; }
   .footer-right { text-align: right; }
-  .footer-copy { font-size: 12px; color: rgba(247,245,241,0.25); letter-spacing: 0.04em; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
 
   /* ── LIGHTBOX ── */
   #lb {
@@ -504,11 +504,11 @@
   .qr-l { font-size: 13px; color: var(--ink-mid); line-height: 1.5; font-weight: 300; }
 
   /* Dark quick results */
-  .svc-section-alt .quick-results { border-top-color: rgba(247,245,241,0.08); }
+  .svc-section-alt .quick-results { border-top-color: rgba(255,255,255,0.08); }
   .svc-section-alt .quick-results-label { color: var(--terra); }
-  .svc-section-alt .quick-results-grid { border-color: rgba(247,245,241,0.1); }
-  .svc-section-alt .qr { background: rgba(247,245,241,0.03); border-right-color: rgba(247,245,241,0.07); }
-  .svc-section-alt .qr-l { color: rgba(247,245,241,0.4); }
+  .svc-section-alt .quick-results-grid { border-color: rgba(255,255,255,0.1); }
+  .svc-section-alt .qr { background: rgba(255,255,255,0.03); border-right-color: rgba(255,255,255,0.07); }
+  .svc-section-alt .qr-l { color: rgba(255,255,255,0.4); }
 
   /* ── COVER LOGO ── */
   .cover-logo-img {
@@ -560,7 +560,7 @@
     padding: 20px 20px 28px; cursor: pointer; position: relative;
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   }
-  .client-card:hover { background: var(--white); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(26,25,24,0.09); }
+  .client-card:hover { background: var(--white); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(20,33,61,0.09); }
   .client-card::after {
     content: 'View case study →';
     position: absolute; bottom: 14px; left: 20px;
@@ -584,7 +584,7 @@
   /* ── CASE STUDY MODAL ── */
   #cs-modal {
     display: none; position: fixed; inset: 0;
-    background: rgba(26,25,24,0.9); z-index: 1001;
+    background: rgba(20,33,61,0.9); z-index: 1001;
     align-items: flex-start; justify-content: center;
     padding: 48px 20px 40px; overflow-y: auto;
   }
@@ -603,17 +603,17 @@
     font-family: 'Google Sans', 'Noto Sans', system-ui, -apple-system, sans-serif;
     font-size: 32px; font-weight: 600; color: var(--white); line-height: 1.05; margin-bottom: 6px;
   }
-  .cs-subtitle { font-size: 13px; color: rgba(247,245,241,0.38); font-weight: 300; }
+  .cs-subtitle { font-size: 13px; color: rgba(255,255,255,0.38); font-weight: 300; }
   #cs-close {
     position: absolute; top: 18px; right: 22px;
-    font-size: 26px; color: rgba(247,245,241,0.35); cursor: pointer; transition: color 0.2s; z-index: 2;
+    font-size: 26px; color: rgba(255,255,255,0.35); cursor: pointer; transition: color 0.2s; z-index: 2;
   }
   #cs-close:hover { color: var(--white); }
 
   /* ── HERO: one number, dominant ── */
   .cs-hero {
     margin-top: 30px; padding: 26px 0 30px;
-    border-top: 1px solid rgba(247,245,241,0.12);
+    border-top: 1px solid rgba(255,255,255,0.12);
     display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: center;
   }
   .cs-hero-n {
@@ -621,7 +621,7 @@
     line-height: 0.92; color: var(--terra); letter-spacing: -0.015em; white-space: nowrap;
   }
   .cs-hero-l { font-size: 14px; color: var(--white); font-weight: 500; line-height: 1.4; }
-  .cs-hero-d { font-size: 12.5px; color: rgba(247,245,241,0.55); font-weight: 300; line-height: 1.6; margin-top: 7px; }
+  .cs-hero-d { font-size: 12.5px; color: rgba(255,255,255,0.55); font-weight: 300; line-height: 1.6; margin-top: 7px; }
 
   .cs-body { padding: 30px 40px 34px; }
   .cs-sec + .cs-sec { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border); }
@@ -661,8 +661,8 @@
     padding: 2px 6px; border-radius: 3px; border: none;
     font-family: inherit; cursor: default;
   }
-  button.cs-src { cursor: pointer; color: var(--terra); background: rgba(192,80,35,0.10); transition: background 0.18s; }
-  button.cs-src:hover { background: rgba(192,80,35,0.20); }
+  button.cs-src { cursor: pointer; color: var(--terra); background: rgba(226,106,44,0.10); transition: background 0.18s; }
+  button.cs-src:hover { background: rgba(226,106,44,0.20); }
 
   /* ── EVIDENCE ── */
   .cs-ev { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -670,7 +670,7 @@
     border: 1px solid var(--border); border-radius: 5px; overflow: hidden;
     background: var(--cream); cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s;
   }
-  .cs-ev-item:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(26,25,24,0.1); }
+  .cs-ev-item:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20,33,61,0.1); }
   .cs-ev-item img { width: 100%; display: block; height: 130px; object-fit: cover; object-position: top left; }
   .cs-ev-b { padding: 12px 14px 15px; }
   .cs-ev-t {
@@ -762,7 +762,7 @@
     .proof-grid { grid-template-columns: 1fr 1fr; }
     .quick-results-grid { grid-template-columns: 1fr 1fr; }
     .quick-results-grid .qr:nth-child(3) { border-right: none; grid-column: 1 / -1; border-top: 1px solid var(--border); }
-    .svc-section-alt .quick-results-grid .qr:nth-child(3) { border-top-color: rgba(247,245,241,0.08); }
+    .svc-section-alt .quick-results-grid .qr:nth-child(3) { border-top-color: rgba(255,255,255,0.08); }
     .founder-row { grid-template-columns: 160px 1fr; }
     .founder-photo { width: 160px; height: 180px; }
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 36px 28px; }
@@ -809,21 +809,21 @@
   /* ── CHANNEL FLOW ── */
   .ch-flow { display:flex; flex-direction:column; align-items:stretch; gap:0; }
   .ch-item {
-    background: rgba(247,245,241,0.06); border: 1px solid rgba(247,245,241,0.12);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
     border-radius: 4px; padding: 12px 20px;
-    font-size: 13px; font-weight: 400; color: rgba(247,245,241,0.75);
+    font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.75);
     letter-spacing: 0.04em; text-align: center;
   }
-  .ch-item.ai { background: rgba(192,80,35,0.14); border-color: rgba(192,80,35,0.35); color: #d4714a; }
-  .ch-arrow { text-align:center; color:rgba(192,80,35,0.4); font-size:16px; line-height:1; padding:5px 0; }
+  .ch-item.ai { background: rgba(226,106,44,0.14); border-color: rgba(226,106,44,0.35); color: #d4714a; }
+  .ch-arrow { text-align:center; color:rgba(226,106,44,0.4); font-size:16px; line-height:1; padding:5px 0; }
 
   /* ── PATHWAY GRID ── */
   .pathway-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
   .pathway { border:1px solid var(--border-mid); border-radius:6px; overflow:hidden; display:flex; flex-direction:column; }
   .pathway-head { padding:28px 28px 22px; background:var(--ink); }
-  .pathway-num { font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(192,80,35,0.85); margin-bottom:10px; }
-  .pathway-title { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--white); line-height:1.1; margin-bottom:8px; }
-  .pathway-desc { font-size:12px; color:rgba(247,245,241,0.4); font-weight:300; line-height:1.55; }
+  .pathway-num { font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(226,106,44,0.85); margin-bottom:10px; }
+  .pathway-title { font-size:26px; font-weight:600; color:var(--white); line-height:1.1; margin-bottom:8px; }
+  .pathway-desc { font-size:12px; color:rgba(255,255,255,0.4); font-weight:300; line-height:1.55; }
   .pathway-body { padding:24px 28px 28px; background:var(--white); display:flex; flex-direction:column; gap:20px; flex:1; }
   .phase-lbl { font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--terra); margin-bottom:5px; }
   .phase-name { font-size:13px; font-weight:500; color:var(--ink); margin-bottom:6px; }
@@ -834,10 +834,10 @@
 
   /* ── COMBINE BLOCK ── */
   .combine-block { background:var(--ink); border-radius:6px; padding:40px 48px; margin-top:24px; }
-  .combine-block h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; color:var(--white); margin-bottom:10px; }
-  .combine-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:24px; border-top:1px solid rgba(247,245,241,0.1); padding-top:24px; }
+  .combine-block h3 { font-size:28px; font-weight:600; color:var(--white); margin-bottom:10px; }
+  .combine-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:24px; border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; }
   .combine-col h4 { font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
-  .combine-col p { font-size:13px; color:rgba(247,245,241,0.45); font-weight:300; line-height:1.65; }
+  .combine-col p { font-size:13px; color:rgba(255,255,255,0.45); font-weight:300; line-height:1.65; }
 
   /* ── WHY LOCULLY GRID ── */
   .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border-mid); border-radius:6px; overflow:hidden; margin-top:40px; }
@@ -904,7 +904,7 @@
     .metrics-row { grid-template-columns: 1fr; padding-top: 32px; }
     .metric { padding: 0 0 20px !important; border-left: none !important; border-bottom: 1px solid var(--border); }
     .metric:last-child { border-bottom: none; padding-bottom: 0 !important; }
-    .svc-section-alt .metric { border-bottom-color: rgba(247,245,241,0.08); }
+    .svc-section-alt .metric { border-bottom-color: rgba(255,255,255,0.08); }
     .metric-n { font-size: 40px; }
 
     /* Quick results */
@@ -912,7 +912,7 @@
     .quick-results-grid { grid-template-columns: 1fr; }
     .qr { border-right: none !important; border-bottom: 1px solid var(--border); }
     .qr:last-child { border-bottom: none; }
-    .svc-section-alt .qr { border-bottom-color: rgba(247,245,241,0.08); }
+    .svc-section-alt .qr { border-bottom-color: rgba(255,255,255,0.08); }
     .qr-n { font-size: 30px; }
 
     /* Dashboard walkthrough */
@@ -989,7 +989,7 @@
     display: none; position: fixed; top: 56px; left: 0; right: 0;
     background: var(--cream); z-index: 98;
     border-bottom: 2px solid var(--border-mid);
-    box-shadow: 0 12px 32px rgba(26,25,24,0.12);
+    box-shadow: 0 12px 32px rgba(20,33,61,0.12);
   }
   #mobile-menu.open { display: block; }
   #mobile-menu ul { list-style: none; padding: 6px 0 10px; }
@@ -1049,7 +1049,7 @@
     padding: 4px 11px; border-radius: 100px;
   }
   .prompt-tier-pill.green { background: rgba(37,160,80,0.12); color: #25A050; border: 1px solid rgba(37,160,80,0.25); }
-  .prompt-tier-pill.gold  { background: rgba(192,80,35,0.10); color: var(--terra-dark); border: 1px solid rgba(192,80,35,0.22); }
+  .prompt-tier-pill.gold  { background: rgba(226,106,44,0.10); color: var(--terra-dark); border: 1px solid rgba(226,106,44,0.22); }
   .prompt-tier-pill.slate { background: rgba(74,71,68,0.10); color: var(--ink-mid); border: 1px solid var(--border-mid); }
   .prompt-col-count { font-size: 10px; color: var(--ink-light); font-weight: 300; }
   .prompt-rows { display: flex; flex-direction: column; gap: 5px; }
@@ -1058,7 +1058,7 @@
     gap: 10px; padding: 9px 12px; border-radius: 5px;
   }
   .prompt-row.green { background: rgba(37,160,80,0.06); border: 1px solid rgba(37,160,80,0.14); }
-  .prompt-row.gold  { background: rgba(192,80,35,0.05); border: 1px solid rgba(192,80,35,0.13); }
+  .prompt-row.gold  { background: rgba(226,106,44,0.05); border: 1px solid rgba(226,106,44,0.13); }
   .prompt-row.slate { background: rgba(74,71,68,0.04); border: 1px solid var(--border); }
   .prompt-text { font-size: 12px; color: var(--ink); line-height: 1.4; }
   .prompt-rank-tag { font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
@@ -1098,10 +1098,10 @@
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 7px;
-    text-decoration-color: rgba(192,80,35,0.55);
+    text-decoration-color: rgba(226,106,44,0.55);
     text-decoration-skip-ink: none;
   }
-  .cc-metric .grow, .db-walk-n .grow, .conv-big .grow { text-decoration-color: rgba(192,80,35,0.85); }
+  .cc-metric .grow, .db-walk-n .grow, .conv-big .grow { text-decoration-color: rgba(226,106,44,0.85); }
   .cc-delta { margin-top: 8px; }
   .ss-delta { margin-top: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .ss-n .grow { display: inline-block; }
@@ -1163,9 +1163,9 @@
   .tr-name span { display: block; font-size: 10px; color: var(--ink-light); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
   .tr-bars { display: flex; align-items: flex-end; gap: 4px; height: 76px; }
   .tr-bars { border-bottom: 1px solid var(--border-mid); }
-  .tr-bar { flex: 1; background: rgba(192,80,35,0.22); border-radius: 2px 2px 0 0; min-height: 3px; }
+  .tr-bar { flex: 1; background: rgba(226,106,44,0.22); border-radius: 2px 2px 0 0; min-height: 3px; }
   .tr-bar.first, .tr-bar.last { background: var(--terra); }
-  .tr-bar.hi { background: rgba(192,80,35,0.48); }
+  .tr-bar.hi { background: rgba(226,106,44,0.48); }
   .tr-delta { text-align: right; }
   .tr-d-n { font-family: 'Google Sans', 'Noto Sans', system-ui, -apple-system, sans-serif; font-size: 27px; font-weight: 700; line-height: 1.05; white-space: nowrap; }
   .tr-d-l { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-top: 4px; }
@@ -1176,7 +1176,7 @@
     border-radius: 6px; overflow: hidden; cursor: zoom-in;
     transition: transform 0.25s, box-shadow 0.25s;
   }
-  .ev-item:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(26,25,24,0.1); }
+  .ev-item:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(20,33,61,0.1); }
   .ev-item img { width: 100%; display: block; height: 170px; object-fit: cover; object-position: top left; }
   .ev-body { padding: 14px 16px 18px; }
   .ev-tag {
@@ -1193,8 +1193,8 @@
     border-radius: 8px; padding: 44px 48px; margin-top: 24px;
   }
   .conv-big { font-family: 'Google Sans', 'Noto Sans', system-ui, -apple-system, sans-serif; font-size: 84px; font-weight: 700; line-height: 0.95; color: var(--terra); }
-  .conv-big-l { font-size: 12.5px; color: rgba(247,245,241,0.62); font-weight: 300; line-height: 1.55; margin-top: 14px; }
-  .conv-copy p { font-size: 14px; color: rgba(247,245,241,0.82); font-weight: 300; line-height: 1.7; }
+  .conv-big-l { font-size: 12.5px; color: rgba(255,255,255,0.62); font-weight: 300; line-height: 1.55; margin-top: 14px; }
+  .conv-copy p { font-size: 14px; color: rgba(255,255,255,0.82); font-weight: 300; line-height: 1.7; }
   .conv-copy p + p { margin-top: 14px; }
   .num-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
@@ -1230,6 +1230,93 @@
     .trend-block { padding: 22px 18px 18px; }
   }
 
+
+  /* ── 2026-11 homepage theme ── */
+  nav { background: #fff; }
+  #cover { background: #fff; border-bottom: 1px solid var(--border); }
+  #cover::before { background: radial-gradient(ellipse 80% 60% at 75% 45%, rgba(226,106,44,0.08) 0%, transparent 65%); }
+  .cover-h1 { color: var(--ink); letter-spacing: -0.03em; }
+  .cover-desc { color: var(--ink-mid); font-weight: 400; }
+  .cover-logo-img { display: none; }
+  .cover-meta-row { border-top-color: var(--border); }
+  .cover-meta-label { color: var(--ink-light); }
+  .cover-meta-value { color: var(--ink); }
+  .cover-eyebrow { color: var(--terra-dark); }
+  .overview-video { width: min(100%, 340px); margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: var(--ink); box-shadow: 0 20px 50px rgba(20,33,61,.18); }
+  .overview-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .logo-strip { grid-template-columns: repeat(7, 1fr); max-width: 1100px; margin: 0 auto; }
+  .logo-cell { aspect-ratio: 2 / 1; border-radius: 12px; padding: 0; overflow: hidden; }
+  .logo-cell img { width: 100%; height: 100%; opacity: 1; }
+  @media (max-width: 900px) { .logo-strip { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 560px) { .logo-strip { grid-template-columns: repeat(3, 1fr); } }
+  #about h2 { font-size: clamp(30px, 3.6vw, 44px); }
+  .about-steps { list-style: none; counter-reset: st; margin: 28px 0 0; padding: 0; border-top: 1px solid var(--border); }
+  .about-steps li { counter-increment: st; position: relative; padding: 14px 0 14px 40px; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.6; color: var(--ink-mid); }
+  .about-steps li::before { content: counter(st, decimal-leading-zero); position: absolute; left: 0; top: 15px; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--terra-dark); }
+  .about-steps li b { color: var(--ink); font-weight: 600; }
+  .about-facts { margin-top: 20px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); font-weight: 500; }
+  .steps-wide { grid-column: 1 / -1; margin-top: 8px; padding-top: 48px; border-top: 1px solid var(--border); }
+  .steps-head { margin-bottom: 36px; }
+  .steps-head .label { margin-bottom: 10px; }
+  .steps-head h3 { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
+  .steps-wide .svc-detail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: none; border-radius: 0; background: none; overflow: visible; }
+  .steps-wide .svc-detail { position: relative; background: none; border: none; border-top: 2px solid var(--border-mid); padding: 30px 28px 4px 0; }
+  .steps-wide .svc-detail:hover { background: none; }
+  .steps-wide .svc-detail::before { content: ''; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--terra); box-shadow: 0 0 0 5px var(--white); }
+  #performance .steps-wide .svc-detail::before { box-shadow: 0 0 0 5px var(--cream); }
+  .steps-wide .svc-detail-num { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-dark); margin-bottom: 12px; }
+  .steps-wide .svc-detail h4 { font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); margin-bottom: 12px; min-height: 2.4em; }
+  .steps-wide .svc-detail p, .steps-wide .svc-detail ul li { font-size: 14.5px; line-height: 1.65; color: var(--ink-mid); font-weight: 400; }
+  @media (max-width: 1024px) { .steps-wide .svc-detail-grid { grid-template-columns: 1fr 1fr; row-gap: 36px; } .steps-wide .svc-detail h4 { min-height: 0; } }
+  @media (max-width: 620px) { .steps-wide .svc-detail-grid { grid-template-columns: 1fr; } .steps-wide .svc-detail { padding-right: 0; } }
+  .own-tracker { display: grid; grid-template-columns: 1.55fr 1fr; gap: 28px; align-items: start; margin-top: 28px; }
+  .ot-shot { margin: 0; min-width: 0; }
+  .ot-shot img { width: 100%; display: block; border: 1px solid var(--border-mid); border-radius: 12px; cursor: zoom-in; box-shadow: 0 16px 40px rgba(20,33,61,.10); }
+  .ot-shot figcaption { font-size: 12px; color: var(--ink-light); margin-top: 10px; }
+  .ot-box { background: var(--ink); color: #fff; border-radius: 12px; padding: 32px 30px 30px; position: sticky; top: 84px; }
+  .ot-k { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
+  .ot-box h4 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: #fff; margin-bottom: 12px; }
+  .ot-box p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.78); margin-bottom: 20px; }
+  .ot-box ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.16); }
+  .ot-box li { font-size: 14px; line-height: 1.5; color: #fff; padding: 12px 0 12px 22px; border-bottom: 1px solid rgba(255,255,255,.16); position: relative; }
+  .ot-box li::before { content: ''; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+  @media (max-width: 900px) { .own-tracker { grid-template-columns: 1fr; } .ot-box { position: static; } }
+  .ev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
+  .ev-tile { display: flex; flex-direction: column; text-align: left; background: #fff; border: 1px solid var(--border-mid); border-radius: 12px; padding: 0 0 18px; overflow: hidden; cursor: zoom-in; font: inherit; color: inherit; transition: transform .18s, box-shadow .18s; }
+  .ev-tile:hover, .ev-tile:focus-visible { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(20,33,61,.13); outline: none; border-color: var(--terra); }
+  .ev-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--cream-dark); border-bottom: 1px solid var(--border); }
+  .ev-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+  .ev-who { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-dark); padding: 16px 18px 0; }
+  .ev-t { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; color: var(--ink); padding: 6px 18px 0; }
+  @media (max-width: 900px) { .ev-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .ev-grid { grid-template-columns: 1fr; } }
+  #lb { flex-direction: column; gap: 18px; padding: 24px 16px; }
+  #lb img { max-height: 70vh; }
+  #lb-cap { max-width: min(680px, 92vw); background: #fff; border-radius: 12px; padding: 18px 22px 20px; cursor: default; }
+  #lb-cap[hidden] { display: none; }
+  #lb-cap .lc-who { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-dark); }
+  #lb-cap .lc-t { font-size: 19px; font-weight: 700; color: var(--ink); margin: 4px 0 6px; }
+  #lb-cap .lc-x { font-size: 15px; line-height: 1.6; color: var(--ink-mid); margin: 0; }
+  .pts { list-style: none; margin: 18px 0 0; padding: 0; max-width: 620px; }
+  .pts li { position: relative; padding: 0 0 0 22px; margin-bottom: 12px; font-size: 16px; line-height: 1.6; color: var(--ink-mid); }
+  .pts li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); }
+  .pts li b { color: var(--ink); font-weight: 600; }
+  .pts-dark li { color: rgba(255,255,255,.78); }
+  .sep-strip { margin-top: 22px; border: 1px solid var(--border-mid); border-radius: 8px; padding: 18px 20px; background: var(--white); }
+  .sep-k { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra-dark); margin-bottom: 12px; }
+  .sep-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .sep-row b { display: block; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); line-height: 1.1; }
+  .sep-row span { display: block; font-size: 12.5px; line-height: 1.45; color: var(--ink-mid); margin-top: 6px; }
+  .sep-src { font-size: 11px; color: var(--ink-light); margin-top: 12px; }
+  @media (max-width: 560px) { .sep-row { grid-template-columns: 1fr; } }
+  .cover-h1 { margin-bottom: 26px; }
+  .cover-wordmark { display: block; height: 46px; width: auto; margin: 0 0 30px; }
+  .trk-shots { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 24px; margin-top: 28px; align-items: start; }
+  .trk-shots figure { margin: 0; }
+  .trk-shots img { width: 100%; display: block; border: 1px solid var(--border); border-radius: 8px; cursor: zoom-in; }
+  .trk-shots figcaption { font-size: 13px; color: var(--ink-mid); margin-top: 10px; line-height: 1.5; }
+  .trk-shots figcaption b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 760px) { .trk-shots { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1237,12 +1324,12 @@
 <!-- NAV -->
 <nav>
   <a href="#cover" class="nav-logo">
-    <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Cormorant Garamond,serif;font-size:22px;font-weight:600;color:#1A1918\'>Locully</span>'">
+    <img src="images/brand/locully.png" alt="Locully">
   </a>
   <div class="nav-right">
     <ul class="nav-services">
+      <li><a href="#seo-aio">SEO & GEO</a></li>
       <li><a href="#performance">Performance Marketing</a></li>
-      <li><a href="#seo-aio">SEO & AI Visibility</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#fit">Who We Work With</a></li>
     </ul>
@@ -1260,8 +1347,8 @@
 <!-- MOBILE MENU -->
 <div id="mobile-menu">
   <ul>
+    <li><a href="#seo-aio" onclick="closeMobileMenu()">SEO & GEO</a></li>
     <li><a href="#performance" onclick="closeMobileMenu()">Performance Marketing</a></li>
-    <li><a href="#seo-aio" onclick="closeMobileMenu()">SEO & AI Visibility</a></li>
     <li><a href="#testimonials" onclick="closeMobileMenu()">Reviews</a></li>
     <li><a href="#fit" onclick="closeMobileMenu()">Who We Work With</a></li>
     <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
@@ -1274,17 +1361,18 @@
 
 <!-- COVER -->
 <section id="cover">
-  <img class="cover-logo-img" src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" onerror="this.style.display='none'">
+  <img class="cover-logo-img" src="images/brand/locully.png" alt="Locully">
   <div class="cover-inner">
     <div>
-      <div class="cover-eyebrow">Bangkok · Thailand & Southeast Asia · Est. 2024</div>
+      <div class="cover-eyebrow">Bangkok · Thailand & Southeast Asia</div>
       <h1 class="cover-h1">
         Locully<br>
         <em>Company</em><br>
         Profile
       </h1>
+      <img class="cover-wordmark" src="images/brand/locully-wordmark.svg" alt="Locully">
       <p class="cover-desc">
-        A growth marketing agency specialising in AI search visibility, local lead generation, and performance advertising for businesses operating in Thailand and Southeast Asia.
+        A growth marketing agency specialising in GEO (AI search), local lead generation, and performance advertising for businesses operating in Thailand and Southeast Asia.
       </p>
     </div>
     <div class="cover-meta">
@@ -1294,11 +1382,11 @@
       </div>
       <div class="cover-meta-row">
         <div class="cover-meta-label">Primary Services</div>
-        <div class="cover-meta-value">SEO & AI Visibility · Lead Generation · Performance Marketing</div>
+        <div class="cover-meta-value">SEO & GEO · Lead Generation · Performance Marketing</div>
       </div>
       <div class="cover-meta-row">
-        <div class="cover-meta-label">Clients Served</div>
-        <div class="cover-meta-value">20+ businesses across Thailand & SEA — Clinics, Hospitality, Finance, Education</div>
+        <div class="cover-meta-label">Sectors</div>
+        <div class="cover-meta-value">Clinics, Hospitality, Finance, Education</div>
       </div>
       <div class="cover-meta-row">
         <div class="cover-meta-label">Document</div>
@@ -1308,19 +1396,40 @@
   </div>
 </section>
 
+<!-- OVERVIEW VIDEO -->
+<section id="overview" style="padding: 88px 0; background: var(--cream); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 36px;">
+      <div class="label" style="margin-bottom: 12px; justify-content: center;">Overview</div>
+      <h2 style="font-size: clamp(28px, 4vw, 42px);">Locully in <em>Two Minutes</em></h2>
+    </div>
+    <div class="overview-video reveal d1"><video controls playsinline preload="none" poster="video/overview-poster.jpg" src="video/overview.mp4" aria-label="Locully overview video"></video></div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
         <div class="label">About Locully</div>
-        <h2>Bangkok's <em>Growth Partner</em></h2>
+        <h2>A Bangkok Agency for <em>GEO, SEO</em> and Performance Marketing</h2>
         <p class="intro">
-          Locully is a B2B marketing agency founded in Bangkok to address a straightforward problem: <span class="key">most businesses invest in marketing without knowing whether it is working.</span> We change that.
+          Locully is a digital marketing agency in Bangkok, Thailand. We help businesses get found where their customers search, compare and make decisions: Google Search, Google Maps and AI assistants like ChatGPT.
         </p>
         <p class="intro" style="margin-top: 16px;">
-          We operate as a dedicated growth partner — not a vendor. Our work spans AI search optimisation, local lead generation, and performance advertising, executed by a locally based team that understands the Thai market.
+          <span class="key">GEO, or AI search, is our core work.</span> Locully works on how AI assistants find, understand and describe your business. That includes ChatGPT, Claude, Google Gemini, Perplexity and Google AI Overviews.
         </p>
+        <p class="intro" style="margin-top: 16px;">
+          Locully&rsquo;s approach is pull marketing. Instead of pushing messages at people and hoping they care, we help you get found by people who are already searching for what you sell.
+        </p>
+        <ol class="about-steps">
+          <li><b>Measure.</b> Locully records where you stand: Google rankings, Google Maps, and what AI assistants say about you on a fixed set of buying questions.</li>
+          <li><b>Fix.</b> Locully repairs the site, the content and the business details that search engines and AI assistants read.</li>
+          <li><b>Place.</b> Locully earns mentions of your business on trusted third-party sites, the kind Google and AI assistants read.</li>
+          <li><b>Report.</b> Every month you get a report tied to enquiries, bookings and cost per acquisition.</li>
+        </ol>
+        <p class="about-facts">Founded 2020 &middot; Rebranded as Locully 2025 &middot; Bangkok &middot; Thailand and Singapore</p>
         <div class="mission-pull">
           <p>"People are no longer just searching Google — they're asking ChatGPT where to go. <span class="key">We help businesses become the recommendation.</span>"</p>
         </div>
@@ -1330,23 +1439,43 @@
         <div class="team-stack">
           <div class="founder-row">
             <div class="founder-photo">
-              <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/3500a91a4c149ce4bd90f26531350113.jpg" alt="Sunny Sakchiraphong — Founder, Locully" onerror="this.parentNode.style.background='var(--cream-dark)'">
+              <img src="images/team/sunny.jpg" alt="Sunny Sakchiraphong, Founder of Locully">
             </div>
             <div class="founder-info">
               <div class="t-name">Sunny Sakchiraphong</div>
               <div class="t-role">Founder & CEO</div>
-              <p class="t-bio">Marketing specialist with expertise in SEO, AI search optimisation, and performance marketing. Sunny has worked with 20+ Thai businesses across healthcare, hospitality, finance, and education — and personally leads strategy for every client engagement.</p>
+              <p class="t-bio">Marketing specialist with expertise in SEO, AI search optimisation, and performance marketing. Sunny works with businesses across healthcare, hospitality, finance, and education — and personally leads strategy for every client engagement.</p>
             </div>
           </div>
-          <div class="team-item">
-            <div class="t-name">Boni</div>
-            <div class="t-role">SEO & Content Lead</div>
-            <p class="t-bio">Technical SEO specialist with 7+ years in organic growth, content architecture, and digital PR. Leads execution across keyword strategy, AI-optimised content, and authority-building campaigns that earn citations from AI platforms.</p>
+          <div class="founder-row">
+            <div class="founder-photo">
+              <img src="images/team/rachanon.jpg" alt="Rachanon Sakchiraphong, Head of Partnerships at Locully">
+            </div>
+            <div class="founder-info">
+              <div class="t-name">Rachanon Sakchiraphong</div>
+              <div class="t-role">Head of Partnerships</div>
+              <p class="t-bio">Rachanon looks after Locully&rsquo;s partnerships.</p>
+            </div>
+          </div>
+          <div class="founder-row">
+            <div class="founder-photo">
+              <img src="images/team/neramit.jpg" alt="Neramit S., AI Lead at Locully">
+            </div>
+            <div class="founder-info">
+              <div class="t-name">Neramit S.</div>
+              <div class="t-role">AI Lead</div>
+              <p class="t-bio">Builds AI agents and workflow automations that take repetitive work off client teams, with people kept in control. Leads Locully&rsquo;s hands-on Agentic AI for Businesses training.</p>
+            </div>
           </div>
           <div class="team-item">
             <div class="t-name">Bangkok Operations Team</div>
             <div class="t-role">Local Execution</div>
             <p class="t-bio">In-market team managing paid advertising, content production, reporting, and event marketing. Locally based for faster turnaround and real-time responsiveness to Thailand's market conditions.</p>
+          </div>
+          <div class="team-item">
+            <div class="t-name">Philippines SEO Team</div>
+            <div class="t-role">SEO Execution</div>
+            <p class="t-bio">SEO team handling on-page optimisation, content production, and link building across client accounts.</p>
           </div>
         </div>
       </div>
@@ -1371,6 +1500,10 @@
       <div class="logo-cell"><img src="images/logos/amorretto.jpg" alt="Client logo" loading="lazy"></div>
       <div class="logo-cell"><img src="images/logos/akira.jpg" alt="Client logo" loading="lazy"></div>
       <div class="logo-cell"><img src="images/logos/investors.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/opera.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/jdc.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/expatmedicare.jpg" alt="Client logo" loading="lazy"></div>
+      <div class="logo-cell"><img src="images/logos/ironfairies.jpg" alt="Client logo" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1380,15 +1513,11 @@
   <div class="container">
     <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:start;">
       <div class="reveal">
-        <div class="label" style="color:rgba(192,80,35,0.9); margin-bottom:16px;">Market Reality · 2026</div>
+        <div class="label" style="color:rgba(226,106,44,0.9); margin-bottom:16px;">Market Reality · 2026</div>
         <h2 style="color:var(--white);">How customers find<br><em>businesses today</em></h2>
-        <p style="font-size:15px; color:rgba(247,245,241,0.6); margin-top:24px; font-weight:300; line-height:1.75;">
-          Customers now go to ChatGPT, Gemini, and Google AI before they ever scroll search results. They ask "best physio in Bangkok" or "where should I eat tonight" — and book whoever the AI names first.
-        </p>
-        <p style="font-size:15px; color:rgba(247,245,241,0.6); margin-top:16px; font-weight:300; line-height:1.75;">
-          Most business owners don't realise this is happening. Referrals feel steady. But competitors are quietly capturing every booking, every enquiry, every table reservation that comes through these channels — every single day.
-        </p>
-        <div style="margin-top:32px; padding:22px 24px; background:rgba(192,80,35,0.1); border:1px solid rgba(192,80,35,0.3); border-radius:4px;">
+        <ul class="pts pts-dark"><li>Customers ask ChatGPT, Gemini and Google AI before they scroll search results.</li><li>They book whoever the AI names first.</li><li>Most owners never see it happen. Competitors take those bookings every day.</li></ul>
+        
+        <div style="margin-top:32px; padding:22px 24px; background:rgba(226,106,44,0.1); border:1px solid rgba(226,106,44,0.3); border-radius:4px;">
           <p style="font-size:15px; color:var(--white); font-weight:300; line-height:1.65; font-style:italic;">
             "If your business isn't on these platforms, you are not losing <em>visibility</em>. You are losing <strong style="font-weight:500; font-style:normal;">revenue</strong> — to someone who is."
           </p>
@@ -1408,7 +1537,7 @@
           <div class="ch-arrow">↓</div>
           <div class="ch-item ai">Perplexity</div>
         </div>
-        <p style="font-size:11px; color:rgba(247,245,241,0.28); text-align:center; margin-top:16px; letter-spacing:0.06em;">Every channel above is where customers decide who to book in 2026</p>
+        <p style="font-size:11px; color:rgba(255,255,255,0.28); text-align:center; margin-top:16px; letter-spacing:0.06em;">Every channel above is where customers decide who to book in 2026</p>
       </div>
     </div>
   </div>
@@ -1424,21 +1553,17 @@
     </div>
     <div class="svc-nav-grid reveal d1">
 
-      <a href="#performance" class="svc-nav-card">
+      <a href="#seo-aio" class="svc-nav-card">
         <div class="svc-num">01</div>
-        <div class="svc-nav-title">Performance Marketing</div>
-        <p class="svc-nav-desc">
-          Google Search, Meta, and programmatic advertising managed for measurable ROI. Every campaign is structured around cost-per-lead and revenue targets, not impressions.
-        </p>
+        <div class="svc-nav-title">SEO & GEO</div>
+        <p class="svc-nav-desc">Rank on Google and get cited by ChatGPT, Gemini, Google AI Overviews and Perplexity.</p>
         <div class="svc-nav-anchor">View service details</div>
       </a>
 
-      <a href="#seo-aio" class="svc-nav-card">
+      <a href="#performance" class="svc-nav-card">
         <div class="svc-num">02</div>
-        <div class="svc-nav-title">SEO & AI Visibility</div>
-        <p class="svc-nav-desc">
-          Structured programmes to increase organic search rankings and ensure your brand is cited by AI platforms — ChatGPT, Gemini, Google AI Overviews, and Perplexity.
-        </p>
+        <div class="svc-nav-title">Performance Marketing</div>
+        <p class="svc-nav-desc">Google Ads and Meta Ads, managed to cost per lead and revenue.</p>
         <div class="svc-nav-anchor">View service details</div>
       </a>
 
@@ -1447,18 +1572,385 @@
 </section>
 
 <!-- ════════════════════════════════
-     SERVICE 01: PERFORMANCE MARKETING
+     SERVICE 01: SEO & GEO
      ════════════════════════════════ -->
-<section id="performance" class="svc-section" style="background: var(--white);">
+<section id="seo-aio" class="svc-section" style="background: var(--white);">
   <div class="container">
     <div class="svc-header">
       <div class="reveal">
         <div class="label">Service 01</div>
+        <h2>SEO &amp; <em>GEO</em></h2>
+        <ul class="pts"><li>Customers now find businesses on ChatGPT, Gemini, Perplexity and Google AI Overviews as well as Google.</li><li>We build the content, technical foundations and backlinks that get you cited and ranked.</li><li>We measure it every 72 hours and show you the raw answers.</li></ul>
+        
+        <div class="client-cards reveal">
+          <div class="client-card" onclick="openCase('form-recovery')">
+            <div class="cc-service">SEO &middot; GEO</div>
+            <div class="cc-name">Wellness Clinic, Bangkok</div>
+            <div class="cc-metric"><span class="grow">0 &rarr; 31</span></div>
+            <div class="cc-label">AI-sourced consultations in a month &middot; Aug 2025 to Oct 2026</div>
+          </div>
+          <div class="client-card" onclick="openCase('genesis')">
+            <div class="cc-service">SEO &middot; GEO</div>
+            <div class="cc-name">IVF Clinic, Bangkok</div>
+            <div class="cc-metric"><span class="grow">0 &rarr; 10</span></div>
+            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>0 &rarr; 242 AI citations in 2 months</span></div>
+            <div class="cc-label">Patients from AI search in three months &middot; clinic-reported</div>
+          </div>
+          <div class="client-card" onclick="openCase('cosmo')">
+            <div class="cc-service">SEO &middot; GEO</div>
+            <div class="cc-name">Aesthetic Clinic, Bangkok</div>
+            <div class="cc-metric"><span class="grow">7 &rarr; 32</span></div>
+            <div class="cc-label">Patient enquiries &middot; January and February combined, then March alone</div>
+          </div>
+          <div class="client-card" onclick="openCase('ibrokers')">
+            <div class="cc-service">SEO &middot; 12 Months</div>
+            <div class="cc-name">Insurance Broker, Bangkok</div>
+            <div class="cc-metric"><span class="grow">5&times;</span></div>
+            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>+403%</span></div>
+            <div class="cc-label">Click growth &middot; 1,030 &rarr; 5,180/month</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1" style="margin-top: 40px;">
+        <div class="label" style="margin-bottom: 8px;">Organic Search</div>
+        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">From each client&rsquo;s Google Search Console.</p>
+        <div class="stat-strip half">
+          <div class="ss-item">
+            <div class="ss-n"><span class="grow">4,528</span></div>
+            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>+12.9%</span><span class="delta ctx">vs July</span></div>
+            <div class="ss-l">Organic clicks for the Wellness Clinic &mdash; a second consecutive record month</div>
+          </div>
+          <div class="ss-item">
+            <div class="ss-n"><span class="grow">+37%</span></div>
+            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>+51% sessions</span></div>
+            <div class="ss-l">Organic conversions at the same clinic, on far more organic traffic</div>
+          </div>
+          <div class="ss-item">
+            <div class="ss-n"><span class="grow">16&times;</span></div>
+            <div class="ss-delta"><span class="delta ctx">15.8K &rarr; 252K</span><span class="delta"><span class="ar">&#9650;</span>clicks 99 &rarr; 844</span></div>
+            <div class="ss-l">English impressions at the IVF Clinic, June to October</div>
+          </div>
+          <div class="ss-item">
+            <div class="ss-n"><span class="grow">13.2</span></div>
+            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>19.5 places</span><span class="delta ctx">from 32.7 in June</span></div>
+            <div class="ss-l">Average English position at the IVF Clinic in October</div>
+          </div>
+        </div>
+        <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:14px; letter-spacing:0.02em;">
+          Source: Google Search Console. Wellness Clinic, August vs July 2026, full calendar months. IVF Clinic, English-language pages only, October vs June 2026, full calendar months.
+        </p>
+      </div>
+
+      <div class="reveal d1 steps-wide">
+        <div class="steps-head"><div class="label">Our Process</div><h3>Four steps, in this order</h3></div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 01</div>
+            <h4>GEO Audit</h4>
+            <p>Benchmark your brand against competitors across the major AI platforms. Find the gaps and technical blocks.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 02</div>
+            <h4>Technical &amp; Content Foundation</h4>
+            <p>On-page SEO, schema and content formatted for AI to cite.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 03</div>
+            <h4>Authority &amp; Backlink Building</h4>
+            <p>Editorial placements on DR50+ publications, digital PR and directory citations.</p>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-num">Step 04</div>
+            <h4>Monitoring &amp; Compounding</h4>
+            <p>Prompts re-run every 72 hours. Full answers stored, not a score.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ MEASUREMENT INFRASTRUCTURE ══ -->
+    <div class="reveal" style="margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">How We Prove It</div>
+      <h3 style="font-size:34px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; max-width:640px; margin-bottom:14px;">Most agencies report GEO results from a screenshot. We run a tracker.</h3>
+      <ul class="pts"><li>Every 72 hours each client&rsquo;s prompts run through live AI search.</li><li>We store the full answer, your position and every competitor named.</li><li>Clients log in and read the raw responses.</li></ul>
+    </div>
+    <div class="own-tracker reveal d1">
+      <figure class="ot-shot">
+        <img src="images/tracker/client-tracker.jpg" alt="Locully tracker: what changed since the last run, prompts won and lost, links in ChatGPT answers, and results by type of question" loading="lazy" onclick="lb(this.src)">
+        <figcaption>Locully&rsquo;s own tracker, client view. Prompt text blurred for confidentiality.</figcaption>
+      </figure>
+      <aside class="ot-box">
+        <div class="ot-k">Client access</div>
+        <h4>Every client receives their own login.</h4>
+        <p>You see the same tracker we work from, not a monthly summary of it.</p>
+        <ul>
+          <li>What changed since the last run</li>
+          <li>Prompts won and lost, run by run</li>
+          <li>Links to your website in ChatGPT answers</li>
+          <li>Results by type of question</li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- ══ TREND ══ -->
+    <div class="reveal" style="margin-top: 64px;">
+      <div class="label" style="margin-bottom: 8px;">Three Months, Measured Every 72 Hours</div>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">Share of tracked prompts naming the client. 26 runs, 20 July to 19 October 2026. The figure on the right is each client&rsquo;s best run.</p>
+    </div>
+    <div class="trend-block reveal d1">
+      <div class="tr-row">
+        <div class="tr-name">Wellness Clinic, Bangkok<span>22 to 100 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:36%" title="36.4%"></div><div class="tr-bar" style="height:36%" title="36.4%"></div><div class="tr-bar" style="height:36%" title="36.4%"></div><div class="tr-bar" style="height:46%" title="45.5%"></div><div class="tr-bar" style="height:32%" title="31.8%"></div><div class="tr-bar" style="height:46%" title="45.5%"></div><div class="tr-bar" style="height:41%" title="40.9%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:36%" title="36.4%"></div><div class="tr-bar" style="height:59%" title="59.1%"></div><div class="tr-bar" style="height:73%" title="72.7%"></div><div class="tr-bar" style="height:77%" title="77.3%"></div><div class="tr-bar" style="height:73%" title="72.7%"></div><div class="tr-bar" style="height:54%" title="54.5%"></div><div class="tr-bar" style="height:68%" title="68.2%"></div><div class="tr-bar" style="height:64%" title="63.6%"></div><div class="tr-bar" style="height:72%" title="72.0%"></div><div class="tr-bar" style="height:68%" title="68.0%"></div><div class="tr-bar" style="height:68%" title="68.0%"></div><div class="tr-bar" style="height:72%" title="72.0%"></div><div class="tr-bar" style="height:72%" title="72.0%"></div><div class="tr-bar" style="height:76%" title="76.0%"></div><div class="tr-bar hi" style="height:88%" title="88.0%"></div><div class="tr-bar" style="height:60%" title="59.7%"></div><div class="tr-bar" style="height:79%" title="79.0%"></div><div class="tr-bar last" style="height:73%" title="73.0%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">36 &rarr; 88%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>2.4&times;</span></div><div class="tr-d-l">best of 26 runs</div></div>
+      </div>
+      <div class="tr-row">
+        <div class="tr-name">IVF Clinic, Bangkok<span>18 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:28%" title="27.8%"></div><div class="tr-bar" style="height:44%" title="44.4%"></div><div class="tr-bar" style="height:44%" title="44.4%"></div><div class="tr-bar" style="height:56%" title="55.6%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:44%" title="44.4%"></div><div class="tr-bar" style="height:56%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="55.6%"></div><div class="tr-bar" style="height:67%" title="66.7%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:33%" title="33.3%"></div><div class="tr-bar" style="height:61%" title="61.1%"></div><div class="tr-bar" style="height:67%" title="66.7%"></div><div class="tr-bar" style="height:83%" title="83.3%"></div><div class="tr-bar" style="height:72%" title="72.2%"></div><div class="tr-bar" style="height:61%" title="61.1%"></div><div class="tr-bar" style="height:67%" title="66.7%"></div><div class="tr-bar" style="height:61%" title="61.1%"></div><div class="tr-bar" style="height:78%" title="77.8%"></div><div class="tr-bar" style="height:56%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="55.6%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:61%" title="61.1%"></div><div class="tr-bar last" style="height:94%" title="94.4%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">28 &rarr; 94%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>3.4&times;</span></div><div class="tr-d-l">best of 26 runs</div></div>
+      </div>
+      <div class="tr-row">
+        <div class="tr-name">Aesthetic Clinic, Bangkok<span>28 prompts</span></div>
+        <div class="tr-bars"><div class="tr-bar first" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:14%" title="13.8%"></div><div class="tr-bar" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:14%" title="13.8%"></div><div class="tr-bar" style="height:21%" title="20.7%"></div><div class="tr-bar" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:10%" title="10.3%"></div><div class="tr-bar" style="height:21%" title="20.7%"></div><div class="tr-bar" style="height:31%" title="31.0%"></div><div class="tr-bar" style="height:34%" title="34.5%"></div><div class="tr-bar" style="height:28%" title="27.6%"></div><div class="tr-bar" style="height:17%" title="17.2%"></div><div class="tr-bar" style="height:41%" title="41.4%"></div><div class="tr-bar" style="height:34%" title="34.5%"></div><div class="tr-bar" style="height:46%" title="46.4%"></div><div class="tr-bar" style="height:43%" title="42.9%"></div><div class="tr-bar" style="height:39%" title="39.3%"></div><div class="tr-bar" style="height:46%" title="46.4%"></div><div class="tr-bar" style="height:25%" title="25.0%"></div><div class="tr-bar" style="height:46%" title="46.4%"></div><div class="tr-bar" style="height:36%" title="35.7%"></div><div class="tr-bar hi" style="height:50%" title="50.0%"></div><div class="tr-bar" style="height:39%" title="39.3%"></div><div class="tr-bar last" style="height:32%" title="32.1%"></div></div>
+        <div class="tr-delta"><div class="tr-d-n">17 &rarr; 50%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>2.9&times;</span></div><div class="tr-d-l">best of 26 runs</div></div>
+      </div>
+    </div>
+
+    <!-- ══ VERIFIED RANKINGS ══ -->
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Verified AI Placements</div>
+      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:600px;">Real customer questions, and where our clients were named.</p>
+    </div>
+    <div class="prompt-rankings-block reveal d1">
+      <p class="prompt-rankings-intro">Collection run of <strong>19 October 2026</strong>, live AI search. Aesthetics from the 10 September run.</p>
+
+      <div class="prompt-col-grid">
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill green">Physiotherapy &amp; TCM</span>
+            <span class="prompt-col-count">30 named first &middot; 12 shown</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best physiotherapy clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/8</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best English-speaking physiotherapist in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for expats</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/13</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for sports injuries</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best acupuncture in Bangkok for pain relief</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Who does the best acupuncture in Bangkok?</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best Chinese medicine clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best cupping therapy in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/6</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best lymphatic drainage massage in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Which clinics in Bangkok specialise in sports injury rehab?</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">HYROX recovery physio Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
+          </div>
+        </div>
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill gold">Fertility &amp; IVF</span>
+            <span class="prompt-col-count">9 named first &middot; 12 top three</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Thailand</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/17</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/22</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok for foreigners</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/16</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best IVF clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best ICSI clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best clinic for PGT-A testing in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best place for egg freezing in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/23</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Compare fertility clinics in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">IVF success rates Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/20</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best clinic for male infertility in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">PGT-A Bangkok price</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/8</span></span></div>
+            <div class="prompt-row green"><span class="prompt-text">Best IUI clinic in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/10</span></span></div>
+          </div>
+        </div>
+
+        <div class="prompt-col">
+          <div class="prompt-col-hd">
+            <span class="prompt-tier-pill slate">Aesthetics</span>
+            <span class="prompt-col-count">10 Sep run &middot; 6 placements</span>
+          </div>
+          <div class="prompt-rows">
+            <div class="prompt-row green"><span class="prompt-text">Best Ultherapy clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/19</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/14</span></span></div>
+            <div class="prompt-row gold"><span class="prompt-text">Beauty clinic Central Pinklao</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/18</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best filler clinic in Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/10</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best Botox clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/21</span></span></div>
+            <div class="prompt-row slate"><span class="prompt-text">Best lip filler clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/10</span></span></div>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:20px; letter-spacing:0.02em;">
+        Reads as <strong style="color:var(--ink-mid)">position / providers named</strong> &mdash; &ldquo;1/16&rdquo; means named first out of sixteen clinics in that answer.
+        Row colour marks the band: <span style="color:#2F6B4A;font-weight:600">top 3</span> &middot;
+        <span style="color:#8A6A18;font-weight:600">4&ndash;5</span> &middot;
+        <span style="color:var(--ink-mid);font-weight:600">6+</span>.
+      </p>
+      </div>
+      <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:22px; padding-top:18px; border-top:1px solid var(--border); line-height:1.6;">19 October run: named first on <strong>30 of 100 wellness prompts</strong> and <strong>9 of 18 fertility prompts</strong>.</p>
+    
+
+    <!-- ══ EVIDENCE GRID ══ -->
+    <div class="reveal" style="margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Evidence</div>
+      <h3 style="font-size:34px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; max-width:660px; margin-bottom:10px;">Nine results, straight from the source.</h3>
+      <p style="font-size:14px; color:var(--ink-mid); max-width:620px;">Click any image to enlarge it and read what it shows.</p>
+    </div>
+    <div class="ev-grid reveal d1">
+      <button type="button" class="ev-tile" data-src="images/tracker/prompt-tracker.jpg" data-title="Prompt tracker" data-who="IVF Clinic" data-text="Every buying question is re-run on a schedule. The clinic is named in 100% of runs for egg freezing in Bangkok and for egg freezing price." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/tracker/prompt-tracker.jpg" alt="Prompt tracker, IVF Clinic" loading="lazy"></span>
+        <span class="ev-who">IVF Clinic</span>
+        <span class="ev-t">Prompt tracker</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/ivf-case/robots-ai-crawlers-blocked.jpg" data-title="The cause: AI crawlers blocked" data-who="IVF Clinic" data-text="Eight AI crawlers, including GPTBot, ClaudeBot and Google-Extended, were blocked in the clinic’s robots.txt. AI models could not read the site, so the clinic appeared in zero AI answers." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/ivf-case/robots-ai-crawlers-blocked.jpg" alt="The cause: AI crawlers blocked, IVF Clinic" loading="lazy"></span>
+        <span class="ev-who">IVF Clinic</span>
+        <span class="ev-t">The cause: AI crawlers blocked</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/ivf-case/ai-responses-0-to-242.jpg" data-title="0 to 242 AI citations" data-who="IVF Clinic" data-text="Two months after the fix, AI responses citing the clinic went from 0 to 242 across 81 pages. 141 of them were in Google AI Overviews." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/ivf-case/ai-responses-0-to-242.jpg" alt="0 to 242 AI citations, IVF Clinic" loading="lazy"></span>
+        <span class="ev-who">IVF Clinic</span>
+        <span class="ev-t">0 to 242 AI citations</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/evidence/compare-runs.jpg" data-title="Named in 28% of answers, then 83%" data-who="IVF Clinic" data-text="The same prompts on two dates. Between 20 July and 28 August 2026 the clinic went from named in 28% of answers to 83%, with 11 prompts won and 1 lost." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/evidence/compare-runs.jpg" alt="Named in 28% of answers, then 83%, IVF Clinic" loading="lazy"></span>
+        <span class="ev-who">IVF Clinic</span>
+        <span class="ev-t">Named in 28% of answers, then 83%</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/ivf-case/gsc-jun-vs-aug.jpg" data-title="Search clicks: 99 to 487" data-who="IVF Clinic" data-text="Search Console, June against August 2026, English pages. Impressions rose from 15.8K to 153K, clicks from 99 to 487, and average position from 32.7 to 16.3." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/ivf-case/gsc-jun-vs-aug.jpg" alt="Search clicks: 99 to 487, IVF Clinic" loading="lazy"></span>
+        <span class="ev-who">IVF Clinic</span>
+        <span class="ev-t">Search clicks: 99 to 487</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/evidence/ga4-wellness-chatgpt-users.jpg" data-title="ChatGPT users up 91%" data-who="Wellness Clinic" data-text="Google Analytics. Users arriving from ChatGPT rose from 77 in July to 147 in August 2026. Total users rose 52% in the same month." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/evidence/ga4-wellness-chatgpt-users.jpg" alt="ChatGPT users up 91%, Wellness Clinic" loading="lazy"></span>
+        <span class="ev-who">Wellness Clinic</span>
+        <span class="ev-t">ChatGPT users up 91%</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/evidence/ga4-aesthetic-chatgpt-sessions.jpg" data-title="ChatGPT sessions up 373%" data-who="Aesthetic Clinic" data-text="Google Analytics, March to April against January to February 2026. Sessions from ChatGPT rose from 70 to 331, and key events on the site rose from 24 to 79." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/evidence/ga4-aesthetic-chatgpt-sessions.jpg" alt="ChatGPT sessions up 373%, Aesthetic Clinic" loading="lazy"></span>
+        <span class="ev-who">Aesthetic Clinic</span>
+        <span class="ev-t">ChatGPT sessions up 373%</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/evidence/aio-education.jpg" data-title="Listed in a Google AI Overview" data-who="Education Client" data-text="Google lists the client third among online course providers, and 2 of the answer’s 16 citations point to the client’s own pages. Captured 31 May 2026." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/evidence/aio-education.jpg" alt="Listed in a Google AI Overview, Education Client" loading="lazy"></span>
+        <span class="ev-who">Education Client</span>
+        <span class="ev-t">Listed in a Google AI Overview</span>
+      </button>
+      <button type="button" class="ev-tile" data-src="images/tracker/head-to-head.jpg" data-title="Ahead on 73% of shared prompts" data-who="Wellness Clinic" data-text="Across 30 shared prompts the clinic appears higher than a named competitor on 73%. It leads on physiotherapy, cupping and acupuncture." onclick="lbEv(this)">
+        <span class="ev-img"><img src="images/tracker/head-to-head.jpg" alt="Ahead on 73% of shared prompts, Wellness Clinic" loading="lazy"></span>
+        <span class="ev-who">Wellness Clinic</span>
+        <span class="ev-t">Ahead on 73% of shared prompts</span>
+      </button>
+    </div>
+
+    <!-- ══ LIVE SCREENSHOTS ══ -->
+    <div class="reveal" style="margin-top: 64px;">
+      <div class="label" style="margin-bottom: 8px;">Live AI Platform Screenshots</div>
+      <p style="font-size:13px; color: var(--ink-light);">Client answers captured directly from the platforms. Click to enlarge.</p>
+    </div>
+    <div class="proof-grid reveal d1" style="grid-template-columns: repeat(3,1fr); margin-top: 20px;">
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">ChatGPT</span>
+          <div class="proof-desc">&ldquo;Best physiotherapy clinic Bangkok&rdquo; &mdash; client named first</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/wellness/gemini-best-physio.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google Gemini</span>
+          <div class="proof-desc">&ldquo;Best physio clinic Thailand&rdquo; &mdash; listed first with full detail</div>
+        </div>
+      </div>
+      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
+        <img src="images/aesthetic/aio-best-fillers.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
+        <div class="proof-cap">
+          <span class="proof-platform">Google AI Overview</span>
+          <div class="proof-desc">&ldquo;Best fillers Bangkok&rdquo; &mdash; aesthetic clinic recommended</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ DASHBOARD ══ -->
+    <div class="reveal d1" style="margin-top: 64px; margin-bottom: 16px;">
+      <div class="label" style="margin-bottom: 4px;">Client Dashboard &mdash; What You Log Into</div>
+      <p style="font-size:13px; color: var(--ink-light);">Example client view. Figures are from the date on the panel.</p>
+    </div>
+    <div class="db-2col reveal d1">
+      <div class="db-2col-img">
+        <img src="images/wellness/ai-visibility-dashboard.jpg" alt="GEO dashboard showing mentions, rank and citations" onclick="lb(this.src)" onerror="this.parentNode.style.display='none'">
+      </div>
+      <div class="db-2col-text">
+        <div class="db-walk-head">What this tracks</div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Every prompt</div>
+          <div class="db-walk-l">Your full prompt set, re-run every 72 hours</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Position, not presence</div>
+          <div class="db-walk-l">Where you appear in the answer, and how many rivals appear with you</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">Competitor set</div>
+          <div class="db-walk-l">Every brand named alongside you, on every run</div>
+        </div>
+        <div class="db-walk-item">
+          <div class="db-walk-n">The raw answer</div>
+          <div class="db-walk-l">The full stored response, so you can check any number</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LOCAL SEO ══ -->
+
+
+    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <div class="label" style="margin-bottom: 8px;">Local SEO &mdash; Organic Ranking Results</div>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">F&amp;B and healthcare clients in Bangkok and Pattaya. Click a card to see full results.</p>
+    </div>
+    <div class="client-cards reveal" style="margin-top: 24px; border-top: none; padding-top: 0;">
+      <div class="client-card" onclick="openCase('eatali')">
+        <div class="cc-service">Local SEO &middot; Pattaya</div>
+        <div class="cc-name">Italian Restaurant, Pattaya</div>
+        <div class="cc-metric">Top 3</div>
+        <div class="cc-label">&ldquo;Italian restaurant pattaya&rdquo;</div>
+      </div>
+      <div class="client-card" onclick="openCase('amorretto')">
+        <div class="cc-service">Local SEO &middot; Google Maps</div>
+        <div class="cc-name">Caf&eacute; &amp; Bar, Bangkok</div>
+        <div class="cc-metric"><span class="grow">+80%</span></div>
+        <div class="cc-label">Google Maps visibility growth</div>
+      </div>
+      <div class="client-card" onclick="openCase('form-recovery')">
+        <div class="cc-service">SEO &middot; Healthcare &middot; Bangkok</div>
+        <div class="cc-name">Wellness Clinic, Bangkok</div>
+        <div class="cc-metric">4,009</div>
+        <div class="cc-label">Organic clicks in July 2026 &mdash; first 4K month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SERVICE 02: PERFORMANCE MARKETING
+     ════════════════════════════════ -->
+<section id="performance" class="svc-section" style="background: var(--cream);">
+  <div class="container">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="label">Service 02</div>
         <h2>Performance <em>Marketing</em></h2>
         <div class="mission-pull" style="margin-bottom: 28px; margin-top: 24px;">
           <p>"We turn Google searches into reservations, restaurant visits, and real revenue."</p>
         </div>
-        <p class="intro">Every campaign has one objective: put more paying customers through your door. We manage Google Maps, Search, and Meta for restaurants, clinics, hotels, and retail businesses in Thailand and across Southeast Asia.</p>
+        <p class="intro">Google Maps, Search and Meta for restaurants, clinics, hotels and retail in Thailand and Southeast Asia.</p>
         <ul style="list-style:none; margin-top: 20px; display:flex; flex-direction:column; gap:10px;">
           <li style="font-size:14px; color:var(--ink-mid); font-weight:300; padding-left:18px; position:relative; line-height:1.5;">
             <span style="position:absolute;left:0;color:var(--terra);font-weight:600;">→</span>
@@ -1524,10 +2016,8 @@
       </div>
 
       <div class="reveal d1" style="margin-top: 40px;">
-        <div class="label" style="margin-bottom: 8px;">Most Recent Month &mdash; August 2026</div>
-        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
-          Performance Max for the Indian Restaurant in Bangkok, August against July. Every figure below is a customer action Google recorded, not an impression.
-        </p>
+        <div class="label" style="margin-bottom: 8px;">August 2026</div>
+        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">Performance Max, Indian Restaurant, Bangkok. August against July 2026.</p>
         <div class="stat-strip half">
           <div class="ss-item">
             <div class="ss-n"><span class="grow">364</span></div>
@@ -1553,9 +2043,15 @@
         <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:14px; letter-spacing:0.02em;">
           Source: Google Ads campaign report, 1&ndash;31 August 2026 compared with 1&ndash;31 July 2026. Bangkok location only.
         </p>
+        <div class="sep-strip">
+          <div class="sep-k">September 2026 &middot; both locations</div>
+          <div class="sep-row"><div><b>109</b><span>Calls from Google ads, up 24% on August</span></div><div><b>865,998</b><span>Ad impressions across Google and Meta, up 54%</span></div><div><b>2&times;</b><span>Meta impressions against August</span></div></div>
+          <div class="sep-src">Source: Google Ads and Meta Ads Manager, 1&ndash;30 September 2026 compared with August.</div>
+        </div>
       </div>
 
-      <div class="reveal d1">
+      <div class="reveal d1 steps-wide">
+        <div class="steps-head"><div class="label">Capabilities</div><h3>What we manage</h3></div>
         <div class="svc-detail-grid">
           <div class="svc-detail">
             <div class="svc-detail-num">Capability 01</div>
@@ -1619,19 +2115,19 @@
         <div class="db-walk-head">What this shows</div>
         <div class="db-walk-item">
           <div class="db-walk-n"><span class="grow">2,608%</span></div>
-          <div class="db-walk-l">ROAS — every ฿1 in ad spend returned ฿26 in measurable customer actions, confirmed directly in the Google Ads dashboard</div>
+          <div class="db-walk-l">ROAS: ฿26 back for every ฿1 of ad spend</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">60% Maps</div>
-          <div class="db-walk-l">Over half the budget ran through Google Maps placements — where "Indian restaurant near me" searches convert fastest into foot traffic</div>
+          <div class="db-walk-l">Of budget on Google Maps, where near-me searches convert fastest</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">3,350</div>
-          <div class="db-walk-l">Conversions in a single month. At 10 conversions per in-store visit → 350+ estimated visits. ฿3/conversion = <strong style="color:var(--terra);font-weight:500;">฿30 per in-store visit</strong></div>
+          <div class="db-walk-l">Conversions in one month, an estimated 350+ in-store visits</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">฿3.28</div>
-          <div class="db-walk-l">Cost per conversion — less than the price of one menu item to bring each new customer through the door</div>
+          <div class="db-walk-l">Cost per conversion</div>
         </div>
       </div>
     </div>
@@ -1652,15 +2148,15 @@
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n"><span class="grow">+550%</span></div>
-          <div class="db-walk-l">"Dosa near me" — specific buyers, not browsers. Converting at ฿0.29 each because intent matches exactly</div>
+          <div class="db-walk-l">&ldquo;Dosa near me&rdquo;, converting at ฿0.29 each</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n"><span class="grow">&gt;+1,000%</span></div>
-          <div class="db-walk-l">"South Indian food near me" — niche queries convert at 80–100% because only one type of restaurant satisfies that search</div>
+          <div class="db-walk-l">&ldquo;South Indian food near me&rdquo;, converting at 80&ndash;100%</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">78–100%</div>
-          <div class="db-walk-l">Conversion rate on food-specific terms — people searching "dosa" are deciding where to eat right now, not browsing</div>
+          <div class="db-walk-l">Conversion rate on food-specific terms</div>
         </div>
       </div>
     </div>
@@ -1690,7 +2186,7 @@
          ════════════════════════════════ -->
     <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
       <div class="label" style="margin-bottom: 4px;">Google Ads — Italian Restaurant, Bangkok</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 28px;">Month one. Performance Max + Search across Google Maps, Search, Display, and YouTube. Click any image to zoom.</p>
+      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 28px;">Month one. Performance Max and Search. Click any image to zoom.</p>
     </div>
 
     <!-- Italian Restaurant — headline numbers -->
@@ -1711,6 +2207,26 @@
       </div>
     </div>
 
+    <div class="reveal" style="margin-top: 36px;">
+      <div class="dashboard-label">Month two <span>27 May &ndash; 28 June 2026</span></div>
+    </div>
+    <div class="quick-results reveal" style="margin-top: 0; padding-top: 0; border-top: none;">
+      <div class="quick-results-grid">
+        <div class="qr">
+          <div class="qr-n">743</div>
+          <div class="qr-l">Direction requests from Google Maps and Search in the month</div>
+        </div>
+        <div class="qr">
+          <div class="qr-n">68</div>
+          <div class="qr-l">Store visits recorded by Google &mdash; up 24.7% on month one</div>
+        </div>
+        <div class="qr">
+          <div class="qr-n">Excellent</div>
+          <div class="qr-l">Performance Max ad strength, with Thai-language and competitor Search ad groups added</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Channel-flow Sankey — 2-col walkthrough -->
     <div class="reveal" style="margin-top: 48px; margin-bottom: 16px;">
       <div class="dashboard-label">Where the conversions come from <span>Channel flow · Performance Max</span></div>
@@ -1723,19 +2239,19 @@
         <div class="db-walk-head">Reading the numbers</div>
         <div class="db-walk-item">
           <div class="db-walk-n">Maps</div>
-          <div class="db-walk-l">53% of ad spend, but ~71% of all conversions — the single most efficient channel at ฿12.86 per direction request</div>
+          <div class="db-walk-l">53% of ad spend, about 71% of conversions, at ฿12.86 per direction request</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">981</div>
-          <div class="db-walk-l">"Get directions" actions — the highest-intent signal a diner can send: they're deciding where to eat right now</div>
+          <div class="db-walk-l">&ldquo;Get directions&rdquo; actions, the highest-intent signal a diner sends</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">฿13.34</div>
-          <div class="db-walk-l">Cost per action on this campaign — less than one main course to bring a new diner through the door</div>
+          <div class="db-walk-l">Cost per action on this campaign</div>
         </div>
         <div class="db-walk-item">
           <div class="db-walk-n">2,250</div>
-          <div class="db-walk-l">Engagements — plus page views, contacts and checkouts, all feeding the algorithm cleaner signals to optimise on</div>
+          <div class="db-walk-l">Engagements, plus page views, contacts and checkouts</div>
         </div>
       </div>
     </div>
@@ -1796,483 +2312,17 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     SERVICE 02: SEO & AI VISIBILITY
-     ════════════════════════════════ -->
-<section id="seo-aio" class="svc-section" style="background: var(--cream);">
-  <div class="container">
-    <div class="svc-header">
-      <div class="reveal">
-        <div class="label">Service 02</div>
-        <h2>SEO &amp; <em>AI Visibility</em></h2>
-        <p class="intro">
-          Search is no longer just Google. An increasing share of product and service discovery now happens through AI platforms &mdash; ChatGPT, Gemini, Perplexity, and Google AI Overviews. Locully optimises for both.
-        </p>
-        <p class="intro" style="margin-top: 16px;">
-          We build the content authority, technical foundations, and backlink profile that cause AI models to cite your business as a trusted recommendation &mdash; and cause Google to rank you on page one. Then we measure it, every 72 hours, and show you the raw answers.
-        </p>
-        <div class="client-cards reveal">
-          <div class="client-card" onclick="openCase('form-recovery')">
-            <div class="cc-service">SEO &middot; AI Visibility</div>
-            <div class="cc-name">Wellness Clinic, Bangkok</div>
-            <div class="cc-metric">40/mo</div>
-            <div class="cc-label">Paid consultations sourced from AI &mdash; from zero</div>
-          </div>
-          <div class="client-card" onclick="openCase('genesis')">
-            <div class="cc-service">SEO &middot; AI Visibility</div>
-            <div class="cc-name">IVF Clinic, Bangkok</div>
-            <div class="cc-metric"><span class="grow">0 &rarr; 242</span></div>
-            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>from zero in 2 months</span></div>
-            <div class="cc-label">AI responses citing the clinic &middot; 2 months</div>
-          </div>
-          <div class="client-card" onclick="openCase('cosmo')">
-            <div class="cc-service">SEO &middot; AI Visibility</div>
-            <div class="cc-name">Aesthetic Clinic, Bangkok</div>
-            <div class="cc-metric"><span class="grow">2.7&times;</span></div>
-            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>+170%</span></div>
-            <div class="cc-label">AI citation rate in seven weeks</div>
-          </div>
-          <div class="client-card" onclick="openCase('ibrokers')">
-            <div class="cc-service">SEO &middot; 12 Months</div>
-            <div class="cc-name">Insurance Broker, Bangkok</div>
-            <div class="cc-metric"><span class="grow">5&times;</span></div>
-            <div class="cc-delta"><span class="delta"><span class="ar">&#9650;</span>+403%</span></div>
-            <div class="cc-label">Click growth &middot; 1,030 &rarr; 5,180/month</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal d1" style="margin-top: 40px;">
-        <div class="label" style="margin-bottom: 8px;">Organic Search &mdash; August 2026</div>
-        <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
-          The most recent full calendar month, taken straight from each client&rsquo;s Google Search Console. AI visibility and classic rankings compound together &mdash; the same pages earn both.
-        </p>
-        <div class="stat-strip half">
-          <div class="ss-item">
-            <div class="ss-n"><span class="grow">4,528</span></div>
-            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>+12.9%</span><span class="delta ctx">vs July</span></div>
-            <div class="ss-l">Organic clicks for the Wellness Clinic &mdash; a second consecutive record month</div>
-          </div>
-          <div class="ss-item">
-            <div class="ss-n"><span class="grow">+37%</span></div>
-            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>+51% sessions</span></div>
-            <div class="ss-l">Organic conversions at the same clinic, on far more organic traffic</div>
-          </div>
-          <div class="ss-item">
-            <div class="ss-n"><span class="grow">+183%</span></div>
-            <div class="ss-delta"><span class="delta ctx">46,652 &rarr; 132,097</span><span class="delta"><span class="ar">&#9650;</span>clicks +74%</span></div>
-            <div class="ss-l">English impressions at the IVF Clinic</div>
-          </div>
-          <div class="ss-item">
-            <div class="ss-n"><span class="grow">16.5</span></div>
-            <div class="ss-delta"><span class="delta"><span class="ar">&#9650;</span>15.6 places</span><span class="delta ctx">from 32.1 in June</span></div>
-            <div class="ss-l">Average English position at the IVF Clinic &mdash; third straight month of gains</div>
-          </div>
-        </div>
-        <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:14px; letter-spacing:0.02em;">
-          Source: Google Search Console. Wellness Clinic, August vs July 2026, full calendar months. IVF Clinic, English-language pages only, 1&ndash;25 August vs 1&ndash;25 July 2026.
-        </p>
-      </div>
-
-      <div class="reveal d1">
-        <div class="svc-detail-grid">
-          <div class="svc-detail">
-            <div class="svc-detail-num">Step 01</div>
-            <h4>AI Visibility Audit</h4>
-            <p>We analyse your brand across all major AI platforms and benchmark it against competitors. This establishes a clear baseline and identifies the specific gaps driving missed recommendations &mdash; including the technical blocks most sites do not know they have.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Step 02</div>
-            <h4>Technical &amp; Content Foundation</h4>
-            <p>On-page SEO, schema markup, and structured content specifically formatted to be cited by AI models. We build the pages that AI engines pull from when answering user queries.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Step 03</div>
-            <h4>Authority &amp; Backlink Building</h4>
-            <p>Editorial placements on DR50+ publications, digital PR, and citation building across authoritative directories. The trust signals that AI and Google both require to recommend a source.</p>
-          </div>
-          <div class="svc-detail">
-            <div class="svc-detail-num">Step 04</div>
-            <h4>Monitoring &amp; Compounding</h4>
-            <p>Every 72 hours we re-run your prompt set across live AI search and store the full answer text &mdash; not a score, the actual response. Visibility compounds: each asset built continues to earn citations and rankings beyond the campaign period.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ MEASUREMENT INFRASTRUCTURE ══ -->
-    <div class="reveal" style="margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">How We Prove It</div>
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:640px; margin-bottom:14px;">Most agencies report AI visibility from a screenshot. We run a tracker.</h3>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
-        Locully operates its own AI visibility collector. Every 72 hours it puts each client&rsquo;s prompt set through live AI search, stores the complete answer, records whether the brand was named, where in the answer it appeared, and every competitor named alongside it. Clients log into the dashboard and read the raw responses themselves.
-      </p>
-    </div>
-    <div class="stat-strip reveal d1">
-      <div class="ss-item"><div class="ss-n">71</div><div class="ss-l">Commercial prompts tracked across three healthcare clients &mdash; the questions patients actually type</div></div>
-      <div class="ss-item"><div class="ss-n">1,317</div><div class="ss-l">Full AI answers captured and stored since 20 July 2026 &mdash; auditable, not summarised</div></div>
-      <div class="ss-item"><div class="ss-n">72h</div><div class="ss-l">Collection interval. Automated, versioned, and running whether or not anyone asks for a report</div></div>
-      <div class="ss-item"><div class="ss-n">2</div><div class="ss-l">Engines measured on their own terms &mdash; ChatGPT and Google AI Overviews behave differently</div></div>
-    </div>
-
-    <!-- ══ TWO-ENGINE MEASUREMENT ══ -->
-    <div class="reveal" style="margin-top: 64px;">
-      <div class="label" style="margin-bottom: 8px;">The Two-Engine Problem</div>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
-        ChatGPT <em style="font-style:normal;color:var(--ink);font-weight:500">names brands</em> in its answer. Google AI Overviews <em style="font-style:normal;color:var(--ink);font-weight:500">names almost none</em> &mdash; it cites source websites instead. Measure both with one metric and you will under-report one of them by 4&times;. We measure each engine on the signal it actually emits.
-      </p>
-    </div>
-    <div class="engine-split reveal d1">
-      <div class="es-card">
-        <div class="es-brand">Wellness Clinic, Bangkok</div>
-        <div class="es-sub">Physiotherapy &middot; Bangkok</div>
-        <div class="es-row">
-          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">50.6%</span></div>
-          <div class="es-track"><div class="es-fill" style="width:50.6%"></div></div>
-        </div>
-        <div class="es-row">
-          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">80.6%</span></div>
-          <div class="es-track"><div class="es-fill g" style="width:80.6%"></div></div>
-        </div>
-        <div class="es-note">Cited by Google&rsquo;s AI in 4 of every 5 answers in its category. On ChatGPT it is named outright in half.</div>
-      </div>
-      <div class="es-card">
-        <div class="es-brand">IVF Clinic, Bangkok</div>
-        <div class="es-sub">Fertility &middot; SET-listed</div>
-        <div class="es-row">
-          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">19.7%</span></div>
-          <div class="es-track"><div class="es-fill" style="width:19.7%"></div></div>
-        </div>
-        <div class="es-row">
-          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">36.7%</span></div>
-          <div class="es-track"><div class="es-fill g" style="width:36.7%"></div></div>
-        </div>
-        <div class="es-note">Two months in, from a standing start of zero on both engines. The trajectory matters more than the level.</div>
-      </div>
-      <div class="es-card">
-        <div class="es-brand">Aesthetic Clinic, Bangkok</div>
-        <div class="es-sub">Aesthetics &middot; Bangkok</div>
-        <div class="es-row">
-          <div class="es-eng"><span>ChatGPT &mdash; brand named</span><span class="es-val">3.5%</span></div>
-          <div class="es-track"><div class="es-fill" style="width:3.5%"></div></div>
-        </div>
-        <div class="es-row">
-          <div class="es-eng"><span>Google AIO &mdash; site cited</span><span class="es-val">42.6%</span></div>
-          <div class="es-track"><div class="es-fill g" style="width:42.6%"></div></div>
-        </div>
-        <div class="es-note">A 12&times; gap between engines in the same period. Report one number and you describe the wrong business.</div>
-      </div>
-    </div>
-    <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:14px; line-height:1.6; max-width:720px;">
-      Per-response exports, 25&ndash;30 August 2026. Rates are measured against each platform&rsquo;s own broad prompt set (83&ndash;137 responses per engine, per brand), so they are not comparable between clients &mdash; only between engines for the same client.
-    </p>
-
-    <!-- ══ TREND ══ -->
-    <div class="reveal" style="margin-top: 64px;">
-      <div class="label" style="margin-bottom: 8px;">Seven Weeks, Measured Every 72 Hours</div>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:640px;">
-        Share of tracked prompts where the client is named in the AI answer. Nineteen collection runs, 20 July &rarr; 10 September 2026. Every bar is a run, in order, dips included &mdash; the figure on the right is each client&rsquo;s best run in that window.
-      </p>
-    </div>
-    <div class="trend-block reveal d1">
-      <div class="tr-row">
-        <div class="tr-name">Wellness Clinic, Bangkok<span>25 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:35%" title="31.8%"></div><div class="tr-bar" style="height:51%" title="45.5%"></div><div class="tr-bar" style="height:45%" title="40.9%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:40%" title="36.4%"></div><div class="tr-bar" style="height:66%" title="59.1%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar hi" style="height:86%" title="77.3%"></div><div class="tr-bar" style="height:81%" title="72.7%"></div><div class="tr-bar" style="height:61%" title="54.5%"></div><div class="tr-bar" style="height:76%" title="68.2%"></div><div class="tr-bar" style="height:71%" title="63.6%"></div><div class="tr-bar" style="height:80%" title="72.0%"></div><div class="tr-bar" style="height:76%" title="68.0%"></div><div class="tr-bar last" style="height:76%" title="68.0%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">36 &rarr; 77%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>2.1&times;</span></div><div class="tr-d-l">best of 19 runs</div></div>
-      </div>
-      <div class="tr-row">
-        <div class="tr-name">IVF Clinic, Bangkok<span>18 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:31%" title="27.8%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:49%" title="44.4%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:62%" title="55.6%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:56%" title="50.0%"></div><div class="tr-bar" style="height:37%" title="33.3%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar hi" style="height:93%" title="83.3%"></div><div class="tr-bar" style="height:80%" title="72.2%"></div><div class="tr-bar" style="height:68%" title="61.1%"></div><div class="tr-bar" style="height:74%" title="66.7%"></div><div class="tr-bar last" style="height:68%" title="61.1%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">28 &rarr; 83%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>3.0&times;</span></div><div class="tr-d-l">best of 19 runs</div></div>
-      </div>
-      <div class="tr-row">
-        <div class="tr-name">Aesthetic Clinic, Bangkok<span>28 prompts</span></div>
-        <div class="tr-bars"><div class="tr-bar first" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:15%" title="13.8%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:11%" title="10.3%"></div><div class="tr-bar" style="height:23%" title="20.7%"></div><div class="tr-bar" style="height:34%" title="31.0%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar" style="height:31%" title="27.6%"></div><div class="tr-bar" style="height:19%" title="17.2%"></div><div class="tr-bar" style="height:46%" title="41.4%"></div><div class="tr-bar" style="height:38%" title="34.5%"></div><div class="tr-bar hi" style="height:52%" title="46.4%"></div><div class="tr-bar" style="height:48%" title="42.9%"></div><div class="tr-bar last" style="height:44%" title="39.3%"></div></div>
-        <div class="tr-delta"><div class="tr-d-n">17 &rarr; 46%</div><div class="tr-d-x"><span class="delta"><span class="ar">&#9650;</span>2.7&times;</span></div><div class="tr-d-l">best of 19 runs</div></div>
-      </div>
-    </div>
-
-    <!-- ══ VERIFIED RANKINGS ══ -->
-    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Verified AI Placements</div>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.6; max-width:600px;">These are actual queries customers type into AI search &mdash; and where our clients were named in the answer on the most recent collection run.</p>
-    </div>
-    <div class="prompt-rankings-block reveal d1">
-      <p class="prompt-rankings-intro">Every placement from the collection run of <strong>10 September 2026</strong>, live AI search, across three clinical categories. Nothing selected, nothing reordered &mdash; this is the run.</p>
-
-      <div class="prompt-col-grid">
-
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill green">Physiotherapy &amp; TCM</span>
-            <span class="prompt-col-count">14 placements</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row green"><span class="prompt-text">Best English-speaking physiotherapist in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best acupuncture clinic in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best acupuncture in Bangkok for pain relief</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best cupping therapy in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/11</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best lymphatic drainage massage in Bangkok</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/22</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for sports injuries</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physio clinic in Bangkok for expats</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best physiotherapist in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/10</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">TCM clinic in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Acupuncture Bangkok price</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best clinic for lymphatic drainage after liposuction Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/21</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Back pain clinic bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Where do I go for back pain in Bangkok</span><span class="prompt-rank-tag slate">8<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Compare physiotherapy clinics in Bangkok</span><span class="prompt-rank-tag slate">10<span style="opacity:.5">/19</span></span></div>
-          </div>
-        </div>
-
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill gold">Fertility &amp; IVF</span>
-            <span class="prompt-col-count">10 placements</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok for foreigners</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/16</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Thailand</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">ICSI Bangkok price</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/5</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">PGT-A Bangkok price</span><span class="prompt-rank-tag green">1<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best ICSI clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/9</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best clinic for PGT-A testing in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/15</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best clinic for male infertility in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/12</span></span></div>
-            <div class="prompt-row green"><span class="prompt-text">Best fertility clinic in Bangkok</span><span class="prompt-rank-tag green">3<span style="opacity:.5">/16</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best IVF clinic in Bangkok</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/21</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">IUI Bangkok price</span><span class="prompt-rank-tag slate">9<span style="opacity:.5">/14</span></span></div>
-          </div>
-        </div>
-
-        <div class="prompt-col">
-          <div class="prompt-col-hd">
-            <span class="prompt-tier-pill slate">Aesthetics</span>
-            <span class="prompt-col-count">6 placements</span>
-          </div>
-          <div class="prompt-rows">
-            <div class="prompt-row green"><span class="prompt-text">Best Ultherapy clinic in Bangkok</span><span class="prompt-rank-tag green">2<span style="opacity:.5">/19</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Best aesthetic clinic near Pinklao</span><span class="prompt-rank-tag gold">4<span style="opacity:.5">/14</span></span></div>
-            <div class="prompt-row gold"><span class="prompt-text">Beauty clinic Central Pinklao</span><span class="prompt-rank-tag gold">5<span style="opacity:.5">/18</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best filler clinic in Bangkok</span><span class="prompt-rank-tag slate">6<span style="opacity:.5">/10</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best Botox clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/21</span></span></div>
-            <div class="prompt-row slate"><span class="prompt-text">Best lip filler clinic in Bangkok</span><span class="prompt-rank-tag slate">7<span style="opacity:.5">/10</span></span></div>
-          </div>
-        </div>
-
-      </div>
-      <p style="font-size:11px; color:var(--ink-light); font-weight:300; margin-top:20px; letter-spacing:0.02em;">
-        Reads as <strong style="color:var(--ink-mid)">position / providers named</strong> &mdash; &ldquo;1/16&rdquo; means named first out of sixteen clinics in that answer.
-        Row colour marks the band: <span style="color:#2F6B4A;font-weight:600">top 3</span> &middot;
-        <span style="color:#8A6A18;font-weight:600">4&ndash;5</span> &middot;
-        <span style="color:var(--ink-mid);font-weight:600">6+</span>.
-      </p>
-      </div>
-      <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:22px; padding-top:18px; border-top:1px solid var(--border); line-height:1.6;">
-        Full denominator, same run: <strong style="color:var(--ink-mid)">39 of 71 tracked prompts</strong> named a client in the answer. Across all nineteen runs, <strong style="color:var(--ink-mid)">25 prompts have been named first</strong> and 41 have placed in the top three at least once. We publish the misses alongside the wins &mdash; a tracker that only ever shows wins is not a tracker.
-      </p>
-    </div>
-
-    <!-- ══ GENESIS CASE — BEFORE / AFTER ══ -->
-    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Case Evidence &mdash; IVF Clinic, Bangkok</div>
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:660px; margin-bottom:14px;">A SET-listed IVF clinic, invisible to every AI engine. The cause was four lines in a config file.</h3>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
-        A fertility clinic listed on the Stock Exchange of Thailand &mdash; 2,000+ patients a year, 60&ndash;65% ICSI success rate, three branches, a seven-doctor team. In June 2026 it appeared in <strong>zero</strong> AI answers on any engine. Not because the clinic was weak &mdash; because its <code style="font-family:ui-monospace,monospace;font-size:12.5px;background:var(--cream-dark);padding:1px 5px;border-radius:3px;">robots.txt</code> was blocking GPTBot, ClaudeBot, Google-Extended and CCBot from reading the site at all. A default setting nobody had chosen. We found it, specified the fix, and rebuilt the English content stack on top of it.
-      </p>
-    </div>
-    <div class="ev-strip reveal d1">
-      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/ivf-case/robots-ai-crawlers-blocked.jpg" alt="robots.txt blocking every AI crawler" onerror="this.parentNode.style.display='none'">
-        <div class="ev-body">
-          <span class="ev-tag before">Before &middot; the cause</span>
-          <div class="ev-cap">Eight AI crawlers set to <strong>Disallow: /</strong> &mdash; GPTBot, ClaudeBot, Google-Extended, CCBot and more. The models could not read the site.</div>
-        </div>
-      </div>
-      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/ivf-case/chatgpt-client-absent.jpg" alt="ChatGPT top IVF clinics Bangkok - client absent" onerror="this.parentNode.style.display='none'">
-        <div class="ev-body">
-          <span class="ev-tag before">Before &middot; the effect</span>
-          <div class="ev-cap">&ldquo;Top IVF clinics in Bangkok&rdquo; on ChatGPT. Five clinics recommended. The SET-listed one is not among them.</div>
-        </div>
-      </div>
-      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/ivf-case/ai-responses-0-to-242.jpg" alt="0 to 242 AI responses" onerror="this.parentNode.style.display='none'">
-        <div class="ev-body">
-          <span class="ev-tag after">After &middot; two months</span>
-          <div class="ev-cap"><strong>0 &rarr; 242 AI responses</strong> citing the clinic across 81 pages &mdash; 141 in Google AI Overviews, plus AI Mode, Perplexity, Copilot, ChatGPT and Gemini.</div>
-        </div>
-      </div>
-      <div class="ev-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/ivf-case/gsc-jun-vs-aug.jpg" alt="Search Console June vs August" onerror="this.parentNode.style.display='none'">
-        <div class="ev-body">
-          <span class="ev-tag after">After &middot; two months</span>
-          <div class="ev-cap">Search Console, June vs August: impressions <strong>15.8K &rarr; 153K</strong>, clicks <strong>99 &rarr; 487</strong>, average position <strong>32.7 &rarr; 16.3</strong>.</div>
-        </div>
-      </div>
-    </div>
-    <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:14px; line-height:1.6; max-width:720px;">
-      August is a 28-day window against June&rsquo;s 30 &mdash; the growth is understated, not flattered. Engagement began 9 June 2026, so June is the pre-engagement baseline and the result represents two months of delivery.
-    </p>
-
-    <!-- ══ CONVERSION VALUE ══ -->
-    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Why It Is Worth Paying For</div>
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; line-height:1.15; max-width:660px; margin-bottom:14px;">Citations are the input. Booked, paid patients are the output.</h3>
-      <p style="font-size:14px; color:var(--ink-mid); font-weight:300; line-height:1.7; max-width:660px;">
-        Every figure below is from one client &mdash; a Bangkok physiotherapy and wellness group &mdash; reconciled against its own sales ledger, consultation tracker and GA4. Not modelled, not estimated.
-      </p>
-    </div>
-    <div class="conv-block reveal d1">
-      <div>
-        <div class="conv-big"><span class="grow">3.9&times;</span></div>
-        <div class="conv-big-l">AI-referred visitors convert 3.9&times; better than organic search visitors on the same site &mdash; 14.5% vs 3.7% session key-event rate, full-month GA4.</div>
-      </div>
-      <div class="conv-copy">
-        <p>Citation counts are a means, not an end. The reason AI visibility is worth budget is that the traffic arrives <em>pre-qualified</em> &mdash; the model has already answered the research question and endorsed you as the answer. What lands on your site is a decision, not a browse.</p>
-        <p>AI sessions stayed flat while AI conversions rose <em>60%</em> in the same month. That is a quality effect, not a volume effect &mdash; which is why we report a <em>rate</em>. A rate survives scrutiny.</p>
-        <p>The clinic went from <em>zero</em> AI-sourced paid consultations to a peak month of <em>38</em>, and now averages <em>40 a month</em>. Confirmed paid bookings &mdash; not leads, not clicks, not traffic estimates.</p>
-      </div>
-    </div>
-
-    <div class="reveal d1" style="margin-top: 20px;">
-      <div class="num-grid">
-        <div class="num-card">
-          <div class="num-n">40<span>/mo</span></div>
-          <div class="num-l">Paid consultations now sourced from AI each month, against zero a year earlier. Peak month to date: 38 during the ramp.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">฿694K&ndash;936K</div>
-          <div class="num-l">AI-sourced revenue in the first half of 2026 alone &mdash; <strong>100% incremental</strong>, because the channel did not exist twelve months earlier.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">96%</div>
-          <div class="num-l">Of AI-sourced patients are <strong>new to the clinic</strong>. This is pure discovery, not existing patients rerouting through a new channel.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">฿6,951</div>
-          <div class="num-l">Average value of an AI-sourced booking &mdash; within 1% of a Google-sourced booking (฿7,025). Same quality of patient, additional volume.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">22&ndash;30%</div>
-          <div class="num-l">Share of total clinic revenue now attributable to search and AI combined. Google-sourced consultations grew 5% year on year &mdash; <strong>AI supplied the growth.</strong></div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">54&ndash;57%</div>
-          <div class="num-l">Of AI-sourced patients are international visitors &mdash; the highest-value, hardest-to-reach segment, arriving without a baht of media spend.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">17.6%</div>
-          <div class="num-l">Share of voice across the category &mdash; the most-cited domain of any provider, <strong>4.3&times;</strong> the nearest single-clinic competitor.</div>
-        </div>
-        <div class="num-card">
-          <div class="num-n">4,009</div>
-          <div class="num-l">Organic clicks in July 2026 &mdash; the clinic&rsquo;s first 4,000-click month, +12% on June, with average position improving 8.44 &rarr; 7.79.</div>
-        </div>
-      </div>
-      <p style="font-size:11.5px; color:var(--ink-light); font-weight:300; margin-top:16px; line-height:1.6; max-width:760px;">
-        Sources: clinic sales ledger (11,942 transactions, Jan&ndash;Jun 2026), consultation tracker, GA4 channel export, Google Search Console, and AI prompt-response exports. Client anonymised at their request. Revenue figures are gross revenue, not margin.
-      </p>
-    </div>
-
-    <!-- ══ LIVE SCREENSHOTS ══ -->
-    <div class="reveal" style="margin-top: 64px;">
-      <div class="label" style="margin-bottom: 8px;">Live AI Platform Screenshots</div>
-      <p style="font-size:13px; color: var(--ink-light);">Client answers captured directly from the platforms. Click to enlarge.</p>
-    </div>
-    <div class="proof-grid reveal d1" style="grid-template-columns: repeat(3,1fr); margin-top: 20px;">
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT best physio" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">ChatGPT</span>
-          <div class="proof-desc">&ldquo;Best physiotherapy clinic Bangkok&rdquo; &mdash; client named first</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/wellness/gemini-best-physio.jpg" alt="Gemini recommendation" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google Gemini</span>
-          <div class="proof-desc">&ldquo;Best physio clinic Thailand&rdquo; &mdash; listed first with full detail</div>
-        </div>
-      </div>
-      <div class="proof-item" onclick="lb(this.querySelector('img').src)">
-        <img src="images/aesthetic/aio-best-fillers.jpg" alt="Best fillers Bangkok AI result" onerror="this.classList.add('broken');this.parentNode.style.display='none'">
-        <div class="proof-cap">
-          <span class="proof-platform">Google AI Overview</span>
-          <div class="proof-desc">&ldquo;Best fillers Bangkok&rdquo; &mdash; aesthetic clinic recommended</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ DASHBOARD ══ -->
-    <div class="reveal d1" style="margin-top: 64px; margin-bottom: 16px;">
-      <div class="label" style="margin-bottom: 4px;">Client Dashboard &mdash; What You Log Into</div>
-      <p style="font-size:13px; color: var(--ink-light);">Every client gets their own login. Prompts, positions, competitors, and the full stored answer text &mdash; not a monthly PDF. Example client view; figures shown are from the date on the panel, not today.</p>
-    </div>
-    <div class="db-2col reveal d1">
-      <div class="db-2col-img">
-        <img src="images/wellness/ai-visibility-dashboard.jpg" alt="AI visibility growth dashboard" onclick="lb(this.src)" onerror="this.parentNode.style.display='none'">
-      </div>
-      <div class="db-2col-text">
-        <div class="db-walk-head">What this tracks</div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">Every prompt</div>
-          <div class="db-walk-l">Your full commercial prompt set, re-run every 72 hours &mdash; the questions your patients actually ask, not vanity keywords</div>
-        </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">Position, not presence</div>
-          <div class="db-walk-l">Being named 20th of 34 is not the same as being named first. We record where in the answer you appear and how many rivals appear with you</div>
-        </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">Competitor set</div>
-          <div class="db-walk-l">Every brand the model named alongside you, on every run &mdash; so you can see exactly who is taking the recommendation</div>
-        </div>
-        <div class="db-walk-item">
-          <div class="db-walk-n">The raw answer</div>
-          <div class="db-walk-l">The complete stored response text. If a number in your report looks wrong, you can read the source and check it yourself</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ LOCAL SEO ══ -->
-    <div class="reveal" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border);">
-      <div class="label" style="margin-bottom: 8px;">Local SEO &mdash; Organic Ranking Results</div>
-      <p style="font-size:13px; color: var(--ink-light); margin-bottom: 0;">F&amp;B and healthcare clients in Bangkok and Pattaya. Click a card to see full results.</p>
-    </div>
-    <div class="client-cards reveal" style="margin-top: 24px; border-top: none; padding-top: 0;">
-      <div class="client-card" onclick="openCase('eatali')">
-        <div class="cc-service">Local SEO &middot; Pattaya</div>
-        <div class="cc-name">Italian Restaurant, Pattaya</div>
-        <div class="cc-metric">Top 3</div>
-        <div class="cc-label">&ldquo;Italian restaurant pattaya&rdquo;</div>
-      </div>
-      <div class="client-card" onclick="openCase('amorretto')">
-        <div class="cc-service">Local SEO &middot; Google Maps</div>
-        <div class="cc-name">Caf&eacute; &amp; Bar, Bangkok</div>
-        <div class="cc-metric"><span class="grow">+80%</span></div>
-        <div class="cc-label">Google Maps visibility growth</div>
-      </div>
-      <div class="client-card" onclick="openCase('form-recovery')">
-        <div class="cc-service">SEO &middot; Healthcare &middot; Bangkok</div>
-        <div class="cc-name">Wellness Clinic, Bangkok</div>
-        <div class="cc-metric">4,009</div>
-        <div class="cc-label">Organic clicks in July 2026 &mdash; first 4K month</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- TESTIMONIALS -->
 <section id="testimonials" style="background: var(--ink); padding: 96px 0;">
   <div class="container">
     <div class="reveal" style="text-align: center; margin-bottom: 56px;">
-      <div class="label" style="justify-content: center; color: rgba(192,80,35,0.9); margin-bottom: 14px;">Client Reviews</div>
+      <div class="label" style="justify-content: center; color: rgba(226,106,44,0.9); margin-bottom: 14px;">Client Reviews</div>
       <h2 style="color: var(--white); font-size: clamp(30px,4vw,48px);">What Clients <em>Say</em></h2>
-      <p style="font-size: 14px; color: rgba(247,245,241,0.45); margin-top: 10px; font-weight: 300;">Verified · Senja</p>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.45); margin-top: 10px; font-weight: 300;">Verified · Senja</p>
     </div>
 
     <!-- Senja video testimonial -->
-    <div class="reveal" style="max-width: 680px; margin: 0 auto 64px; background: rgba(247,245,241,0.04); border: 1px solid rgba(247,245,241,0.1); border-radius: 6px; overflow: hidden;">
+    <div class="reveal" style="max-width: 680px; margin: 0 auto 64px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
       <div class="senja-embed" data-id="e78045b1-0c17-4032-ae66-d945b9ace7b2" data-mode="shadow" data-lazyload="false" style="display: block; width: 100%; height: 480px;"></div>
     </div>
 
@@ -2304,7 +2354,7 @@
       <div style="border: 1px solid var(--border-mid); border-radius: 6px; overflow: hidden;">
         <div style="background: var(--ink); padding: 20px 24px;">
           <div style="font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color: var(--terra); margin-bottom: 6px;">Best Suited For</div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white);">We're a strong fit</div>
+          <div style="font-size:20px; font-weight:600; color:var(--white);">We're a strong fit</div>
         </div>
         <div style="padding: 20px 24px 24px; background: var(--cream);">
           <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
@@ -2319,7 +2369,7 @@
       <div style="border: 1px solid var(--border-mid); border-radius: 6px; overflow: hidden;">
         <div style="background: var(--cream-dark); padding: 20px 24px;">
           <div style="font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-light); margin-bottom: 6px;">Probably Not For</div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--ink);">Not a strong fit</div>
+          <div style="font-size:20px; font-weight:600; color:var(--ink);">Not a strong fit</div>
         </div>
         <div style="padding: 20px 24px 24px; background: var(--white);">
           <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
@@ -2340,9 +2390,7 @@
       <div class="reveal">
         <div class="label">Get in Touch</div>
         <h2>Start a <em>Conversation</em></h2>
-        <p class="intro">
-          We work with a small number of clients at any time to ensure quality of execution. If you are evaluating Locully as a growth partner, the best next step is a 30-minute briefing call.
-        </p>
+        <p class="intro">The next step is a 30-minute briefing call.</p>
         <div class="contact-details">
           <div class="contact-row">
             <div class="contact-label">Email</div>
@@ -2375,8 +2423,8 @@
             </div>
           </div>
           <div class="cp">
-            <div class="cp-name">Boni</div>
-            <div class="cp-role">SEO & Content Lead — Technical Enquiries</div>
+            <div class="cp-name">Rachanon Sakchiraphong</div>
+            <div class="cp-role">Head of Partnerships — Partnership Enquiries</div>
             <div class="cp-contact"><a href="mailto:sunny@locully.org">Via Sunny</a></div>
           </div>
         </div>
@@ -2387,7 +2435,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" style="filter: invert(1) brightness(0.55);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('afterbegin','<span style=\'font-family:Cormorant Garamond,serif;font-size:18px;font-weight:600;color:rgba(247,245,241,0.4)\'>Locully</span>')">
+  <img src="images/brand/locully-light.png" alt="Locully" style="opacity:.75;" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('afterbegin','<span style=\'font-family:Cormorant Garamond,serif;font-size:18px;font-weight:600;color:rgba(255,255,255,0.4)\'>Locully</span>')">
   <div class="footer-right">
     <div class="footer-copy">Locully · Bangkok, Thailand · locully.org · +66 62 695 9444</div>
     <div class="footer-copy" style="margin-top: 6px;">Company Profile · 2026 · Confidential</div>
@@ -2440,15 +2488,20 @@
 <div id="lb" onclick="closeLb()">
   <div id="lb-x" onclick="closeLb()">×</div>
   <img id="lb-img" src="" alt="">
+  <div id="lb-cap" hidden><div class="lc-who"></div><div class="lc-t"></div><p class="lc-x"></p></div>
 </div>
 
 <script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '-40px' });
-  reveals.forEach(el => io.observe(el));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '-40px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
 
   // Nav scroll
   window.addEventListener('scroll', () => {
@@ -2477,7 +2530,16 @@
   window.addEventListener('scroll', () => { if (mobileMenu.classList.contains('open')) closeMobileMenu(); }, { passive: true });
 
   // Lightbox
-  function lb(src) { document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('on'); }
+  function lb(src) { document.getElementById('lb-cap').hidden = true; document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('on'); }
+  function lbEv(el) {
+    var c = document.getElementById('lb-cap');
+    c.querySelector('.lc-who').textContent = el.dataset.who;
+    c.querySelector('.lc-t').textContent = el.dataset.title;
+    c.querySelector('.lc-x').textContent = el.dataset.text;
+    document.getElementById('lb-img').src = el.dataset.src;
+    c.hidden = false;
+    document.getElementById('lb').classList.add('on');
+  }
   function closeLb() { document.getElementById('lb').classList.remove('on'); document.getElementById('lb-img').src = ''; }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLb(); closeCase(); } });
 
@@ -2498,13 +2560,13 @@
 
   const CASES = {
     'form-recovery': {
-      svc: 'AI Visibility · Search Optimisation · Healthcare · Bangkok',
+      svc: 'GEO · Search Optimisation · Healthcare · Bangkok',
       name: 'Wellness Clinic, Bangkok',
       sub: 'Bangkok, Thailand · Physiotherapy, TCM & Wellness',
-      hero: ['0 → 40', 'AI-sourced paid consultations per month', 'Confirmed paid bookings traced to ChatGPT, Perplexity and Google AI Overviews. Not leads. Not clicks. Not traffic estimates.'],
+      hero: ['0 → 31', 'AI-sourced consultations in a month', 'Consultations the clinic logged as coming from ChatGPT and other AI search, August 2025 to October 2026. Not leads. Not clicks. Not traffic estimates.'],
       situation: 'A premium physiotherapy, acupuncture and wellness group across Sukhumvit. 4.9★ from 730+ Google reviews and genuinely strong clinical outcomes — and completely absent from the AI answers its own patients were reading. This is a category owned by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani. An independent clinic had no way in through conventional search.',
       shift: [
-        ['AI-sourced paid consultations', '0 per month', '40 per month', 'LED', null],
+        ['AI-sourced consultations', '0 in Aug 2025', '31 in Oct 2026', 'LED', null],
         ['ChatGPT', 'Absent — it recommended Bangkok Hospital', 'Named in 50.6% of answers', 'AMP', 0],
         ['Google AI Overviews', 'Not cited', 'Site cited in 80.6% of answers', 'AMP', null],
         ['Tracked prompt coverage', '36% of prompts named', 'peak 77% named', 'TRK', null],
@@ -2535,7 +2597,7 @@
       ]
     },
     'genesis': {
-      svc: 'AI Visibility · Search Optimisation · Fertility · Bangkok',
+      svc: 'GEO · Search Optimisation · Fertility · Bangkok',
       name: 'IVF Clinic, Bangkok',
       sub: 'Bangkok, Thailand · Fertility & IVF · SET-listed',
       hero: ['0 → 242', 'AI responses citing the clinic, in two months', 'From total invisibility on every engine to 242 citations across 81 pages — 141 of them inside Google AI Overviews.'],
@@ -2574,7 +2636,7 @@
       ]
     },
     'cosmo': {
-      svc: 'AI Visibility · Search Optimisation · Aesthetics · Bangkok',
+      svc: 'GEO · Search Optimisation · Aesthetics · Bangkok',
       name: 'Aesthetic Clinic, Bangkok',
       sub: 'Bangkok, Thailand · Non-Surgical Aesthetic Medicine',
       hero: ['7 → 32', 'Patient enquiries, in a single month', 'Seven form submissions across January and February combined, against 32 in March alone — the highest enquiry month in the clinic&rsquo;s history.'],
